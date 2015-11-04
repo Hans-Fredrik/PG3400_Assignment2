@@ -3,7 +3,7 @@
 //
 
 
-#include "../headers/dynamic_char_array.h"
+#include "../headers/string.h"
 
 String new_string(int startSize){
     String string;

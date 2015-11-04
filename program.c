@@ -28,12 +28,6 @@ int main(int argc, char *argv[]){
     write_to_file("encodedText.txt", &encodeSting);
 
 
-
-    // Allways free memory..
-    free_string_memory(&inputMessage);
-    free_string_memory(&encodeSting);
-
-
     // Read encoded.txt
     printf("\n\n\n ");
     String encodedFileText = new_string(2);
@@ -46,6 +40,8 @@ int main(int argc, char *argv[]){
     decode_string(&keyString, &encodedFileText, &decodedText);
     print_string(&decodedText);
 
+    free_string_memory(&inputMessage);
+    free_string_memory(&encodeSting);
     free_string_memory(&encodedFileText);
     free_string_memory(&decodedText);
     free_string_memory(&keyString);

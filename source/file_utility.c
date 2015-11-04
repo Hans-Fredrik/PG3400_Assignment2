@@ -13,7 +13,7 @@ int read_file(char *fileName, String *pstring, ReadFlag readFlag){
 
     char readChar;
 
-    while((readChar = fgetc(file)) != EOF){
+    while((fscanf (file, "%c", &readChar)) != EOF){
         if(readFlag == KEY){
             if((readChar >= 'a' && 'z' >= readChar) || (readChar >= 'A' && readChar <= 'Z')){
                 add_char(pstring, (char) tolower(readChar));

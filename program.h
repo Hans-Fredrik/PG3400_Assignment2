@@ -6,7 +6,7 @@
 #define INNLEVERING2_PROGRAM_H
 
 
-#include "source/dynamic_char_array.c"
+#include "source/string.c"
 #include "secretCoder.c"
 #include "source/file_utility.c"
 #include "headers/arraylist.h"

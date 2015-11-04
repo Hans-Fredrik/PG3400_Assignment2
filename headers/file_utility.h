@@ -2,7 +2,7 @@
 // Created by Hans Fredrik Brastad on 01/11/15.
 //
 
-#include "dynamic_char_array.h"
+#include "string.h"
 
 #ifndef INNLEVERING2_FILE_UTILITY_H
 #define INNLEVERING2_FILE_UTILITY_H

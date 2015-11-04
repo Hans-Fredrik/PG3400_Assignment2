@@ -6,7 +6,7 @@
 #define INNLEVERING2_ARRAYLIST_H
 #include <stdlib.h>
 #include <stdio.h>
-#include "dynamic_char_array.h"
+#include "string.h"
 
 const int ARRAY_RESIZE_FACTOR = 2;
 
