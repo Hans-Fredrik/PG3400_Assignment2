@@ -31,7 +31,7 @@ void add_int_as_indiviudal_chars(String *encodedOutput, int number);
 void decode_string(String *key, String *message, String *decodeOutput);
 char get_char_at_position(String *pString, int pos);
 
-int check_char_lower(char chr);
-int check_char_upper(char chr);
+int char_lower(char chr);
+int char_upper(char chr);
 
 #endif //INNLEVERING2_ARRAYLIST_H

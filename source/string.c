@@ -74,10 +74,10 @@ void add_int_as_indiviudal_chars(String *encodedOutput, int number){
 void encode_string(String *key, String *message, String *encodedOutput, int d){
     for(int i = 0; i < message->used; i++){
 
-        if(check_char_lower(message->characters[i]) || check_char_upper(message->characters[i])){
+        if(char_lower(message->characters[i]) || char_upper(message->characters[i])){
             add_char(encodedOutput, '[');
 
-            if(check_char_upper(message->characters[i])){
+            if(char_upper(message->characters[i])){
                 add_char(encodedOutput, '-');
             }
 
@@ -92,12 +92,13 @@ void encode_string(String *key, String *message, String *encodedOutput, int d){
     }
 }
 
-int check_char_lower(char chr){
+int char_lower(char chr){
     if(chr >= 'a' && 'z' >= chr) return 1;
     return 0;
 }
 
-int check_char_upper(char chr){
+
+int char_upper(char chr){
     if(chr >= 'A' && chr <= 'Z') return 1;
     return 0;
 }
@@ -120,6 +121,7 @@ char get_char_at_position(String *pString, int pos){
             return pString->characters[i];
         }
     }
+
     return '0';
 }
 
@@ -127,38 +129,33 @@ char get_char_at_position(String *pString, int pos){
 void decode_string(String *key, String *message, String *decodeOutput){
 
     for(int i = 0; i < message->used; i++){
-        int streakCounter = 0;
 
         if(message->characters[i] == '['){
-            int number;
             String numberBasedOnChar = new_string(2);
 
             i++;
             while(i < message->used && message->characters[i] != ']'){
                 add_char(&numberBasedOnChar, message->characters[i]);
-                streakCounter++;
                 i++;
             }
 
             add_char(&numberBasedOnChar, '\0');
+
+            int number;
             sscanf(numberBasedOnChar.characters, "%d", &number);
 
-            char charToAdd;
 
             if(number < 0){
-                charToAdd = (char)toupper(get_char_at_position(key, abs(number)));
+                add_char(decodeOutput, (char)toupper(get_char_at_position(key, abs(number))));
 
             }else{
-                charToAdd = get_char_at_position(key, number);
+                add_char(decodeOutput, get_char_at_position(key, number));
             }
 
-
-            add_char(decodeOutput, charToAdd);
             free_string_memory(&numberBasedOnChar);
         }else{
             add_char(decodeOutput, message->characters[i]);
         }
-
     }
 
 }
