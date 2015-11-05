@@ -61,7 +61,7 @@ void add_int_as_indiviudal_chars(String *encodedOutput, int number){
     if(number == 0) {
         add_char(encodedOutput, '0');
     }else{
-        int length = (int)log10(number)+1;
+        const int length = (int)log10(number)+1;
 
         String buffer = new_string(length+1);
 
@@ -143,7 +143,7 @@ void decode_string(String *key, String *message, String *decodeOutput){
 
             if(number < 0){
 
-                charToAdd = toupper(get_char_at_position(key, abs(number)));
+                charToAdd = (char)toupper(get_char_at_position(key, abs(number)));
 
             }else{
                 charToAdd = get_char_at_position(key, number);

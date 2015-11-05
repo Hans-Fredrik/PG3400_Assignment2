@@ -47,13 +47,6 @@ int main(int argc, char *argv[]){
     free_string_memory(&encodedFileText);
     free_string_memory(&decodedText);
     free_string_memory(&keyString);
-
-
-    printf("\nTest at mathfunctions: \n");
-    int num = 568;
-    printf("%d", (int)log10(num)+1);
-
-
-
+    
     return 0;
 }
