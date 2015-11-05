@@ -6,14 +6,15 @@
 #define INNLEVERING2_MAP_H
 
 
+
 #include <stdlib.h>
+#include "../source/array.h"
+
 const int RESIZE_FACTOR = 2;
 
 typedef struct{
-    char    key;
-    int     *value;
-    int     value_length;
-    int     value_used;
+    char      key;
+    Array     value;
 }Item;
 
 

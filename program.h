@@ -9,6 +9,8 @@
 #include "source/string.c"
 #include "headers/map.h"
 #include "source/map.c"
+#include "source/array.h"
+#include "source/array.c"
 #include "source/file_utility.c"
 #include "secretCoder.c"
 

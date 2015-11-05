@@ -36,10 +36,7 @@ void resize_map(Map *pMap){
 
 void free_map_memory(Map *pMap){
     for(int i = 0; i < pMap->used; i++){
-        free(pMap->items[i].value);
-        pMap->items[i].value = NULL;
-        pMap->items[i].value_length = 0;
-        pMap->items[i].value_used = 0;
+        free_array_memory(&pMap->items[i].value);
     }
 
     free(pMap->items);

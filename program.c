@@ -3,6 +3,7 @@
 //
 
 #include "program.h"
+#include "source/array.h"
 
 
 int main(int argc, char *argv[]){
@@ -48,12 +49,14 @@ int main(int argc, char *argv[]){
 
     Map map = new_map(25);
 
-    Item charItem = {.key = 'A', .value = malloc(sizeof(int) * 5), .value_length = 5, .value_used = 0 };
+    Item charItem = {.key = 'A', .value = new_array(2)};
 
     put(&map, charItem);
 
-
     free_map_memory(&map);
 
+    Array array = new_array(2);
+
+    free_array_memory(&array);
     return 0;
 }
