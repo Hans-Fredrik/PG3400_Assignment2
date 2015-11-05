@@ -71,15 +71,13 @@ void add_int_as_indiviudal_chars(String *encodedOutput, int number){
 
 
 
-
-
 void encode_string(String *key, String *message, String *encodedOutput, int d){
     for(int i = 0; i < message->used; i++){
 
-        if((message->characters[i] >= 'a' && 'z' >= message->characters[i]) || (message->characters[i] >= 'A' && message->characters[i] <= 'Z')){
+        if(check_char_lower(message->characters[i]) || check_char_upper(message->characters[i])){
             add_char(encodedOutput, '[');
 
-            if((message->characters[i] >= 'A' && message->characters[i] <= 'Z')){
+            if(check_char_upper(message->characters[i])){
                 add_char(encodedOutput, '-');
             }
 
@@ -94,10 +92,19 @@ void encode_string(String *key, String *message, String *encodedOutput, int d){
     }
 }
 
+int check_char_lower(char chr){
+    if(chr >= 'a' && 'z' >= chr) return 1;
+    return 0;
+}
+
+int check_char_upper(char chr){
+    if(chr >= 'A' && chr <= 'Z') return 1;
+    return 0;
+}
+
 
 
 int get_char_position(String *pString, char target){
-
     for(int i = 0; i < pString->used; i++){
         if(pString->characters[i] == target){
             return  i;
@@ -139,7 +146,6 @@ void decode_string(String *key, String *message, String *decodeOutput){
             char charToAdd;
 
             if(number < 0){
-
                 charToAdd = (char)toupper(get_char_at_position(key, abs(number)));
 
             }else{
