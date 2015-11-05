@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="program.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="program.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8335645">
-              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="e#55#74#0" expanded="true" />
               </folding>
@@ -58,21 +58,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="string.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="string.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/string.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.35506243">
+              <caret line="66" column="20" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="20" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
-                <element signature="e#126#309#0" expanded="false" />
-                <element signature="e#311#513#0" expanded="false" />
                 <element signature="e#516#883#0" expanded="false" />
                 <element signature="e#886#1041#0" expanded="false" />
                 <element signature="e#1044#1177#0" expanded="false" />
-                <element signature="e#2591#2793#0" expanded="false" />
-                <element signature="e#2795#2990#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file_utility.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/file_utility.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,8 +117,8 @@
         <option value="$PROJECT_DIR$/inputMessage.txt" />
         <option value="$PROJECT_DIR$/program.h" />
         <option value="$PROJECT_DIR$/makefile" />
-        <option value="$PROJECT_DIR$/source/string.c" />
         <option value="$PROJECT_DIR$/program.c" />
+        <option value="$PROJECT_DIR$/source/string.c" />
       </list>
     </option>
   </component>
@@ -274,7 +280,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446723115804</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactored add_int_as_individual_chars&#10;">
+      <created>1446723237319</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1446723237319</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -393,13 +405,9 @@
           <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#126#309#0" expanded="false" />
-            <element signature="e#311#513#0" expanded="false" />
             <element signature="e#516#883#0" expanded="false" />
             <element signature="e#886#1041#0" expanded="false" />
             <element signature="e#1044#1177#0" expanded="false" />
-            <element signature="e#2591#2793#0" expanded="false" />
-            <element signature="e#2795#2990#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -472,13 +480,9 @@
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#126#309#0" expanded="false" />
-            <element signature="e#311#513#0" expanded="false" />
             <element signature="e#516#883#0" expanded="false" />
             <element signature="e#886#1041#0" expanded="false" />
             <element signature="e#1044#1177#0" expanded="false" />
-            <element signature="e#2591#2793#0" expanded="false" />
-            <element signature="e#2795#2990#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -574,14 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/file_utility.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41608876">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inputMessage.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -630,29 +626,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/string.c">
+    <entry file="file://$PROJECT_DIR$/program.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#126#309#0" expanded="false" />
-            <element signature="e#311#513#0" expanded="false" />
-            <element signature="e#516#883#0" expanded="false" />
-            <element signature="e#886#1041#0" expanded="false" />
-            <element signature="e#1044#1177#0" expanded="false" />
-            <element signature="e#2591#2793#0" expanded="false" />
-            <element signature="e#2795#2990#0" expanded="false" />
+            <element signature="e#55#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program.c">
+    <entry file="file://$PROJECT_DIR$/source/file_utility.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8335645">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/string.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35506243">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="20" />
           <folding>
-            <element signature="e#55#74#0" expanded="true" />
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#516#883#0" expanded="false" />
+            <element signature="e#886#1041#0" expanded="false" />
+            <element signature="e#1044#1177#0" expanded="false" />
           </folding>
         </state>
       </provider>

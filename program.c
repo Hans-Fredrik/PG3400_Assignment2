@@ -47,6 +47,6 @@ int main(int argc, char *argv[]){
     free_string_memory(&encodedFileText);
     free_string_memory(&decodedText);
     free_string_memory(&keyString);
-    
+
     return 0;
 }

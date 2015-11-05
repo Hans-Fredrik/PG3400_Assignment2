@@ -52,10 +52,6 @@ void print_string(String *pString){
 }
 
 
-// HER KAN SPRINTF brukes for å gjøre det litt lettere.. SAMMEN med strncat
-//http://www.tutorialspoint.com/c_standard_library/c_function_strncat.htm
-//http://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm
-
 void add_int_as_indiviudal_chars(String *encodedOutput, int number){
 
     if(number == 0) {
@@ -63,17 +59,18 @@ void add_int_as_indiviudal_chars(String *encodedOutput, int number){
     }else{
         const int length = (int)log10(number)+1;
 
-        String buffer = new_string(length+1);
+        char buffer[length];
 
-        sprintf(buffer.characters, "%d", number);
+        sprintf(buffer, "%d", number);
 
         for(int i = 0; i < length ; i++){
-            add_char(encodedOutput, buffer.characters[i]);
+            add_char(encodedOutput, buffer[i]);
         }
-
-        free_string_memory(&buffer);
     }
 }
+
+
+
 
 
 void encode_string(String *key, String *message, String *encodedOutput, int d){
