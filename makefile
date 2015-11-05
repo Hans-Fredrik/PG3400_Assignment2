@@ -1,8 +1,11 @@
 CFLAGS=-Wall -g -Werror -std=c11
+LIBS= -lm
 
+all:
+	gcc $(CFLAGS) program.c -o program $(LIBS)
 
-all: program
 
 clean:
 	rm -f program
-	rm -f dynamic_char_array
+	rm -f string
+	rm -f file_utility

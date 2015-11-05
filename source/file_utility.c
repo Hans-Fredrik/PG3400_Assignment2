@@ -33,7 +33,7 @@ int write_to_file(char *fileName, String *pstring){
 
     if(encodedMessageFile == NULL) return 0;
 
-    fwrite(pstring->charArray, sizeof(char), pstring->used, encodedMessageFile);
+    fwrite(pstring->characters, sizeof(char), pstring->used, encodedMessageFile);
 
     fclose(encodedMessageFile);
 

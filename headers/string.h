@@ -13,7 +13,7 @@ const int ARRAY_RESIZE_FACTOR = 2;
 
 
 typedef struct{
-    char    *charArray;
+    char    *characters;
     int     used;
     int     length;
 }String;

@@ -11,5 +11,4 @@
 #include "source/file_utility.c"
 #include "headers/arraylist.h"
 
-
 #endif //INNLEVERING2_PROGRAM_H
