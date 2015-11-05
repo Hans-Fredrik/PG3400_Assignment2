@@ -2,10 +2,7 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
-#include <string.h>
-#include <math.h>
 #include "program.h"
-#include "headers/arraylist.h"
 
 
 int main(int argc, char *argv[]){
@@ -47,6 +44,16 @@ int main(int argc, char *argv[]){
     free_string_memory(&encodedFileText);
     free_string_memory(&decodedText);
     free_string_memory(&keyString);
+
+
+    Map map = new_map(25);
+
+    Item charItem = {.key = 'A', .value = malloc(sizeof(int) * 5), .value_length = 5, .value_used = 0 };
+
+    put(&map, charItem);
+
+
+    free_map_memory(&map);
 
     return 0;
 }

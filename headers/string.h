@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <math.h>
+
 
 const int ARRAY_RESIZE_FACTOR = 2;
 

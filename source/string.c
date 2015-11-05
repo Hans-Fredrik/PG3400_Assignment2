@@ -2,9 +2,6 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
-
-#include <string.h>
-#include <math.h>
 #include "../headers/string.h"
 
 String new_string(int startSize){
@@ -112,7 +109,7 @@ int get_char_position(String *pString, char target){
         }
     }
 
-    return -404;
+    return -01;
 }
 
 char get_char_at_position(String *pString, int pos){

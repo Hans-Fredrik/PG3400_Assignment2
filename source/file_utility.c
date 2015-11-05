@@ -2,8 +2,7 @@
 // Created by Hans Fredrik Brastad on 01/11/15.
 //
 
-#include <stdio.h>
-#include <ctype.h>
+
 #include "../headers/file_utility.h"
 
 int read_file(char *fileName, String *pstring, ReadFlag readFlag){

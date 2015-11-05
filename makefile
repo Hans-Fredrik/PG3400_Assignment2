@@ -9,3 +9,5 @@ clean:
 	rm -f program
 	rm -f string
 	rm -f file_utility
+	rm -f arraylist
+	rm -f map

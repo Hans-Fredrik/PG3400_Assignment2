@@ -4,34 +4,28 @@
 
 #include "../headers/arraylist.h"
 
-void create_new_array(ArrayList *pArray, int startSize){
-    pArray->array = malloc(startSize * sizeof(Data));
-    pArray->used = 0;
-    pArray->length = startSize;
+ArrayList new_array(int startSize){
+    ArrayList arrayList;
+    arrayList.array = malloc(startSize * sizeof(int));
+    arrayList.used = 0;
+    arrayList.length = startSize;
+    return arrayList;
 }
 
-
-void add_char(ArrayList *pArray, char chr) {
-    if (pArray->used == pArray->length) {
-        resize_array(pArray);
-    }
-    pArray->array[pArray->used].character = chr;
-    pArray->used++;
-}
 
 void add_int(ArrayList *pArray, int num) {
     if (pArray->used == pArray->length) {
         resize_array(pArray);
     }
-    pArray->array[pArray->used].number = num;
+    pArray->array[pArray->used] = num;
     pArray->used++;
 }
 
 
 
 void resize_array(ArrayList *a){
-    a->length *= ARRAY_RESIZE_FACTOR;
-    a->array = realloc(a->array, a->length * sizeof(Data));
+    a->length *= RESIZE_FACTOR ;
+    a->array = realloc(a->array, a->length * sizeof(int));
 
     if(a->array == NULL){
         printf("\nProgram couldn't reallocate more memory, freeing memory and exiting!\n");
@@ -51,7 +45,7 @@ void free_array_memory(ArrayList *pArray) {
 
 void print_array_list(ArrayList *pArray){
     for(int i = 0; i < pArray->used; i++){
-        printf("[%d] \t", pArray->array[i].number);
+        printf("[%d] \t", pArray->array[i]);
     }
 }
 

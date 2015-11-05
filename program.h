@@ -7,8 +7,10 @@
 
 
 #include "source/string.c"
-#include "secretCoder.c"
+#include "headers/map.h"
+#include "source/map.c"
 #include "source/file_utility.c"
-#include "headers/arraylist.h"
+#include "secretCoder.c"
+
 
 #endif //INNLEVERING2_PROGRAM_H
