@@ -8,7 +8,7 @@
 
 
 #include <stdlib.h>
-#include "../source/array.h"
+#include "array.h"
 
 const int RESIZE_FACTOR = 2;
 

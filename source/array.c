@@ -4,7 +4,7 @@
 
 
 
-#include "array.h"
+#include "../headers/array.h"
 
 Array new_array(int size){
     Array array;

@@ -12,7 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/secretCoder.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/secretCoder.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/array.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source/array.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/headers/array.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/arraylist.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/file_utility.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/map.c" isTestSource="false" />
