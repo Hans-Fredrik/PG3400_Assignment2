@@ -92,22 +92,23 @@ int get_char_position_in_map(Map *pMap, char target, int d){
 
     if(usedLength > 1 && currentIndex < usedLength){
 
-        if(currentIndex != 0){
-            for(int i = currentIndex; i < usedLength; i++){
-                if((pMap->items[keyIndex].value.numbers[i] - pMap->items[keyIndex].value.numbers[currentIndex]) >= d){
-                    currentIndex = i;
-                    break;
-                }
-            }
-            pMap->items[keyIndex].value.currentIndex = currentIndex;
-        }else{
+        if(currentIndex == 0){
             pMap->items[keyIndex].value.currentIndex++;
+            return pMap->items[keyIndex].value.numbers[0];
         }
 
+        for(int i = currentIndex; i < usedLength; i++){
+
+            if((pMap->items[keyIndex].value.numbers[i] - pMap->items[keyIndex].value.numbers[i-1]) >= d){
+                currentIndex = i;
+                break;
+            }
+        }
+
+        pMap->items[keyIndex].value.currentIndex++;
         return pMap->items[keyIndex].value.numbers[currentIndex];
 
     }else{
-
         // Only 1 element aka no Adjacent code.
         return pMap->items[keyIndex].value.numbers[0];
     }
