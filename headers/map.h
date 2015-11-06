@@ -27,11 +27,14 @@ typedef struct{
 
 Map new_map(int size);
 void put(Map *pMap, Item item);
-int cointains_key(Map *pMap, char key);
+int contains_key(Map *pMap, char key);
+void add_int_on_key(Map *pMap, char key, int number);
+int get_index_for_key(Map *pMap, char key);
 void resize_map(Map *pMap);
 void free_map_memory(Map *pMap);
 
-
-Item new_item(int size);
-
+/*
+void quick_sort_map_by_key(Map *pMap, int firstIndex, int lastIndex);
+static void _quick_sort_swap_helper(Map *pMap, int lIndex, int fIndex);
+*/
 #endif //INNLEVERING2_MAP_H

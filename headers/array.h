@@ -11,9 +11,9 @@
 const int RESIZE_FACTOR_ARRAY = 2;
 
 typedef struct{
-    int     *numbers;
-    int     used;
-    int     length;
+    int         *numbers;
+    int         usedLength;
+    int         length;
 }Array;
 
 

@@ -9,17 +9,17 @@
 Array new_array(int size){
     Array array;
     array.numbers = malloc(size * sizeof(int));
-    array.used = 0;
+    array.usedLength = 0;
     array.length = size;
     return  array;
 }
 
 void add_int(Array *pArray, int element){
-    if (pArray->used == pArray->length) {
+    if (pArray->usedLength == pArray->length) {
         resize_array(pArray);
     }
-    pArray->numbers[pArray->used] = element;
-    pArray->used++;
+    pArray->numbers[pArray->usedLength] = element;
+    pArray->usedLength++;
 }
 
 void resize_array(Array *pArray){
@@ -38,5 +38,5 @@ void free_array_memory(Array *pArray){
     free(pArray->numbers);
     pArray->numbers= NULL;
     pArray->length = 0;
-    pArray->used = 0;
+    pArray->usedLength = 0;
 }

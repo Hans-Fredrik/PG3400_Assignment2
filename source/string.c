@@ -3,6 +3,8 @@
 //
 
 #include "../headers/string.h"
+#include "../headers/map.h"
+#include "../headers/array.h"
 
 String new_string(int startSize){
     String string;
@@ -67,8 +69,31 @@ void add_int_as_indiviudal_chars(String *encodedOutput, int number){
 }
 
 
+Map create_char_index_map(String *key){
+    Map map = new_map(2);
 
+    for(char i = 'a'; i <= 'z'; i++){
+        const Item charItem = {.key = i, .value = new_array(2)};
+        put(&map, charItem);
+    }
+
+    for(int i = 0; i < key->used; i++){
+        add_int_on_key(&map, key->characters[i], i);
+    }
+
+    return map;
+}
+
+int get_char_position_in_map(Map *pMap, char target){
+    int keyIndex =  get_index_for_key(pMap, target);
+    return pMap->items[keyIndex].value.numbers[0];
+}
+
+// HER VIL DET BLI ENDRING PÅ KODEN..
 void encode_string(String *key, String *message, String *encodedOutput, int d){
+    Map indexMap = create_char_index_map(key);
+
+
     for(int i = 0; i < message->used; i++){
 
         if(char_lower(message->characters[i]) || char_upper(message->characters[i])){
@@ -78,7 +103,7 @@ void encode_string(String *key, String *message, String *encodedOutput, int d){
                 add_char(encodedOutput, '-');
             }
 
-            int pos = get_char_position(key, tolower(message->characters[i]));
+            int pos = get_char_position_in_map(&indexMap, tolower(message->characters[i]));
 
             add_int_as_indiviudal_chars(encodedOutput, pos);
 
@@ -87,6 +112,8 @@ void encode_string(String *key, String *message, String *encodedOutput, int d){
             add_char(encodedOutput, message->characters[i]);
         }
     }
+
+    free_map_memory(&indexMap);
 }
 
 int char_lower(char chr){

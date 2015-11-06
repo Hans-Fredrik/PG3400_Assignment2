@@ -3,6 +3,8 @@
 //
 
 #include "program.h"
+#include "headers/map.h"
+#include "headers/array.h"
 
 
 int main(int argc, char *argv[]){
@@ -43,19 +45,22 @@ int main(int argc, char *argv[]){
     free_string_memory(&encodeSting);
     free_string_memory(&encodedFileText);
     free_string_memory(&decodedText);
+
+
+    Map map = create_char_index_map(&keyString);
+
+
+    for(int i = 0; i < map.used; i++){
+//        printf("\nKey: %c  | ", map.items[i].key);
+//        printf("Values: ");
+        for(int x = 0; x < map.items[i].value.usedLength; x++){
+//            printf(" [%d] ", map.items[i].value.numbers[x]);
+        }
+    }
+
+    free_map_memory(&map);
     free_string_memory(&keyString);
 
 
-    Map map = new_map(25);
-
-    Item charItem = {.key = 'A', .value = new_array(2)};
-
-    put(&map, charItem);
-
-    free_map_memory(&map);
-
-    Array array = new_array(2);
-
-    free_array_memory(&array);
     return 0;
 }
