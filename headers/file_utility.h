@@ -9,9 +9,13 @@
 #ifndef INNLEVERING2_FILE_UTILITY_H
 #define INNLEVERING2_FILE_UTILITY_H
 
-#endif //INNLEVERING2_FILE_UTILITY_H
-typedef enum {NORMAL, KEY, DECODE} ReadFlag;
+typedef enum {
+    NORMAL,
+    KEY
+} ReadFlag;
 
 int read_file(char *fileName, String *pstring, ReadFlag readFlag);
 
 int write_to_file(char *fileName, String *pstring);
+
+#endif //INNLEVERING2_FILE_UTILITY_H

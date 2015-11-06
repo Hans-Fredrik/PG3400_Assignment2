@@ -11,6 +11,7 @@ Array new_array(int size){
     array.numbers = malloc(size * sizeof(int));
     array.usedLength = 0;
     array.length = size;
+    array.currentIndex = 0;
     return  array;
 }
 

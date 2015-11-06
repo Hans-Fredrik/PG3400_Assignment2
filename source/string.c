@@ -84,9 +84,34 @@ Map create_char_index_map(String *key){
     return map;
 }
 
-int get_char_position_in_map(Map *pMap, char target){
+int get_char_position_in_map(Map *pMap, char target, int d){
     int keyIndex =  get_index_for_key(pMap, target);
-    return pMap->items[keyIndex].value.numbers[0];
+
+    int usedLength = pMap->items[keyIndex].value.usedLength;
+    int currentIndex = pMap->items[keyIndex].value.currentIndex;
+
+    if(usedLength > 1 && currentIndex < usedLength){
+
+        if(currentIndex != 0){
+            for(int i = currentIndex; i < usedLength; i++){
+                if((pMap->items[keyIndex].value.numbers[i] - pMap->items[keyIndex].value.numbers[currentIndex]) >= d){
+                    currentIndex = i;
+                    break;
+                }
+            }
+            pMap->items[keyIndex].value.currentIndex = currentIndex;
+        }else{
+            pMap->items[keyIndex].value.currentIndex++;
+        }
+
+        return pMap->items[keyIndex].value.numbers[currentIndex];
+
+    }else{
+
+        // Only 1 element aka no Adjacent code.
+        return pMap->items[keyIndex].value.numbers[0];
+    }
+
 }
 
 // HER VIL DET BLI ENDRING PÅ KODEN..
@@ -103,7 +128,7 @@ void encode_string(String *key, String *message, String *encodedOutput, int d){
                 add_char(encodedOutput, '-');
             }
 
-            int pos = get_char_position_in_map(&indexMap, tolower(message->characters[i]));
+            int pos = get_char_position_in_map(&indexMap, tolower(message->characters[i]), d);
 
             add_int_as_indiviudal_chars(encodedOutput, pos);
 
@@ -127,17 +152,6 @@ int char_upper(char chr){
     return 0;
 }
 
-
-
-int get_char_position(String *pString, char target){
-    for(int i = 0; i < pString->used; i++){
-        if(pString->characters[i] == target){
-            return  i;
-        }
-    }
-
-    return -01;
-}
 
 char get_char_at_position(String *pString, int pos){
     for(int i = 0; i < pString->used; i++){
@@ -181,5 +195,4 @@ void decode_string(String *key, String *message, String *decodeOutput){
             add_char(decodeOutput, message->characters[i]);
         }
     }
-
 }

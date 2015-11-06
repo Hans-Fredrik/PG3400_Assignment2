@@ -14,6 +14,7 @@ typedef struct{
     int         *numbers;
     int         usedLength;
     int         length;
+    int         currentIndex;
 }Array;
 
 

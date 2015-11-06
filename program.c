@@ -51,10 +51,10 @@ int main(int argc, char *argv[]){
 
 
     for(int i = 0; i < map.used; i++){
-//        printf("\nKey: %c  | ", map.items[i].key);
-//        printf("Values: ");
+        printf("\nKey: %c  | ", map.items[i].key);
+        printf("Values: ");
         for(int x = 0; x < map.items[i].value.usedLength; x++){
-//            printf(" [%d] ", map.items[i].value.numbers[x]);
+            printf(" [%d] ", map.items[i].value.numbers[x]);
         }
     }
 
