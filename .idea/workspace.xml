@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="string.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="string.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/string.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="110" column="10" selection-start-line="110" selection-start-column="10" selection-end-line="110" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.69072163">
+              <caret line="108" column="22" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
               <folding>
                 <element signature="e#55#85#0" expanded="true" />
               </folding>
@@ -65,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/inputMessage.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -91,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="program.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="program.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36211342">
+            <state vertical-scroll-proportion="0.0">
               <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
               <folding>
                 <element signature="e#55#75#0" expanded="true" />
@@ -152,9 +152,9 @@
         <option value="$PROJECT_DIR$/source/array.c" />
         <option value="$PROJECT_DIR$/headers/array.h" />
         <option value="$PROJECT_DIR$/headers/file_utility.h" />
+        <option value="$PROJECT_DIR$/program.c" />
         <option value="$PROJECT_DIR$/inputMessage.txt" />
         <option value="$PROJECT_DIR$/source/string.c" />
-        <option value="$PROJECT_DIR$/program.c" />
       </list>
     </option>
   </component>
@@ -370,7 +370,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446828042805</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="D condition now supported..">
+      <created>1446832436023</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1446832436023</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -789,27 +795,27 @@
     <entry file="file://$PROJECT_DIR$/inputMessage.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/string.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="10" selection-start-line="110" selection-start-column="10" selection-end-line="110" selection-end-column="10" />
-          <folding>
-            <element signature="e#55#85#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/program.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36211342">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
           <folding>
             <element signature="e#55#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/string.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69072163">
+          <caret line="108" column="22" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
+          <folding>
+            <element signature="e#55#85#0" expanded="true" />
           </folding>
         </state>
       </provider>

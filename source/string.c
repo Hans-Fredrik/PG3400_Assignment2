@@ -90,6 +90,11 @@ int get_char_position_in_map(Map *pMap, char target, int d){
     int usedLength = pMap->items[keyIndex].value.usedLength;
     int currentIndex = pMap->items[keyIndex].value.currentIndex;
 
+    if (currentIndex == usedLength){
+        pMap->items[keyIndex].value.currentIndex = 0;
+        currentIndex = 0;
+    };
+
     if(usedLength > 1 && currentIndex < usedLength){
 
         if(currentIndex == 0){
