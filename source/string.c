@@ -90,7 +90,7 @@ int get_char_position_in_map(Map *pMap, char target, int d){
     int usedLength = pMap->items[keyIndex].value.usedLength;
     int currentIndex = pMap->items[keyIndex].value.currentIndex;
 
-    if (currentIndex == usedLength){
+    if (currentIndex >= usedLength){
         pMap->items[keyIndex].value.currentIndex = 0;
         currentIndex = 0;
     };
@@ -102,7 +102,7 @@ int get_char_position_in_map(Map *pMap, char target, int d){
             return pMap->items[keyIndex].value.numbers[0];
         }
 
-        for(int i = currentIndex; i < usedLength; i++){
+        for(int i = currentIndex; i < usedLength-1; i++){
 
             if((pMap->items[keyIndex].value.numbers[i] - pMap->items[keyIndex].value.numbers[i-1]) >= d){
                 currentIndex = i;
@@ -110,7 +110,7 @@ int get_char_position_in_map(Map *pMap, char target, int d){
             }
         }
 
-        pMap->items[keyIndex].value.currentIndex++;
+        pMap->items[keyIndex].value.currentIndex = currentIndex+1;
         return pMap->items[keyIndex].value.numbers[currentIndex];
 
     }else{
