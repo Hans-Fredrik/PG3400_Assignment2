@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 
     printf("\nEncoded message: \n");
     String encodeSting = new_string(2);
-    encode_string(&keyString, &inputMessage,&encodeSting, 10);
+    encode_string(&keyString, &inputMessage,&encodeSting, 2);
     print_string(&encodeSting);
     write_to_file("encodedText.txt", &encodeSting);
 

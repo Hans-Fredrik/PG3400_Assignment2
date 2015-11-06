@@ -104,11 +104,12 @@ int get_char_position_in_map(Map *pMap, char target, int d){
 
         for(int i = currentIndex; i < usedLength-1; i++){
 
-            if((pMap->items[keyIndex].value.numbers[i] - pMap->items[keyIndex].value.numbers[i-1]) >= d){
+            if((pMap->items[keyIndex].value.numbers[i] - pMap->items[keyIndex].value.numbers[currentIndex-1]) >= d){
                 currentIndex = i;
                 break;
             }
         }
+
 
         pMap->items[keyIndex].value.currentIndex = currentIndex+1;
         return pMap->items[keyIndex].value.numbers[currentIndex];
