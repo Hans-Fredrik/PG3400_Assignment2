@@ -2,9 +2,9 @@
 // Created by Hans Fredrik Brastad on 04/11/15.
 //
 
-#include <stdio.h>
 #include "../headers/map.h"
 
+const int RESIZE_FACTOR = 2;
 
 Map new_map(int size){
     Map map;

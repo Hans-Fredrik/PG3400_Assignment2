@@ -3,8 +3,8 @@
 //
 
 #include "../headers/string.h"
-#include "../headers/map.h"
-#include "../headers/array.h"
+
+const int ARRAY_RESIZE_FACTOR = 2;
 
 String new_string(int startSize){
     String string;
@@ -24,7 +24,7 @@ void add_char(String *pString, char element) {
 }
 
 
-static void resize_string(String *pString){
+void resize_string(String *pString){
     pString->length *= ARRAY_RESIZE_FACTOR;
     pString->characters = realloc(pString->characters, pString->length * sizeof(char));
 

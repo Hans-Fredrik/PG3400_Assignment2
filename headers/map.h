@@ -5,12 +5,11 @@
 #ifndef INNLEVERING2_MAP_H
 #define INNLEVERING2_MAP_H
 
-
-
+#include <stdio.h>
 #include <stdlib.h>
 #include "array.h"
 
-const int RESIZE_FACTOR = 2;
+const int RESIZE_FACTOR;
 
 typedef struct{
     char      key;

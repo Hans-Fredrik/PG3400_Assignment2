@@ -9,9 +9,10 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <math.h>
+#include "../headers/map.h"
 
 
-const int ARRAY_RESIZE_FACTOR = 2;
+const int ARRAY_RESIZE_FACTOR;
 
 
 typedef struct{
@@ -23,7 +24,7 @@ typedef struct{
 
 String new_string(int startSize);
 void add_char(String *pString, char element);
-static void resize_string(String *pString);
+void resize_string(String *pString);
 void free_string_memory(String *pString);
 
 void print_string(String *pString);

@@ -8,7 +8,9 @@
 
 char *encode(const char *inputMessageFile, const char *keyFile, int *status){
     String keyString = new_string(2);
+
     read_file(keyFile, &keyString, KEY);
+
     print_string(&keyString);
 
 

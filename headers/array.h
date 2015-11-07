@@ -7,8 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-const int RESIZE_FACTOR_ARRAY = 2;
+const int RESIZE_FACTOR_ARRAY;
 
 typedef struct{
     int         *numbers;

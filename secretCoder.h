@@ -5,6 +5,7 @@
 #ifndef INNLEVERING2_SECRETCODER_H
 #define INNLEVERING2_SECRETCODER_H
 
+
 char *encode(const char *inputMessageFile, const char *keyFile, int *status);
 
 char *decode(const char *inputCodeFile, const char *keyFile, int *status);

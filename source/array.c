@@ -6,6 +6,9 @@
 
 #include "../headers/array.h"
 
+const int RESIZE_FACTOR_ARRAY = 2;
+
+
 Array new_array(int size){
     Array array;
     array.numbers = malloc(size * sizeof(int));
