@@ -5,7 +5,7 @@
 
 #include "../headers/file_utility.h"
 
-int read_file(char *fileName, String *pstring, ReadFlag readFlag){
+int read_file(const char *fileName, String *pstring, ReadFlag readFlag){
     FILE* file = fopen (fileName, "r");
 
     if(file == NULL) return 0;
@@ -27,7 +27,7 @@ int read_file(char *fileName, String *pstring, ReadFlag readFlag){
 }
 
 
-int write_to_file(char *fileName, String *pstring){
+int write_to_file(const char *fileName, String *pstring){
     FILE *encodedMessageFile = fopen(fileName, "w");
 
     if(encodedMessageFile == NULL) return 0;

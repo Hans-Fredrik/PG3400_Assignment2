@@ -14,8 +14,8 @@ typedef enum {
     KEY
 } ReadFlag;
 
-int read_file(char *fileName, String *pstring, ReadFlag readFlag);
+int read_file(const char *fileName, String *pstring, ReadFlag readFlag);
 
-int write_to_file(char *fileName, String *pstring);
+int write_to_file(const char *fileName, String *pstring);
 
 #endif //INNLEVERING2_FILE_UTILITY_H

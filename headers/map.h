@@ -33,8 +33,4 @@ int get_index_for_key(Map *pMap, char key);
 void resize_map(Map *pMap);
 void free_map_memory(Map *pMap);
 
-/*
-void quick_sort_map_by_key(Map *pMap, int firstIndex, int lastIndex);
-static void _quick_sort_swap_helper(Map *pMap, int lIndex, int fIndex);
-*/
 #endif //INNLEVERING2_MAP_H

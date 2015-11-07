@@ -9,6 +9,22 @@
 
 int main(int argc, char *argv[]){
 
+    // Tester ut de Ordentlige secretCoder funksjonene..
+
+    int status = 99;
+
+    char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", &status);
+
+    free(encodedText);
+
+
+    char *decodedText = decode("encodedText.txt", "data/sweetChildGR.txt", &status);
+
+    free(decodedText);
+
+    // ------- Testing slutt ---------------------------
+
+    /* --- BRUKES TIL DEBUGGING, SPARES TIL RETT FØR INNLEVERING HANDY JA
     printf("Key: \n");
     String keyString = new_string(2);
     read_file("data/sweetChildGR.txt", &keyString, KEY);
@@ -60,6 +76,8 @@ int main(int argc, char *argv[]){
 
     free_map_memory(&map);
     free_string_memory(&keyString);
+
+    */
 
 
     return 0;

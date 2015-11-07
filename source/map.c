@@ -71,37 +71,3 @@ void free_map_memory(Map *pMap){
     pMap->length = 0;
     pMap->used = 0;
 }
-
-/*
-void quick_sort_map_by_key(Map *pMap, int firstIndex, int lastIndex){
-    if(firstIndex < lastIndex){
-        int pivot = firstIndex;
-        int fIndex = firstIndex;
-        int lIndex = lastIndex;
-
-        while(fIndex < lIndex){
-
-            while(pMap->items[fIndex].key <= pMap->items[pivot].key && fIndex < lastIndex){
-                fIndex++;
-            }
-
-            while(pMap->items[lIndex].key > pMap->items[pivot].key){
-                lIndex--;
-            }
-
-            if(fIndex < lIndex){
-                _quick_sort_swap_helper(pMap, fIndex, lIndex);
-            }
-        }
-
-        _quick_sort_swap_helper(pMap, pivot, lIndex);
-        quick_sort_map_by_key(pMap, firstIndex, lIndex-1);
-        quick_sort_map_by_key(pMap, lIndex+1, lastIndex);
-    }
-}
-
-static void _quick_sort_swap_helper(Map *pMap, int lIndex, int fIndex){
-    Item temp = pMap->items[fIndex];
-    pMap->items[fIndex] = pMap->items[lIndex];
-    pMap->items[lIndex] = temp;
-}*/

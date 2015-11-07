@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/headers/file_utility.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/headers/map.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/headers/string.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/headers/string_utility.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/program.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/program.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/secretCoder.c" isTestSource="false" />
@@ -16,7 +17,6 @@
       <sourceFolder url="file://$MODULE_DIR$/source/map.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/string.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/string_utility.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/headers/string_utility.h" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
