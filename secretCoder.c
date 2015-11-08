@@ -39,7 +39,7 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     printf("\nEncoded message: \n");
 
     String encodedString = new_string(DEFAULT_SIZE);
-    if(!encode_string(&keyString, &inputString,&encodedString, 2)){
+    if(!encode_string(&keyString, &inputString,&encodedString, 1)){
         printf("\nEncode function error: Could not encode with the keyfile. Missing characters...\n");
         free_string_memory(&encodedString);
         free_string_memory(&keyString);

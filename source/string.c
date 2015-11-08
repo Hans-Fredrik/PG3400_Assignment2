@@ -92,6 +92,8 @@ int get_char_position_in_map(Map *pMap, char target, int d){
     int usedLength = pMap->items[keyIndex].value.usedLength;
     int currentIndex = pMap->items[keyIndex].value.currentIndex;
 
+    verify_adjacent_code(&pMap->items[keyIndex], d);
+
     if (currentIndex >= usedLength){
         pMap->items[keyIndex].value.currentIndex = 0;
         currentIndex = 0;
@@ -112,12 +114,11 @@ int get_char_position_in_map(Map *pMap, char target, int d){
             }
         }
 
-
         pMap->items[keyIndex].value.currentIndex = currentIndex+1;
         return pMap->items[keyIndex].value.numbers[currentIndex];
 
     }else{
-        // Only 1 element aka no Adjacent code.
+        // Only 1 element at char, no need to try keep adjacent
         return pMap->items[keyIndex].value.numbers[0];
     }
 
@@ -132,6 +133,7 @@ int encode_string(String *key, String *message, String *encodedOutput, int d){
         return 0;
     }
 
+
     for(int i = 0; i < message->used; i++){
 
         if(char_lower(message->characters[i]) || char_upper(message->characters[i])){
@@ -142,6 +144,7 @@ int encode_string(String *key, String *message, String *encodedOutput, int d){
             }
 
             int pos = get_char_position_in_map(&indexMap, tolower(message->characters[i]), d);
+
 
             add_int_as_indiviudal_chars(encodedOutput, pos);
 
@@ -212,6 +215,7 @@ void decode_string(String *key, String *message, String *decodeOutput){
     }
 }
 
+
 int check_map_for_a_z(Map *map){
 
     for(int i = 0; i < map->used; i++){
@@ -219,4 +223,36 @@ int check_map_for_a_z(Map *map){
     }
 
     return  1;
+}
+
+
+int verify_adjacent_code(Item *item, int d){
+    if(d == 0) return 1;
+
+    if(item->value.usedLength == 1){
+        printf("\nEncode function Warning: Only 1 index on [%c] in key not possible to satifsy d = %d\n", item->key, d);
+        return 0;
+    }
+
+    int lowestNumber = item->value.numbers[0];
+    int numbersOfIndexesFullFillD = 0;
+
+    for(int l = 0; l < item->value.usedLength; l++){
+        if(lowestNumber > item->value.numbers[l]) {
+            lowestNumber = item->value.numbers[l];
+        }
+    }
+
+    for(int x = 0; x < item->value.usedLength; x++){
+        if((item->value.numbers[x] - lowestNumber) >= d){
+            numbersOfIndexesFullFillD++;
+        }
+    }
+
+    if(numbersOfIndexesFullFillD < 2){
+        printf("\nEncode function Warning! Did not satisfy [%d] units between indexes on char [%c] in key. Number of indexes: %d\n"
+                ,d, item->key, item->value.usedLength);
+    }
+
+    return 1;
 }

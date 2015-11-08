@@ -29,12 +29,13 @@ void free_string_memory(String *pString);
 
 void print_string(String *pString);
 int encode_string(String *key, String *message, String *encodedOutput, int d);
-int get_char_position(String *pString, char target);
+int get_char_position_in_map(Map *pMap, char target, int d);
 void add_int_as_indiviudal_chars(String *encodedOutput, int number);
 void decode_string(String *key, String *message, String *decodeOutput);
 char get_char_at_position(String *pString, int pos);
+int verify_adjacent_code(Item *item, int d);
 
-int char_lower(char chr);
+    int char_lower(char chr);
 int char_upper(char chr);
 int check_map_for_a_z(Map *map);
 
