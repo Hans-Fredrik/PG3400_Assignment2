@@ -24,7 +24,9 @@ int main(int argc, char *argv[]){
 
 
 
-    char *encodedText2 = encode("", "data/sweetChildGR.txt", "encodedText.txt", &status);
+    char *encodedText2 = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status);
+
+    printf("\nHere: %s \n", encodedText2);
 
     free(encodedText2);
 

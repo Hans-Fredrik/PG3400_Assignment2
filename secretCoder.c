@@ -8,12 +8,10 @@
 static const int DEFAULT_SIZE = 2;
 
 
-
 char *encode(const char *inputMessageFile, const char *keyFile, const char *outputFile, int *status){
     if(inputMessageFile == NULL || keyFile == NULL || outputFile == NULL) return NULL;
 
     String keyString = new_string(DEFAULT_SIZE);
-
     if(!read_file(keyFile, &keyString, KEY)){
         printf("\nEncode function error: could not open keyfile.\n");
         free_string_memory(&keyString);
@@ -24,30 +22,28 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     print_string(&keyString);
 
 
-
     printf("\nMessage: \n");
-    String inputMessage = new_string(DEFAULT_SIZE);
-
-    if(!read_file(inputMessageFile, &inputMessage, NORMAL)){
+    String inputString = new_string(DEFAULT_SIZE);
+    if(!read_file(inputMessageFile, &inputString, NORMAL)){
         printf("\nEncode function error: could not open inputMessageFile.\n");
-        free_string_memory(&inputMessage);
+        free_string_memory(&inputString);
         free_string_memory(&keyString);
         *status = 2;
         return NULL;
     }
 
-    print_string(&inputMessage);
+    print_string(&inputString);
 
 
 
     printf("\nEncoded message: \n");
-    String encodedString = new_string(DEFAULT_SIZE);
 
-    if(!encode_string(&keyString, &inputMessage,&encodedString, 2)){
+    String encodedString = new_string(DEFAULT_SIZE);
+    if(!encode_string(&keyString, &inputString,&encodedString, 2)){
         printf("\nEncode function error: Could not encode with the keyfile. Missing characters...\n");
         free_string_memory(&encodedString);
         free_string_memory(&keyString);
-        free_string_memory(&inputMessage);
+        free_string_memory(&inputString);
 
         *status = 3;
         return NULL;
@@ -56,12 +52,12 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     print_string(&encodedString);
 
     free_string_memory(&keyString);
-    free_string_memory(&inputMessage);
+    free_string_memory(&inputString);
 
     if(!write_to_file(outputFile, &encodedString)){
         printf("\nEncode function: could not save to file[%s] need atleast 1 char.\n", outputFile);
     }
-
+    
     return encodedString.characters;
 }
 

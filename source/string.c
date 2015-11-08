@@ -151,6 +151,7 @@ int encode_string(String *key, String *message, String *encodedOutput, int d){
         }
     }
 
+    add_char(encodedOutput, '\0');
     free_map_memory(&indexMap);
     return 1;
 }
