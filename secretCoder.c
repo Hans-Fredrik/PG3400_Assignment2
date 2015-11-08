@@ -8,6 +8,7 @@
 static const int DEFAULT_SIZE = 2;
 
 
+
 char *encode(const char *inputMessageFile, const char *keyFile, const char *outputFile, int *status){
     if(inputMessageFile == NULL || keyFile == NULL || outputFile == NULL) return NULL;
 
@@ -30,6 +31,7 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     if(!read_file(inputMessageFile, &inputMessage, NORMAL)){
         printf("\nEncode function error: could not open inputMessageFile.\n");
         free_string_memory(&inputMessage);
+        free_string_memory(&keyString);
         *status = 2;
         return NULL;
     }
@@ -41,7 +43,6 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     printf("\nEncoded message: \n");
     String encodedString = new_string(DEFAULT_SIZE);
 
-    // FIKS HER NÅR DU KOMMER ITLBAKE
     if(!encode_string(&keyString, &inputMessage,&encodedString, 2)){
         printf("\nEncode function error: Could not encode with the keyfile. Missing characters...\n");
         free_string_memory(&encodedString);
@@ -65,7 +66,8 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
 }
 
 
-char *decode(const char *inputCodeFile, const char *keyFile int *status){
+
+char *decode(const char *inputCodeFile, const char *keyFile, int *status){
     if(inputCodeFile == NULL || keyFile == NULL) return NULL;
 
     String keyString = new_string(DEFAULT_SIZE);

@@ -13,12 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5e4593c6-6790-4ed6-b6e4-b74ee4184f47" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program" afterPath="$PROJECT_DIR$/program" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/file_utility.c" afterPath="$PROJECT_DIR$/source/file_utility.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program.c" afterPath="$PROJECT_DIR$/program.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.c" afterPath="$PROJECT_DIR$/secretCoder.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.h" afterPath="$PROJECT_DIR$/secretCoder.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/string.c" afterPath="$PROJECT_DIR$/source/string.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/string.h" afterPath="$PROJECT_DIR$/headers/string.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Innlevering2.iws" />
@@ -43,11 +39,10 @@
       <file leaf-file-name="secretCoder.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/secretCoder.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8646907">
-              <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.5025773">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="e#55#79#0" expanded="true" />
-                <element signature="e#1769#2521#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -57,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/program.c">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -414,7 +409,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446902400891</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Rafactoring, Everything is set to go. Fixing exception handling, secretCoder code should be flowless and then split up some functionality and after that bruteforce&#10;">
+      <created>1447003093919</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1447003093920</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -462,7 +463,8 @@
     <MESSAGE value="Implemented map and array, map -&gt; using key and array as value should work fine now. 3 hours stuggeling because of no reason. Problem is solved, but solution was not as expected but is it ok." />
     <MESSAGE value="D condition now supported.." />
     <MESSAGE value="secretCoder.c is not fully implemented code is doing all it's work. Bruteforce should now be implemented. When that is done and refactoring the task seems to be done in good enough condition to A'it" />
-    <option name="LAST_COMMIT_MESSAGE" value="secretCoder.c is not fully implemented code is doing all it's work. Bruteforce should now be implemented. When that is done and refactoring the task seems to be done in good enough condition to A'it" />
+    <MESSAGE value="Rafactoring, Everything is set to go. Fixing exception handling, secretCoder code should be flowless and then split up some functionality and after that bruteforce&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rafactoring, Everything is set to go. Fixing exception handling, secretCoder code should be flowless and then split up some functionality and after that bruteforce&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -571,7 +573,6 @@
           <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding>
             <element signature="e#55#79#0" expanded="true" />
-            <element signature="e#1769#2521#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,7 +624,6 @@
           <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding>
             <element signature="e#55#79#0" expanded="true" />
-            <element signature="e#1769#2521#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -847,27 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/string.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="43" selection-start-line="134" selection-start-column="43" selection-end-line="134" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#55#85#0" expanded="true" />
-            <element signature="e#366#568#0" expanded="false" />
-            <element signature="e#571#931#0" expanded="false" />
-            <element signature="e#934#1089#0" expanded="false" />
-            <element signature="e#1092#1225#0" expanded="false" />
-            <element signature="e#1599#1922#0" expanded="false" />
-            <element signature="e#1924#3017#0" expanded="false" />
-            <element signature="e#3876#3960#0" expanded="false" />
-            <element signature="e#3963#4047#0" expanded="false" />
-            <element signature="e#4050#4246#0" expanded="false" />
-            <element signature="e#4249#5176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/file_utility.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -892,21 +871,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/string.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="134" column="43" selection-start-line="134" selection-start-column="43" selection-end-line="134" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#55#85#0" expanded="true" />
+            <element signature="e#366#568#0" expanded="false" />
+            <element signature="e#571#931#0" expanded="false" />
+            <element signature="e#934#1089#0" expanded="false" />
+            <element signature="e#1092#1225#0" expanded="false" />
+            <element signature="e#1599#1922#0" expanded="false" />
+            <element signature="e#1924#3017#0" expanded="false" />
+            <element signature="e#3876#3960#0" expanded="false" />
+            <element signature="e#3963#4047#0" expanded="false" />
+            <element signature="e#4050#4246#0" expanded="false" />
+            <element signature="e#4249#5176#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/program.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/secretCoder.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8646907">
-          <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.5025773">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#55#79#0" expanded="true" />
-            <element signature="e#1769#2521#0" expanded="false" />
           </folding>
         </state>
       </provider>
