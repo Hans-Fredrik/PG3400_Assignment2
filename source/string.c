@@ -3,6 +3,8 @@
 //
 
 #include "../headers/string.h"
+#include "../headers/map.h"
+#include "../headers/array.h"
 
 const int ARRAY_RESIZE_FACTOR = 2;
 
@@ -121,10 +123,14 @@ int get_char_position_in_map(Map *pMap, char target, int d){
 
 }
 
-// HER VIL DET BLI ENDRING PÅ KODEN..
-void encode_string(String *key, String *message, String *encodedOutput, int d){
+
+int encode_string(String *key, String *message, String *encodedOutput, int d){
     Map indexMap = create_char_index_map(key);
 
+    if(!check_map_for_a_z(&indexMap)){
+        free_map_memory(&indexMap);
+        return 0;
+    }
 
     for(int i = 0; i < message->used; i++){
 
@@ -146,6 +152,7 @@ void encode_string(String *key, String *message, String *encodedOutput, int d){
     }
 
     free_map_memory(&indexMap);
+    return 1;
 }
 
 int char_lower(char chr){
@@ -202,4 +209,13 @@ void decode_string(String *key, String *message, String *decodeOutput){
             add_char(decodeOutput, message->characters[i]);
         }
     }
+}
+
+int check_map_for_a_z(Map *map){
+
+    for(int i = 0; i < map->used; i++){
+        if(map->items[i].value.usedLength == 0) return 0;
+    }
+
+    return  1;
 }

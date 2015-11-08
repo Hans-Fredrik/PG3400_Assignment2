@@ -28,7 +28,7 @@ void resize_string(String *pString);
 void free_string_memory(String *pString);
 
 void print_string(String *pString);
-void encode_string(String *key, String *message, String *encodedOutput, int d);
+int encode_string(String *key, String *message, String *encodedOutput, int d);
 int get_char_position(String *pString, char target);
 void add_int_as_indiviudal_chars(String *encodedOutput, int number);
 void decode_string(String *key, String *message, String *decodeOutput);
@@ -36,5 +36,7 @@ char get_char_at_position(String *pString, int pos);
 
 int char_lower(char chr);
 int char_upper(char chr);
+int check_map_for_a_z(Map *map);
+
 
 #endif //INNLEVERING2_ARRAYLIST_H

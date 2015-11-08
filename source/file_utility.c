@@ -28,6 +28,8 @@ int read_file(const char *fileName, String *pstring, ReadFlag readFlag){
 
 
 int write_to_file(const char *fileName, String *pstring){
+    if(fileName == NULL) return 0;
+
     FILE *encodedMessageFile = fopen(fileName, "w");
 
     if(encodedMessageFile == NULL) return 0;
