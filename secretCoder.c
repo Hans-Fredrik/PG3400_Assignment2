@@ -4,7 +4,7 @@
 
 #include <string.h>
 #include "secretCoder.h"
-#include "headers/file_utility.h"
+#include "headers/file_reader.h"
 #include "headers/string.h"
 
 static const int DEFAULT_SIZE = 2;

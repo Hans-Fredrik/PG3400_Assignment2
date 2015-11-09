@@ -9,6 +9,9 @@
 #ifndef INNLEVERING2_FILE_UTILITY_H
 #define INNLEVERING2_FILE_UTILITY_H
 
+#include <dirent.h>
+#include <string.h>
+
 typedef enum {
     NORMAL,
     KEY

@@ -10,15 +10,15 @@ prepare_lib:
 	gcc $(CFLAG_LIB) source/array.c -o $(LIBOUTPUT)array.o $(LIBS)
 	gcc $(CFLAG_LIB) source/map.c -o $(LIBOUTPUT)map.o $(LIBS)
 	gcc $(CFLAG_LIB) source/string.c -o $(LIBOUTPUT)string.o $(LIBS)
-	gcc $(CFLAG_LIB) source/file_utility.c -o $(LIBOUTPUT)file_utility.o $(LIBS)
+	gcc $(CFLAG_LIB) source/file_reader.c -o $(LIBOUTPUT)file_reader.o $(LIBS)
 
 lib:
 	gcc -c -g secretCoder.c -o $(LIBOUTPUT)secretCoder.o
-	ar rcs $(LIBOUTPUT)libsecretCoder.a $(LIBOUTPUT)secretCoder.o $(LIBOUTPUT)array.o $(LIBOUTPUT)file_utility.o $(LIBOUTPUT)map.o $(LIBOUTPUT)string.o
+	ar rcs $(LIBOUTPUT)libsecretCoder.a $(LIBOUTPUT)secretCoder.o $(LIBOUTPUT)array.o $(LIBOUTPUT)file_reader.o $(LIBOUTPUT)map.o $(LIBOUTPUT)string.o
 
 clean:
 	rm -f program
 	rm -f string
-	rm -f file_utility
+	rm -f file_reader
 	rm -f arraylist
 	rm -f map

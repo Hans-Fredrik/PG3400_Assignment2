@@ -3,9 +3,7 @@
 //
 
 
-#include <dirent.h>
-#include <string.h>
-#include "../headers/file_utility.h"
+#include "../headers/file_reader.h"
 
 int read_file(const char *fileName, String *pstring, ReadFlag readFlag){
     FILE* file = fopen (fileName, "r");
