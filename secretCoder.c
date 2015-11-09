@@ -2,10 +2,11 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
-#include <string.h>
 #include "secretCoder.h"
-#include "headers/file_reader.h"
+#include <string.h>
 #include "headers/string.h"
+#include "headers/file_reader.h"
+
 
 static const int DEFAULT_SIZE = 2;
 
@@ -92,6 +93,23 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 
 
 
+int check_matching_words(String *pDecoded, String *words){
+
+    char *wordsToCheck = strtok(pDecoded->characters, " ");
+    if(wordsToCheck == NULL) {
+        return 0;
+    }
+
+    while(wordsToCheck != NULL){
+        printf("%s", wordsToCheck);
+
+        wordsToCheck = strtok(NULL, " ");
+    }
+
+    return 1;
+}
+
+
 char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
 
     // 1. Get all words and put in array-memory
@@ -122,6 +140,8 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
 
     // 4. Try decode the inputFile with everykey.
     while (keyname != NULL){
+
+
         String decodedText = new_string(2);
         String stringKey = new_string(2);
 
@@ -130,11 +150,13 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
             printf("Could not read keyname...");
         }
 
-        add_char(&stringKey, '\0');
+
+        printf("\n%s", encodedText.characters);
 
         decode_string(&stringKey, &encodedText, &decodedText);
 
-        add_char(&decodedText,'\0');
+        printf("%s\n", decodedText.characters);
+
 
 
 
@@ -144,8 +166,6 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
         keyname = strtok(NULL, "\n");
     }
 
-    add_char(&encodedText, '\0');
-    printf("\n%s", encodedText.characters);
 
 
     free_string_memory(&keyfiles);
@@ -155,3 +175,5 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
     // 5. Check the result with the dictionary, if match is around 80% it is most likely right key.
     return  NULL;
 }
+
+

@@ -13,6 +13,7 @@ int main(int argc, char *argv[]){
 
     int status = 99;
 
+    /*
     char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status);
 
     free(encodedText);
@@ -20,10 +21,11 @@ int main(int argc, char *argv[]){
 
     char *decodedText = decode("encodedText.txt", "data/sweetChildGR.txt", &status);
 
+    free(decodedText);*/
+
+
+    char * decodedText = crack("encodedText.txt","data/", &status);
     free(decodedText);
-
-
-    crack("encodedText.txt","data/", &status);
 
     return 0;
 }

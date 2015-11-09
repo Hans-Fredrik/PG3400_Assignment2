@@ -6,9 +6,11 @@
 #define INNLEVERING2_SECRETCODER_H
 
 
+
 char *encode(const char *inputMessageFile, const char *keyFile, const char *outputFile, int *status);
 
 char *decode(const char *inputCodeFile, const char *keyFile, int *status);
 
 char *crack(const char *inputCodeFile, const char * keyfolder, int *status);
+
 #endif //INNLEVERING2_SECRETCODER_H

@@ -6,11 +6,12 @@
 #include <stdio.h>
 #include "string.h"
 
-#ifndef INNLEVERING2_FILE_UTILITY_H
-#define INNLEVERING2_FILE_UTILITY_H
+#ifndef INNLEVERING2_FILE_READER_H
+#define INNLEVERING2_FILE_READER_H
 
 #include <dirent.h>
 #include <string.h>
+
 
 typedef enum {
     NORMAL,
@@ -25,4 +26,4 @@ int write_to_file(const char *fileName, String *pstring);
 
 int read_dictionary(const char *fileName, String *pstring);
 
-#endif //INNLEVERING2_FILE_UTILITY_H
+#endif //INNLEVERING2_FILE_READER_H
