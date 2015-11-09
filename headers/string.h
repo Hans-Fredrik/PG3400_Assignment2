@@ -24,6 +24,7 @@ typedef struct{
 
 String new_string(int startSize);
 void add_char(String *pString, char element);
+void add_word(String *pString, const char *word, size_t length);
 void resize_string(String *pString);
 void free_string_memory(String *pString);
 

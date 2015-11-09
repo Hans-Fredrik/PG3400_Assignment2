@@ -14,6 +14,7 @@ const int RESIZE_FACTOR;
 typedef struct{
     char      key;
     Array     value;
+    int       isUsed;
 }Item;
 
 

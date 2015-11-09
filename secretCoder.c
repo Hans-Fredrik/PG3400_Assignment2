@@ -2,8 +2,10 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
+#include <string.h>
 #include "secretCoder.h"
 #include "headers/file_utility.h"
+#include "headers/string.h"
 
 static const int DEFAULT_SIZE = 2;
 
@@ -37,7 +39,6 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
 
 
     printf("\nEncoded message: \n");
-
     String encodedString = new_string(DEFAULT_SIZE);
     if(!encode_string(&keyString, &inputString,&encodedString, 1)){
         printf("\nEncode function error: Could not encode with the keyfile. Missing characters...\n");
@@ -55,7 +56,7 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     free_string_memory(&inputString);
 
     if(!write_to_file(outputFile, &encodedString)){
-        printf("\nEncode function: could not save to file[%s] need atleast 1 char.\n", outputFile);
+        printf("\nEncode function: could not save to file[%s] output filename need atleast 1 to be char.\n", outputFile);
     }
     
     return encodedString.characters;
@@ -87,4 +88,70 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 
 
     return decodedText.characters;
+}
+
+
+
+char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
+
+    // 1. Get all words and put in array-memory
+    String words = new_string(2);
+    read_dictionary("words", &words);
+
+    // 2. Read inputCodeFile
+    String encodedText = new_string(2);
+    if(!read_file(inputCodeFile, &encodedText, NORMAL)){
+        *status = 1;
+        return NULL;
+    }
+
+
+    // 3. Get alist of all possible keys..
+    String keyfiles = new_string(2);
+    if(!read_directory(keyfolder, &keyfiles)){
+        *status = 2;
+        return NULL;
+    }
+
+
+    char *keyname = strtok(keyfiles.characters, "\n");
+    if(keyname == NULL) {
+        return NULL;
+    }
+
+
+    // 4. Try decode the inputFile with everykey.
+    while (keyname != NULL){
+        String decodedText = new_string(2);
+        String stringKey = new_string(2);
+
+
+        if(!read_file(keyname, &stringKey, KEY)){
+            printf("Could not read keyname...");
+        }
+
+        add_char(&stringKey, '\0');
+
+        decode_string(&stringKey, &encodedText, &decodedText);
+
+        add_char(&decodedText,'\0');
+
+
+
+        free_string_memory(&decodedText);
+        free_string_memory(&stringKey);
+
+        keyname = strtok(NULL, "\n");
+    }
+
+    add_char(&encodedText, '\0');
+    printf("\n%s", encodedText.characters);
+
+
+    free_string_memory(&keyfiles);
+    free_string_memory(&encodedText);
+    free_string_memory(&words);
+
+    // 5. Check the result with the dictionary, if match is around 80% it is most likely right key.
+    return  NULL;
 }

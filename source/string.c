@@ -2,6 +2,7 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
+#include <string.h>
 #include "../headers/string.h"
 #include "../headers/map.h"
 #include "../headers/array.h"
@@ -25,6 +26,11 @@ void add_char(String *pString, char element) {
     pString->used++;
 }
 
+void add_word(String *pString, const char *word, size_t length){
+    for(int i = 0; i < length; i++){
+        add_char(pString, word[i]);
+    }
+}
 
 void resize_string(String *pString){
     pString->length *= ARRAY_RESIZE_FACTOR;
@@ -75,7 +81,7 @@ Map create_char_index_map(String *key){
     Map map = new_map(2);
 
     for(char i = 'a'; i <= 'z'; i++){
-        const Item charItem = {.key = i, .value = new_array(2)};
+        const Item charItem = {.key = i, .value = new_array(2), .isUsed = 0};
         put(&map, charItem);
     }
 
@@ -92,7 +98,13 @@ int get_char_position_in_map(Map *pMap, char target, int d){
     int usedLength = pMap->items[keyIndex].value.usedLength;
     int currentIndex = pMap->items[keyIndex].value.currentIndex;
 
-    verify_adjacent_code(&pMap->items[keyIndex], d);
+
+    if(pMap->items[keyIndex].isUsed){
+        verify_adjacent_code(&pMap->items[keyIndex], d);
+    }else{
+        pMap->items[keyIndex].isUsed = 1;
+    }
+
 
     if (currentIndex >= usedLength){
         pMap->items[keyIndex].value.currentIndex = 0;
@@ -230,7 +242,8 @@ int verify_adjacent_code(Item *item, int d){
     if(d == 0) return 1;
 
     if(item->value.usedLength == 1){
-        printf("\nEncode function Warning: Only 1 index on [%c] in key not possible to satifsy d = %d\n", item->key, d);
+        printf("\nEncode function (Warning): "
+                       "Only 1 index[%d] on key [%c] in keystring not possible to satifsy d = %d\n " ,item->value.numbers[0],item->key, d);
         return 0;
     }
 
@@ -250,7 +263,7 @@ int verify_adjacent_code(Item *item, int d){
     }
 
     if(numbersOfIndexesFullFillD < 2){
-        printf("\nEncode function Warning! Did not satisfy [%d] units between indexes on char [%c] in key. Number of indexes: %d\n"
+        printf("\nEncode function (Warning): Did not satisfy [%d] units between indexes on char [%c] in key. Number of indexes: %d\n"
                 ,d, item->key, item->value.usedLength);
     }
 

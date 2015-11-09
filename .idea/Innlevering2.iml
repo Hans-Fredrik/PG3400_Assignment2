@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/headers/array.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/headers/crack_utility.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/headers/file_utility.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/headers/map.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/headers/string.h" isTestSource="false" />
@@ -13,8 +14,11 @@
       <sourceFolder url="file://$MODULE_DIR$/secretCoder.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/secretCoder.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/array.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/crack_utility.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/file_utility.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/map.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/search_util.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/headers/search_util.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/string.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/string_utility.c" isTestSource="false" />
     </content>

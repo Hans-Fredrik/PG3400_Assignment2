@@ -3,6 +3,8 @@
 //
 
 
+#include <dirent.h>
+#include <string.h>
 #include "../headers/file_utility.h"
 
 int read_file(const char *fileName, String *pstring, ReadFlag readFlag){
@@ -26,6 +28,49 @@ int read_file(const char *fileName, String *pstring, ReadFlag readFlag){
     return 1;
 }
 
+int read_directory(const char *dirName, String *pString){
+    DIR *dir;
+
+    dir = opendir(dirName);
+
+    if(dir == NULL){
+        printf("Could not open the directory");
+        return 0;
+    }
+
+    while (1) {
+        struct dirent * entry;
+
+        entry = readdir (dir);
+        if (! entry) {
+            break;
+        }
+
+        add_word(pString, dirName, strlen(dirName));
+        add_word(pString, entry->d_name, strlen(entry->d_name));
+        add_char(pString, '\n');
+    }
+
+    add_char(pString, '\0');
+
+    closedir(dir);
+    return 1;
+}
+
+
+int read_dictionary(const char *fileName, String *pstring){
+    FILE* file = fopen (fileName, "r");
+
+    if(file == NULL) return 0;
+
+    char read[100];
+    while(fgets(read, 100, file)){
+        add_word(pstring, read, strlen(read));
+    }
+
+    fclose (file);
+    return 1;
+}
 
 int write_to_file(const char *fileName, String *pstring){
     if(fileName == NULL) return 0;

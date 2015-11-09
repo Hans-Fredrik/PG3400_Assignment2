@@ -16,6 +16,10 @@ typedef enum {
 
 int read_file(const char *fileName, String *pstring, ReadFlag readFlag);
 
+int read_directory(const char *dirName, String *pString);
+
 int write_to_file(const char *fileName, String *pstring);
+
+int read_dictionary(const char *fileName, String *pstring);
 
 #endif //INNLEVERING2_FILE_UTILITY_H
