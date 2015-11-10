@@ -11,6 +11,7 @@
 
 #include <dirent.h>
 #include <string.h>
+#include "array_list.h"
 
 
 typedef enum {
@@ -24,6 +25,6 @@ int read_directory(const char *dirName, String *pString);
 
 int write_to_file(const char *fileName, String *pstring);
 
-int read_dictionary(const char *fileName, String *pstring);
+int read_dictionary(const char *fileName, ArrayList *pArrayList);
 
 #endif //INNLEVERING2_FILE_READER_H

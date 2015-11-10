@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <math.h>
-#include "../headers/map.h"
+#include "map.h"
 
 
 const int ARRAY_RESIZE_FACTOR;
@@ -20,6 +20,7 @@ typedef struct{
     int     used;
     int     length;
 }String;
+
 
 
 String new_string(int startSize);

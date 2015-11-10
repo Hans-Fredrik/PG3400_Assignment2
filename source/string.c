@@ -2,10 +2,8 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
-#include <string.h>
+
 #include "../headers/string.h"
-#include "../headers/map.h"
-#include "../headers/array.h"
 
 const int ARRAY_RESIZE_FACTOR = 2;
 

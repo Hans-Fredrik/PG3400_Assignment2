@@ -2,7 +2,7 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
-#include <stdlib.h>
+
 #include "program.h"
 
 

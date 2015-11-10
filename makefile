@@ -11,10 +11,11 @@ prepare_lib:
 	gcc $(CFLAG_LIB) source/map.c -o $(LIBOUTPUT)map.o $(LIBS)
 	gcc $(CFLAG_LIB) source/string.c -o $(LIBOUTPUT)string.o $(LIBS)
 	gcc $(CFLAG_LIB) source/file_reader.c -o $(LIBOUTPUT)file_reader.o $(LIBS)
+	gcc $(CFLAG_LIB) source/array_list.c -o $(LIBOUTPUT)array_list.o $(LIBS)
 
 lib:
-	gcc -c -g secretCoder.c -o $(LIBOUTPUT)secretCoder.o
-	ar rcs $(LIBOUTPUT)libsecretCoder.a $(LIBOUTPUT)secretCoder.o $(LIBOUTPUT)array.o $(LIBOUTPUT)file_reader.o $(LIBOUTPUT)map.o $(LIBOUTPUT)string.o
+	gcc $(CFLAG_LIB) secretCoder.c -o $(LIBOUTPUT)secretCoder.o
+	ar rcs $(LIBOUTPUT)libsecretCoder.a $(LIBOUTPUT)secretCoder.o $(LIBOUTPUT)array.o $(LIBOUTPUT)file_reader.o $(LIBOUTPUT)map.o $(LIBOUTPUT)string.o $(LIBOUTPUT)array_list.o
 
 clean:
 	rm -f program

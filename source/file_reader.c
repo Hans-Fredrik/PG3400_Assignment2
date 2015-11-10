@@ -56,7 +56,7 @@ int read_directory(const char *dirName, String *pString){
 }
 
 
-int read_dictionary(const char *fileName, String *pstring){
+int read_dictionary(const char *fileName, ArrayList *pArrayList){
     FILE* file = fopen (fileName, "r");
 
     if(file == NULL) return 0;
@@ -64,7 +64,13 @@ int read_dictionary(const char *fileName, String *pstring){
     char read[100];
 
     while(fgets(read, 100, file) != NULL){
-        add_word(pstring, read, strlen(read));
+        String word = new_string(2);
+
+        add_word(&word, read, strlen(read));
+
+        add_string(pArrayList, word);
+
+        free_string_memory(&word);
     }
 
     fclose (file);

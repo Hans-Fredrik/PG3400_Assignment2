@@ -6,7 +6,7 @@
 #include <string.h>
 #include "headers/string.h"
 #include "headers/file_reader.h"
-
+#include "headers/array_list.h"
 
 
 static const int DEFAULT_SIZE = 2;
@@ -119,8 +119,10 @@ int check_matching_words(String *pDecoded, String *words){
 char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
 
     // 1. Get all words and put in array-memory
-    String words = new_string(2);
-    read_dictionary("words", &words);
+    ArrayList wordList = new_array_list(2);
+    read_dictionary("words", &wordList);
+    printf("\nWordlist size: %d \n", wordList.usedLength);
+
 
     // 2. Read inputCodeFile
     String encodedText = new_string(2);
@@ -148,7 +150,7 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
 
         if(strlen(keyname) > 7){
 
-            printf("\nKeyname: %s ", keyname);
+//            printf("\nKeyname: %s ", keyname);
 
             String stringKey = new_string(2);
 
@@ -168,14 +170,13 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
             free_string_memory(&stringKey);
         }
 
-        printf("Her %s", keyname);
         keyname = strtok(NULL, "\n");
     }
 
 
     free_string_memory(&keyfiles);
     free_string_memory(&encodedText);
-    free_string_memory(&words);
+    free_array_list_memory(&wordList);
 
     // 5. Check the result with the dictionary, if match is around 80% it is most likely right key.
     return  NULL;
