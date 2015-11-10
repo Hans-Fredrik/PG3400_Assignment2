@@ -7,7 +7,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "map.h"
+#include "string.h"
+
 const int RESIZE_FACTOR_ARRAY;
+
+
 
 typedef struct{
     int         *numbers;

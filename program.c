@@ -2,9 +2,9 @@
 // Created by Hans Fredrik Brastad on 31/10/15.
 //
 
+#include <stdlib.h>
 #include "program.h"
-#include "headers/map.h"
-#include "headers/array.h"
+
 
 
 int main(int argc, char *argv[]){
@@ -13,7 +13,6 @@ int main(int argc, char *argv[]){
 
     int status = 99;
 
-    /*
     char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status);
 
     free(encodedText);
@@ -21,11 +20,11 @@ int main(int argc, char *argv[]){
 
     char *decodedText = decode("encodedText.txt", "data/sweetChildGR.txt", &status);
 
-    free(decodedText);*/
-
-
-    char * decodedText = crack("encodedText.txt","data/", &status);
     free(decodedText);
+
+
+    char * decodedText2 = crack("encodedText.txt","data/", &status);
+    free(decodedText2);
 
     return 0;
 }

@@ -8,6 +8,7 @@
 #include "headers/file_reader.h"
 
 
+
 static const int DEFAULT_SIZE = 2;
 
 
@@ -92,19 +93,24 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 }
 
 
-
 int check_matching_words(String *pDecoded, String *words){
 
-    char *wordsToCheck = strtok(pDecoded->characters, " ");
-    if(wordsToCheck == NULL) {
-        return 0;
+    printf("\nHer: \n");
+
+    for(int i = 0; i < pDecoded->used-1; i++){
+
+        printf(" ");
+        String word = new_string(2);
+        while(char_lower(pDecoded->characters[i]) || char_upper(pDecoded->characters[i])){
+            add_char(&word, pDecoded->characters[i]);
+            i++;
+        }
+
+        printf("%s", word.characters);
+        free_string_memory(&word);
+
     }
 
-    while(wordsToCheck != NULL){
-        printf("%s", wordsToCheck);
-
-        wordsToCheck = strtok(NULL, " ");
-    }
 
     return 1;
 }
@@ -123,7 +129,6 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
         return NULL;
     }
 
-
     // 3. Get alist of all possible keys..
     String keyfiles = new_string(2);
     if(!read_directory(keyfolder, &keyfiles)){
@@ -141,31 +146,31 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
     // 4. Try decode the inputFile with everykey.
     while (keyname != NULL){
 
+        if(strlen(keyname) > 7){
 
-        String decodedText = new_string(2);
-        String stringKey = new_string(2);
+            printf("\nKeyname: %s ", keyname);
 
+            String stringKey = new_string(2);
 
-        if(!read_file(keyname, &stringKey, KEY)){
-            printf("Could not read keyname...");
+            if(!read_file(keyname, &stringKey, KEY)){
+                printf("Could not read keyname...");
+            }
+
+            //printf("\n%s", encodedText.characters);
+
+            String decodedText = new_string(2);
+            decode_string(&stringKey, &encodedText, &decodedText);
+
+            //check_matching_words(&decodedText, &words);
+
+            free_string_memory(&decodedText);
+
+            free_string_memory(&stringKey);
         }
 
-
-        printf("\n%s", encodedText.characters);
-
-        decode_string(&stringKey, &encodedText, &decodedText);
-
-        printf("%s\n", decodedText.characters);
-
-
-
-
-        free_string_memory(&decodedText);
-        free_string_memory(&stringKey);
-
+        printf("Her %s", keyname);
         keyname = strtok(NULL, "\n");
     }
-
 
 
     free_string_memory(&keyfiles);

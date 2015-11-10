@@ -62,7 +62,8 @@ int read_dictionary(const char *fileName, String *pstring){
     if(file == NULL) return 0;
 
     char read[100];
-    while(fgets(read, 100, file)){
+
+    while(fgets(read, 100, file) != NULL){
         add_word(pstring, read, strlen(read));
     }
 
