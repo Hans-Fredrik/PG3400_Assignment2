@@ -145,13 +145,13 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
     }
 
 
+    // Add a String that holds the keyname here, and keep change it if the key is more likely right.
+
     // 4. Try decode the inputFile with everykey.
     while (keyname != NULL){
 
         if(strlen(keyname) > 7){
-
 //            printf("\nKeyname: %s ", keyname);
-
             String stringKey = new_string(2);
 
             if(!read_file(keyname, &stringKey, KEY)){
@@ -159,17 +159,14 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
             }
 
             //printf("\n%s", encodedText.characters);
-
             String decodedText = new_string(2);
             decode_string(&stringKey, &encodedText, &decodedText);
 
             //check_matching_words(&decodedText, &words);
 
             free_string_memory(&decodedText);
-
             free_string_memory(&stringKey);
         }
-
         keyname = strtok(NULL, "\n");
     }
 
@@ -178,7 +175,6 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
     free_string_memory(&encodedText);
     free_array_list_memory(&wordList);
 
-    // 5. Check the result with the dictionary, if match is around 80% it is most likely right key.
     return  NULL;
 }
 
