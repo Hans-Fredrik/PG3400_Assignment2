@@ -37,7 +37,7 @@ void decode_string(String *key, String *message, String *decodeOutput);
 char get_char_at_position(String *pString, int pos);
 int verify_adjacent_code(Item *item, int d);
 
-    int char_lower(char chr);
+int char_lower(char chr);
 int char_upper(char chr);
 int check_map_for_a_z(Map *map);
 

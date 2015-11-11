@@ -26,7 +26,9 @@ void add_char(String *pString, char element) {
 
 void add_word(String *pString, const char *word, size_t length){
     for(int i = 0; i < length; i++){
-        add_char(pString, word[i]);
+        if(word[i] != '\n'){
+            add_char(pString, word[i]);
+        }
     }
 }
 

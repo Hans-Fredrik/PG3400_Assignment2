@@ -7,6 +7,7 @@
 #include "headers/string.h"
 #include "headers/file_reader.h"
 #include "headers/array_list.h"
+#include "headers/search_util.h"
 
 
 static const int DEFAULT_SIZE = 2;
@@ -93,51 +94,49 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 }
 
 
-int check_matching_words(String *pDecoded, String *words){
 
-    printf("\nHer: \n");
+int check_word(String *pDecoded, ArrayList *words){
 
     for(int i = 0; i < pDecoded->used-1; i++){
 
-        printf(" ");
         String word = new_string(2);
         while(char_lower(pDecoded->characters[i]) || char_upper(pDecoded->characters[i])){
-            add_char(&word, pDecoded->characters[i]);
+            add_char(&word, tolower(pDecoded->characters[i]));
             i++;
         }
 
-        printf("%s", word.characters);
+        if(word.used > 0){
+            add_char(&word, '\0');
+            binary_arraylist_search(words, word.characters);
+        }
+
         free_string_memory(&word);
-
     }
-
 
     return 1;
 }
 
-
 char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
-
-    // 1. Get all words and put in array-memory
     ArrayList wordList = new_array_list(2);
     read_dictionary("words", &wordList);
-    printf("\nWordlist size: %d \n", wordList.usedLength);
+
+//    for(int i = 0; i < wordList.usedLength; i++){
+//        printf("%s", wordList.strings[i].characters);
+//    }
 
 
-    // 2. Read inputCodeFile
     String encodedText = new_string(2);
     if(!read_file(inputCodeFile, &encodedText, NORMAL)){
         *status = 1;
         return NULL;
     }
 
-    // 3. Get alist of all possible keys..
+
     String keyfiles = new_string(2);
     if(!read_directory(keyfolder, &keyfiles)){
         *status = 2;
         return NULL;
     }
-
 
     char *keyname = strtok(keyfiles.characters, "\n");
     if(keyname == NULL) {
@@ -145,31 +144,56 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
     }
 
 
+    // -------------
+    String stringKEy2 = new_string(2);
+
+
+    if(!read_file("data/sweetChildGR.txt", &stringKEy2, KEY)){
+        printf("Could not read keyname...");
+    }
+
+
+
+    String decodedText2 = new_string(2);
+    decode_string(&stringKEy2, &encodedText, &decodedText2);
+
+    check_word(&decodedText2, &wordList);
+    printf("%s", decodedText2.characters);
+
+    free_string_memory(&stringKEy2);
+    free_string_memory(&decodedText2);
+    //------------------
+
+
     // Add a String that holds the keyname here, and keep change it if the key is more likely right.
 
     // 4. Try decode the inputFile with everykey.
+
     while (keyname != NULL){
 
         if(strlen(keyname) > 7){
-//            printf("\nKeyname: %s ", keyname);
+
             String stringKey = new_string(2);
 
             if(!read_file(keyname, &stringKey, KEY)){
                 printf("Could not read keyname...");
             }
 
-            //printf("\n%s", encodedText.characters);
+//            printf("\n%s", keyname);
             String decodedText = new_string(2);
             decode_string(&stringKey, &encodedText, &decodedText);
 
-            //check_matching_words(&decodedText, &words);
+            check_word(&decodedText, &wordList);
+
+
+//            printf("\n%s ", decodedText.characters);
+
 
             free_string_memory(&decodedText);
             free_string_memory(&stringKey);
         }
         keyname = strtok(NULL, "\n");
     }
-
 
     free_string_memory(&keyfiles);
     free_string_memory(&encodedText);

@@ -35,6 +35,9 @@ void resize_array_list(ArrayList *pArray){
 }
 
 void free_array_list_memory(ArrayList *pArray){
+    for(int i = 0; i < pArray->usedLength; i++){
+        free_string_memory(&pArray->strings[i]);
+    }
     free(pArray->strings);
     pArray->strings = NULL;
     pArray->length = 0;

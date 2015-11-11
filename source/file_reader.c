@@ -51,6 +51,7 @@ int read_directory(const char *dirName, String *pString){
 
     add_char(pString, '\0');
 
+
     closedir(dir);
     return 1;
 }
@@ -67,10 +68,9 @@ int read_dictionary(const char *fileName, ArrayList *pArrayList){
         String word = new_string(2);
 
         add_word(&word, read, strlen(read));
+        add_char(&word, '\0');
 
         add_string(pArrayList, word);
-
-        free_string_memory(&word);
     }
 
     fclose (file);

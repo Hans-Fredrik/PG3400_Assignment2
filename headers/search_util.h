@@ -4,5 +4,8 @@
 
 #ifndef INNLEVERING2_SEARCH_UTIL_H
 #define INNLEVERING2_SEARCH_UTIL_H
+#include "../headers/array_list.h"
+
+int binary_arraylist_search(ArrayList * arrayList, char *target);
 
 #endif //INNLEVERING2_SEARCH_UTIL_H
