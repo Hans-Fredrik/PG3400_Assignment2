@@ -26,6 +26,7 @@ int read_file(const char *fileName, String *pstring, ReadFlag readFlag){
     return 1;
 }
 
+
 int read_directory(const char *dirName, String *pString){
     DIR *dir;
 
@@ -51,7 +52,6 @@ int read_directory(const char *dirName, String *pString){
 
     add_char(pString, '\0');
 
-
     closedir(dir);
     return 1;
 }
@@ -76,6 +76,7 @@ int read_dictionary(const char *fileName, ArrayList *pArrayList){
     fclose (file);
     return 1;
 }
+
 
 int write_to_file(const char *fileName, String *pstring){
     if(fileName == NULL) return 0;

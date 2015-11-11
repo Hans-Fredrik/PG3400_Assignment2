@@ -27,7 +27,6 @@ typedef struct{
 
 Map new_map(int size);
 void put(Map *pMap, Item item);
-int contains_key(Map *pMap, char key);
 void add_int_on_key(Map *pMap, char key, int number);
 int get_index_for_key(Map *pMap, char key);
 void resize_map(Map *pMap);

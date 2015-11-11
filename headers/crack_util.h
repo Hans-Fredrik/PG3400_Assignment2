@@ -7,7 +7,12 @@
 
 #include <string.h>
 #include "../headers/string.h"
+#include "../headers/string_util.h"
+#include "../headers/file_reader.h"
+#include "../headers/array_list.h"
+#include "../headers/search_util.h"
 
-int check_matching_words(String *pDecoded, String *words);
+int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList);
+int check_decoded_words_in_dictionary(String *pDecoded, ArrayList *words);
 
 #endif //INNLEVERING2_CRACK_UTIL_H

@@ -11,9 +11,8 @@ int main(int argc, char *argv[]){
 
     // Tester ut de Ordentlige secretCoder funksjonene..
 
-    int status = 99;
+    int status = -1;
 
-    /*
     char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status);
 
     free(encodedText);
@@ -21,11 +20,12 @@ int main(int argc, char *argv[]){
 
     char *decodedText = decode("encodedText.txt", "data/sweetChildGR.txt", &status);
 
-    free(decodedText); */
+    free(decodedText);
 
 
-    char * decodedText2 = crack("encodedText.txt","data/", &status);
+    char * decodedText2 = crack("encodedText.txt", "data/" , &status);
     free(decodedText2);
+
 
     return 0;
 }

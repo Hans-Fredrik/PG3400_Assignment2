@@ -15,14 +15,13 @@ int binary_arraylist_search(ArrayList * arrayList, char *target){
     while (minIndex <= maxIndex){
         midIndex = (minIndex+maxIndex)/2;
 
-        int res = strcmp(arrayList->strings[midIndex].characters, target);
+        int res = strcmp(target, arrayList->strings[midIndex].characters);
 
         if(res < 0) {
-            minIndex = minIndex +1;
-        }
-        else if(res > 0)
-        {
             maxIndex = midIndex -1;
+        }
+        else if(res > 0) {
+            minIndex = minIndex +1;
         }
         else{
             return  1;
