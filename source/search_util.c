@@ -4,14 +4,9 @@
 
 #include <string.h>
 #include "../headers/search_util.h"
-#include "../headers/array_list.h"
-#include "../headers/string.h"
 
 
 int binary_arraylist_search(ArrayList * arrayList, char *target){
-
-//    printf("\nBinary search: %s\n", target);
-
 
     int minIndex = 0;
     int maxIndex = arrayList->usedLength-1;
@@ -30,7 +25,6 @@ int binary_arraylist_search(ArrayList * arrayList, char *target){
             maxIndex = midIndex -1;
         }
         else{
-            printf("[%s] str1 is equal to [%s] str2", arrayList->strings[midIndex].characters, target);
             return  1;
         }
 

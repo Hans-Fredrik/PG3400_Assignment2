@@ -97,6 +97,9 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 
 int check_word(String *pDecoded, ArrayList *words){
 
+    int found = 0;
+    int numeberOfWords = 0;
+
     for(int i = 0; i < pDecoded->used-1; i++){
 
         String word = new_string(2);
@@ -107,29 +110,29 @@ int check_word(String *pDecoded, ArrayList *words){
 
         if(word.used > 0){
             add_char(&word, '\0');
-            binary_arraylist_search(words, word.characters);
+            numeberOfWords++;
+            if(binary_arraylist_search(words, word.characters)){
+                found++;
+            }
         }
 
         free_string_memory(&word);
     }
 
-    return 1;
+
+    return (found*100)/numeberOfWords;
 }
 
 char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
     ArrayList wordList = new_array_list(2);
     read_dictionary("words", &wordList);
 
-//    for(int i = 0; i < wordList.usedLength; i++){
-//        printf("%s", wordList.strings[i].characters);
-//    }
-
-
     String encodedText = new_string(2);
     if(!read_file(inputCodeFile, &encodedText, NORMAL)){
         *status = 1;
         return NULL;
     }
+
 
 
     String keyfiles = new_string(2);
@@ -147,27 +150,21 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
     // -------------
     String stringKEy2 = new_string(2);
 
-
     if(!read_file("data/sweetChildGR.txt", &stringKEy2, KEY)){
         printf("Could not read keyname...");
     }
-
-
 
     String decodedText2 = new_string(2);
     decode_string(&stringKEy2, &encodedText, &decodedText2);
 
     check_word(&decodedText2, &wordList);
-    printf("%s", decodedText2.characters);
 
     free_string_memory(&stringKEy2);
     free_string_memory(&decodedText2);
     //------------------
 
+    printf("\nCracking: %s\n", encodedText.characters);
 
-    // Add a String that holds the keyname here, and keep change it if the key is more likely right.
-
-    // 4. Try decode the inputFile with everykey.
 
     while (keyname != NULL){
 
@@ -179,14 +176,17 @@ char *crack(const char *inputCodeFile, const char * keyfolder, int *status){
                 printf("Could not read keyname...");
             }
 
-//            printf("\n%s", keyname);
             String decodedText = new_string(2);
             decode_string(&stringKey, &encodedText, &decodedText);
 
-            check_word(&decodedText, &wordList);
+
+            if(check_word(&decodedText, &wordList) > 30){
+                printf("\nDecoded: %s\n", decodedText.characters);
+                printf("Key: %s\n", keyname);
+            }
 
 
-//            printf("\n%s ", decodedText.characters);
+//          printf("\n%s ", decodedText.characters);
 
 
             free_string_memory(&decodedText);
