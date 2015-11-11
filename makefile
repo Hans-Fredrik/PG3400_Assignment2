@@ -27,7 +27,8 @@ lib:
 	$(LIBOUTPUT)map.o \
 	$(LIBOUTPUT)string.o \
 	$(LIBOUTPUT)crack_util.o \
-	$(LIBOUTPUT)string_util.o
+	$(LIBOUTPUT)string_util.o \
+	$(LIBOUTPUT)search_util.o
 
 
 clean:
@@ -38,4 +39,4 @@ clean:
 	rm -f map
 	rm -f search_util
 	rm -f crack_util
-	rm -f array_list
+	rm -f string_util
