@@ -97,6 +97,7 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
     ArrayList wordList = new_array_list(2);
     read_dictionary("words", &wordList);
 
+
     String encodedText = new_string(2);
     if(!read_file(inputCodeFile, &encodedText, NORMAL)){
         *status = 1;
@@ -114,9 +115,6 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
         return NULL;
     }
 
-
-    printf("\nCracking: %s\n", encodedText.characters);
-
     String crackedKey = new_string(2);
 
     if(!brute_force_right_key(&crackedKey, keyname, &encodedText, &wordList)){
@@ -128,7 +126,6 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
 
     printf("Key: ");
     COMPLETE_OUTPUT(crackedKey.characters);
-
 
     free_string_memory(&keyfiles);
     free_string_memory(&encodedText);

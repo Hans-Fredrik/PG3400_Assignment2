@@ -3,9 +3,11 @@
 //
 
 #include "../headers/crack_util.h"
+#include "../headers/string.h"
 
 
 int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList){
+    printf("\nInside: brute_force_right_key");
 
     int highestPercentage = 0;
 
@@ -16,7 +18,8 @@ int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText
             String stringKey = new_string(2);
 
             if(!read_file(keyname, &stringKey, KEY)){
-                printf("Could not read keyname...");
+                free_string_memory(&stringKey);
+                return 0;
             }
 
             String decodedText = new_string(2);
