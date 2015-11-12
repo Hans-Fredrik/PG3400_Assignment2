@@ -15,6 +15,7 @@
 #include "source/string_util.c"
 #include "source/map.c"
 #include "source/array.c"
+#include "source/encode_decode_util.c"
 
 
 

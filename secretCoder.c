@@ -8,9 +8,11 @@
 #include "headers/file_reader.h"
 #include "headers/string_util.h"
 #include "headers/crack_util.h"
+#include "headers/encode_decode_util.h"
 
 
 static const int DEFAULT_SIZE = 2;
+
 
 static void on_error_free_helper(String *pString, String *pString1, String *pString2){
     free_string_memory(pString);
@@ -36,69 +38,32 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
         return  NULL;
     }
 
+    if(!read_and_parse_key_file(keyFile, &keyString, status)){
+        on_error_free_helper(&keyString, &inputString, &encodedString);
+        return NULL;
+    }
 
-    // 1. Parse and read keyfile
-    int readKeyFileResult = read_file(keyFile, &keyString, KEY, &memoryError);
+    if(!read_the_message_to_encode(inputMessageFile, &inputString, status)){
+        on_error_free_helper(&keyString, &inputString, &encodedString);
+        return NULL;
+    }
 
-    if(!readKeyFileResult || memoryError){
-        if(memoryError){
-            OUTPUT_ERROR("\nCould not allocate enough memory");
-            *status = 1;
-        }else{
-            OUTPUT_FILE_ERROR("\nEncode function error: could not open keyfile", keyFile);
-            *status = 2;
-        }
+    if(!encode_the_message_with_key(&keyString, &inputString, &encodedString, keyFile, status, d)){
         on_error_free_helper(&keyString, &inputString, &encodedString);
         return NULL;
     }
 
 
-    // 2. Read the message to encode
-    int readInputMessageResult = read_file(inputMessageFile, &inputString, NORMAL, &memoryError);
-
-    if(!readInputMessageResult || memoryError){
-        if(memoryError){
-            OUTPUT_ERROR("\nCould not allocate enough memory");
-            *status = 1;
-        }else{
-            OUTPUT_FILE_ERROR("\nEncode function error: could not open inputMessageFile", inputMessageFile);
-            *status = 3;
-        }
-        on_error_free_helper(&keyString, &inputString, &encodedString);
-        return NULL;
-    }
-
-    // 3. Encoding the message with the key
-    int encodeMessageWithKeyResult = encode_string(&keyString, &inputString,&encodedString, d, &memoryError);
-
-    if(!encodeMessageWithKeyResult || memoryError){
-        if(memoryError){
-            OUTPUT_ERROR("\nCould not allocate enough memory");
-            *status = 1;
-        }else{
-            OUTPUT_FILE_ERROR("\nEncode function error: Could not encode with the keyfile. Missing characters[a-z is must] in", keyFile);
-            *status = 4;
-        }
-        on_error_free_helper(&keyString, &inputString, &encodedString);
-        return NULL;
-    }
-
-
-    int writeDecodedMessageToFileResult = write_to_file(outputFile, &encodedString);
-
-    if(!writeDecodedMessageToFileResult){
+    if(!write_to_file(outputFile, &encodedString)){
         OUTPUT_FILE_ERROR("\nEncode function: output filename need to be atleast 1 char long, could not save to file ", outputFile);
         on_error_free_helper(&keyString, &inputString, &encodedString);
         *status = 5;
         return  NULL;
     }
 
-
     *status = 0;
     free_string_memory(&keyString);
     free_string_memory(&inputString);
-
-    printf("Last call");
 
     return encodedString.characters;
 }

@@ -13,4 +13,5 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status);
 
 char *crack(const char *inputCodeFile, const char *keyFolder, int *status);
 
+
 #endif //INNLEVERING2_SECRETCODER_H

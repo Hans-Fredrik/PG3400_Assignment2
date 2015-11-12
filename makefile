@@ -16,6 +16,7 @@ prepare_lib:
 	gcc $(CFLAG_LIB) source/search_util.c -o $(LIBOUTPUT)search_util.o $(LIBS)
 	gcc $(CFLAG_LIB) source/string.c -o $(LIBOUTPUT)string.o $(LIBS)
 	gcc $(CFLAG_LIB) source/string_util.c -o $(LIBOUTPUT)string_util.o $(LIBS)
+	gcc $(CFLAG_LIB) source/encode_decode_util.c -o $(LIBOUTPUT)encode_decode_util.o $(LIBS)
 
 lib:
 	gcc $(CFLAG_LIB) secretCoder.c -o $(LIBOUTPUT)secretCoder.o
@@ -28,7 +29,8 @@ lib:
 	$(LIBOUTPUT)string.o \
 	$(LIBOUTPUT)crack_util.o \
 	$(LIBOUTPUT)string_util.o \
-	$(LIBOUTPUT)search_util.o
+	$(LIBOUTPUT)search_util.o \
+	$(LIBOUTPUT)encode_decode_util.o
 
 
 clean:
@@ -40,3 +42,4 @@ clean:
 	rm -f search_util
 	rm -f crack_util
 	rm -f string_util
+	rm -f encode_decode_util
