@@ -12,16 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e4593c6-6790-4ed6-b6e4-b74ee4184f47" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/encode_decode_util.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/encode_decode_util.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program" afterPath="$PROJECT_DIR$/program" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Innlevering2.iml" afterPath="$PROJECT_DIR$/.idea/Innlevering2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/makefile" afterPath="$PROJECT_DIR$/makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/encode_decode_util.c" afterPath="$PROJECT_DIR$/source/encode_decode_util.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/encode_decode_util.h" afterPath="$PROJECT_DIR$/headers/encode_decode_util.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program.c" afterPath="$PROJECT_DIR$/program.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program.h" afterPath="$PROJECT_DIR$/program.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.c" afterPath="$PROJECT_DIR$/secretCoder.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.h" afterPath="$PROJECT_DIR$/secretCoder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/string_util.c" afterPath="$PROJECT_DIR$/source/string_util.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/string_util.h" afterPath="$PROJECT_DIR$/headers/string_util.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Innlevering2.iws" />
@@ -43,23 +40,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="secretCoder.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="secretCoder.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/secretCoder.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.23195876">
+              <caret line="68" column="73" selection-start-line="68" selection-start-column="73" selection-end-line="68" selection-end-column="73" />
               <folding>
                 <element signature="e#55#79#0" expanded="true" />
+                <element signature="e#305#494#0" expanded="false" />
+                <element signature="e#497#1987#0" expanded="false" />
+                <element signature="e#1990#3223#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="secretCoder.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/secretCoder.h">
+      <file leaf-file-name="string_util.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/string_util.c">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="161" column="44" selection-start-line="161" selection-start-column="44" selection-end-line="161" selection-end-column="44" />
+              <folding>
+                <element signature="e#124#287#0" expanded="false" />
+                <element signature="e#1119#2384#0" expanded="false" />
+                <element signature="e#3410#3494#0" expanded="false" />
+                <element signature="e#3497#3581#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="program.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/program.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="string_util.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/headers/string_util.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -69,32 +94,15 @@
         <entry file="file://$PROJECT_DIR$/source/encode_decode_util.c">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding>
+                <element signature="e#0#2#0" expanded="false" />
                 <element signature="e#99#624#0" expanded="false" />
+                <element signature="e#627#1209#0" expanded="false" />
+                <element signature="e#1212#1878#0" expanded="false" />
+                <element signature="e#1881#2288#0" expanded="false" />
+                <element signature="e#2291#2881#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="encode_decode_util.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/encode_decode_util.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="31" />
-              <folding>
-                <element signature="e#141#176#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="program.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/program.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25128865">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -142,17 +150,17 @@
         <option value="$PROJECT_DIR$/source/map.c" />
         <option value="$PROJECT_DIR$/source/string.c" />
         <option value="$PROJECT_DIR$/source/file_reader.c" />
-        <option value="$PROJECT_DIR$/headers/string_util.h" />
         <option value="$PROJECT_DIR$/badkey" />
-        <option value="$PROJECT_DIR$/source/string_util.c" />
         <option value="$PROJECT_DIR$/source/crack_util.c" />
         <option value="$PROJECT_DIR$/secretCoder.h" />
         <option value="$PROJECT_DIR$/makefile" />
         <option value="$PROJECT_DIR$/program.h" />
-        <option value="$PROJECT_DIR$/source/encode_decode_util.c" />
         <option value="$PROJECT_DIR$/headers/encode_decode_util.h" />
-        <option value="$PROJECT_DIR$/secretCoder.c" />
         <option value="$PROJECT_DIR$/program.c" />
+        <option value="$PROJECT_DIR$/headers/string_util.h" />
+        <option value="$PROJECT_DIR$/source/string_util.c" />
+        <option value="$PROJECT_DIR$/source/encode_decode_util.c" />
+        <option value="$PROJECT_DIR$/secretCoder.c" />
       </list>
     </option>
   </component>
@@ -527,7 +535,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447358777342</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447369911279</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1447369911279</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -610,7 +624,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -927,51 +941,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/string.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33247423">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/file_reader.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09664948">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#1779#2104#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/crack_util.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09664948">
           <caret line="8" column="121" selection-start-line="8" selection-start-column="121" selection-end-line="8" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/string_util.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8170103">
-          <caret line="156" column="5" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
-          <folding>
-            <element signature="e#124#287#0" expanded="false" />
-            <element signature="e#1119#2384#0" expanded="false" />
-            <element signature="e#3410#3494#0" expanded="false" />
-            <element signature="e#3497#3581#0" expanded="false" />
-            <element signature="e#3584#3780#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/string_util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14948453">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -992,49 +965,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/secretCoder.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27061856">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/file_reader.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09664948">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#1779#2104#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/headers/encode_decode_util.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.28994846">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#141#176#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/encode_decode_util.c">
+    <entry file="file://$PROJECT_DIR$/source/string.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="e#99#624#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/secretCoder.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.17396908">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secretCoder.c">
+    <entry file="file://$PROJECT_DIR$/source/encode_decode_util.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="e#55#79#0" expanded="true" />
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#99#624#0" expanded="false" />
+            <element signature="e#627#1209#0" expanded="false" />
+            <element signature="e#1212#1878#0" expanded="false" />
+            <element signature="e#1881#2288#0" expanded="false" />
+            <element signature="e#2291#2881#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/string_util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/program.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25128865">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/string_util.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="161" column="44" selection-start-line="161" selection-start-column="44" selection-end-line="161" selection-end-column="44" />
+          <folding>
+            <element signature="e#124#287#0" expanded="false" />
+            <element signature="e#1119#2384#0" expanded="false" />
+            <element signature="e#3410#3494#0" expanded="false" />
+            <element signature="e#3497#3581#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/secretCoder.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23195876">
+          <caret line="68" column="73" selection-start-line="68" selection-start-column="73" selection-end-line="68" selection-end-column="73" />
+          <folding>
+            <element signature="e#55#79#0" expanded="true" />
+            <element signature="e#305#494#0" expanded="false" />
+            <element signature="e#497#1987#0" expanded="false" />
+            <element signature="e#1990#3223#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

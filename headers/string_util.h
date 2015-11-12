@@ -31,7 +31,7 @@ int get_char_position_in_map(Map *pMap, char target, int d);
 
 void add_int_as_indiviudal_chars(String *encodedOutput, int number, int *memoryError);
 
-void decode_string(String *key, String *message, String *decodeOutput, int *memoryError);
+int decode_string(String *key, String *message, String *decodeOutput, int *memoryError);
 
 char get_char_at_position(String *pString, int pos);
 

@@ -14,20 +14,19 @@ int main(int argc, char *argv[]){
     int status = -1;
 
 
+    /*
     char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status, 2);
 
     printf("\nEncodedtext: \n %s", encodedText);
 
-    free(encodedText);
+    free(encodedText); */
 
-
-    /*
 
     char *decodedText = decode("encodedText.txt", "data/sweetChildGR.txt", &status);
 
     printf("\nDecodedtext: \n %s", decodedText);
 
-    free(decodedText); */
+    free(decodedText);
 
 
 /*

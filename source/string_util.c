@@ -154,7 +154,7 @@ char get_char_at_position(String *pString, int pos){
 }
 
 
-void decode_string(String *key, String *message, String *decodeOutput, int *memoryError){
+int decode_string(String *key, String *message, String *decodeOutput, int *memoryError){
 
     for(int i = 0; i < message->used; i++){
 
@@ -181,10 +181,13 @@ void decode_string(String *key, String *message, String *decodeOutput, int *memo
             }
 
             free_string_memory(&numberBasedOnChar);
+            if(*memoryError) return 0;
         }else{
             add_char(decodeOutput, message->characters[i], memoryError);
         }
     }
+
+    return 1;
 }
 
 

@@ -44,6 +44,7 @@ int read_the_message_to_encode(const char *inputMessageFile, String *inputString
     return 1;
 }
 
+
 int encode_the_message_with_key(String *keyString, String *inputString, String *encodedString, const char *keyFile, int *status, int d){
     int memoryError = 0;
 
@@ -58,6 +59,43 @@ int encode_the_message_with_key(String *keyString, String *inputString, String *
             *status = 4;
         }
 
+        return 0;
+    }
+
+    return 1;
+}
+
+
+int write_encoded_message_to_file(const char *outputFile, String *encodedString, int *status){
+
+    int writeEncodedMessageResult =  write_to_file(outputFile, encodedString);
+
+    if(!writeEncodedMessageResult){
+        OUTPUT_FILE_ERROR("\nEncode function: output filename need to be atleast 1 char long, could not save to file ", outputFile);
+        *status = 5;
+        return  0;
+    }
+
+    return 1;
+}
+
+
+int read_encoded_message_to_decode(const char *inputCodeFile, String *encodedFileText, int *status){
+
+    int memoryError = 0;
+
+    int readFileEncodedResult = read_file(inputCodeFile, encodedFileText, NORMAL, &memoryError);
+
+
+    if(!readFileEncodedResult || memoryError){
+
+        if(memoryError){
+            OUTPUT_ERROR("\nCould not allocate enough memory");
+            *status = 1;
+        }else{
+            OUTPUT_FILE_ERROR("\nDecode function error: could not open encoded message file ", inputCodeFile);
+            *status = 2;
+        }
         return 0;
     }
 

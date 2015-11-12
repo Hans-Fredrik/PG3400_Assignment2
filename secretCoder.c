@@ -23,8 +23,9 @@ static void on_error_free_helper(String *pString, String *pString1, String *pStr
 
 char *encode(const char *inputMessageFile, const char *keyFile, const char *outputFile, int *status, int d){
     if(inputMessageFile == NULL || keyFile == NULL || outputFile == NULL) return NULL;
-    if(d < 0) d = 0;
 
+    *status = 0;
+    if(d < 0) d = 0;
     int memoryError = 0;
 
     String keyString = new_string(DEFAULT_SIZE, &memoryError);
@@ -53,15 +54,11 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
         return NULL;
     }
 
-
-    if(!write_to_file(outputFile, &encodedString)){
-        OUTPUT_FILE_ERROR("\nEncode function: output filename need to be atleast 1 char long, could not save to file ", outputFile);
+    if(!write_encoded_message_to_file(outputFile, &encodedString, status)){
         on_error_free_helper(&keyString, &inputString, &encodedString);
-        *status = 5;
         return  NULL;
     }
 
-    *status = 0;
     free_string_memory(&keyString);
     free_string_memory(&inputString);
 
@@ -72,28 +69,39 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
 char *decode(const char *inputCodeFile, const char *keyFile, int *status){
     if(inputCodeFile == NULL || keyFile == NULL) return NULL;
 
+    *status = 0;
     int memoryError = 0;
 
     String keyString = new_string(DEFAULT_SIZE, &memoryError);
-    read_file(keyFile, &keyString, KEY, &memoryError);
-    print_string(&keyString);
-
-
-    printf("\nEncoded messsage from file: \n");
     String encodedFileText = new_string(DEFAULT_SIZE, &memoryError);
-    read_file("encodedText.txt", &encodedFileText, NORMAL, &memoryError);
-    print_string(&encodedFileText);
-
-
-    printf("\nDecoded: \n");
     String decodedText = new_string(DEFAULT_SIZE, &memoryError);
-    decode_string(&keyString, &encodedFileText, &decodedText, &memoryError);
-    print_string(&decodedText);
+
+    if(memoryError){
+        on_error_free_helper(&keyString, &encodedFileText, &decodedText);
+        OUTPUT_ERROR("\nCould not allocate enough memory");
+        *status = 1;
+        return  NULL;
+    }
+
+    if(!read_and_parse_key_file(keyFile, &keyString, status)){
+        on_error_free_helper(&keyString, &encodedFileText, &decodedText);
+        return NULL;
+    }
+
+    if(!read_encoded_message_to_decode(inputCodeFile, &encodedFileText, status)){
+        on_error_free_helper(&keyString, &encodedFileText, &decodedText);
+        return NULL;
+    }
+
+
+    if(!decode_string(&keyString, &encodedFileText, &decodedText, &memoryError)){
+        on_error_free_helper(&keyString, &encodedFileText, &decodedText);
+        return NULL;
+    }
+
 
     free_string_memory(&keyString);
     free_string_memory(&encodedFileText);
-
-
     return decodedText.characters;
 }
 
@@ -103,17 +111,17 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
 
     int memoryError = 0;
 
-    ArrayList wordList = new_array_list(2, &memoryError);
+    ArrayList wordList = new_array_list(DEFAULT_SIZE, &memoryError);
     read_dictionary("words", &wordList, &memoryError);
 
 
-    String encodedText = new_string(2, &memoryError);
+    String encodedText = new_string(DEFAULT_SIZE, &memoryError);
     if(!read_file(inputCodeFile, &encodedText, NORMAL ,&memoryError)){
         *status = 1;
         return NULL;
     }
 
-    String keyfiles = new_string(2, &memoryError);
+    String keyfiles = new_string(DEFAULT_SIZE, &memoryError);
     if(!read_directory(keyFolder, &keyfiles, &memoryError)){
         *status = 2;
         return NULL;
@@ -124,7 +132,7 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
         return NULL;
     }
 
-    String crackedKey = new_string(2, &memoryError);
+    String crackedKey = new_string(DEFAULT_SIZE, &memoryError);
 
     if(!brute_force_right_key(&crackedKey, keyname, &encodedText, &wordList, &memoryError) || memoryError){
 
