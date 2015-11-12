@@ -98,6 +98,8 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     free_string_memory(&keyString);
     free_string_memory(&inputString);
 
+    printf("Last call");
+
     return encodedString.characters;
 }
 
@@ -132,7 +134,9 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 
 
 char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
-    int memoryError = 0; // SHOULD STAY ALL THE TIME OR MOST LIKELY OUTPUT_FILE_ERROR
+    if(inputCodeFile == NULL || keyFolder == NULL) return NULL;
+
+    int memoryError = 0;
 
     ArrayList wordList = new_array_list(2, &memoryError);
     read_dictionary("words", &wordList, &memoryError);
@@ -157,12 +161,15 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
 
     String crackedKey = new_string(2, &memoryError);
 
-    if(!brute_force_right_key(&crackedKey, keyname, &encodedText, &wordList, &memoryError)){
+    if(!brute_force_right_key(&crackedKey, keyname, &encodedText, &wordList, &memoryError) || memoryError){
 
     }
 
-    String decodedText = new_string(2, &memoryError);
-    decode_string(&crackedKey, &encodedText, &decodedText, &memoryError);
+    String keyString = new_string(DEFAULT_SIZE, &memoryError);
+    read_file(crackedKey.characters, &keyString, KEY, &memoryError);
+
+    String decodedText = new_string(DEFAULT_SIZE, &memoryError);
+    decode_string(&keyString, &encodedText, &decodedText, &memoryError);
 
     printf("Key: ");
     OUTPUT_COMPLETE(crackedKey.characters);
@@ -170,6 +177,7 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
     free_string_memory(&keyfiles);
     free_string_memory(&encodedText);
     free_string_memory(&crackedKey);
+    free_string_memory(&keyString);
     free_array_list_memory(&wordList);
 
 

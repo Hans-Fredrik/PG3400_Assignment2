@@ -6,33 +6,31 @@
 #include "../headers/string.h"
 
 
-int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList, int *mallocError){
-    printf("\nInside: brute_force_right_key");
-
+int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList, int *memoryError){
     int highestPercentage = 0;
 
     while (keyname != NULL){
 
         if(strlen(keyname) > 7){
 
-            String stringKey = new_string(2, mallocError);
+            String stringKey = new_string(2, memoryError);
 
-            if(!read_file(keyname, &stringKey, KEY, mallocError)){
+            if(!read_file(keyname, &stringKey, KEY, memoryError)){
                 free_string_memory(&stringKey);
                 return 0;
             }
 
-            String decodedText = new_string(2, mallocError);
-            decode_string(&stringKey, encodedText, &decodedText, mallocError);
+            String decodedText = new_string(2, memoryError);
+            decode_string(&stringKey, encodedText, &decodedText, memoryError);
 
 
-            int result = check_decoded_words_in_dictionary(&decodedText, wordList, mallocError);
+            int result = check_decoded_words_in_dictionary(&decodedText, wordList, memoryError);
             if(result > highestPercentage){
                 highestPercentage = result;
 
                 remove_string_content(crackedKey);
-                add_word(crackedKey, keyname, strlen(keyname), mallocError);
-                add_char(crackedKey, '\0', mallocError);
+                add_word(crackedKey, keyname, strlen(keyname), memoryError);
+                add_char(crackedKey, '\0', memoryError);
             }
 
 
