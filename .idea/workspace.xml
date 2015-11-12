@@ -13,24 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5e4593c6-6790-4ed6-b6e4-b74ee4184f47" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program" afterPath="$PROJECT_DIR$/program" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/array.c" afterPath="$PROJECT_DIR$/source/array.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/array.h" afterPath="$PROJECT_DIR$/headers/array.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/array_list.c" afterPath="$PROJECT_DIR$/source/array_list.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/array_list.h" afterPath="$PROJECT_DIR$/headers/array_list.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/crack_util.c" afterPath="$PROJECT_DIR$/source/crack_util.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/crack_util.h" afterPath="$PROJECT_DIR$/headers/crack_util.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encodedText.txt" afterPath="$PROJECT_DIR$/encodedText.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/file_reader.c" afterPath="$PROJECT_DIR$/source/file_reader.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/file_reader.h" afterPath="$PROJECT_DIR$/headers/file_reader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/map.c" afterPath="$PROJECT_DIR$/source/map.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/map.h" afterPath="$PROJECT_DIR$/headers/map.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program.c" afterPath="$PROJECT_DIR$/program.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.c" afterPath="$PROJECT_DIR$/secretCoder.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.h" afterPath="$PROJECT_DIR$/secretCoder.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/string.c" afterPath="$PROJECT_DIR$/source/string.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/string.h" afterPath="$PROJECT_DIR$/headers/string.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/string_util.c" afterPath="$PROJECT_DIR$/source/string_util.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/string_util.h" afterPath="$PROJECT_DIR$/headers/string_util.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Innlevering2.iws" />
@@ -55,8 +40,21 @@
       <file leaf-file-name="secretCoder.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/secretCoder.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5412371">
-              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.09407216">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#264#453#0" expanded="false" />
+                <element signature="e#456#3293#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="program.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/program.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -111,9 +109,9 @@
         <option value="$PROJECT_DIR$/source/file_reader.c" />
         <option value="$PROJECT_DIR$/headers/string_util.h" />
         <option value="$PROJECT_DIR$/source/string_util.c" />
-        <option value="$PROJECT_DIR$/secretCoder.c" />
         <option value="$PROJECT_DIR$/badkey" />
         <option value="$PROJECT_DIR$/program.c" />
+        <option value="$PROJECT_DIR$/secretCoder.c" />
       </list>
     </option>
   </component>
@@ -470,7 +468,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447336498184</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447355171522</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1447355171522</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -963,17 +967,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/program.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28994846">
-          <caret line="15" column="70" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/secretCoder.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5412371">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.09407216">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#264#453#0" expanded="false" />
+            <element signature="e#456#3293#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -13,10 +13,11 @@ int main(int argc, char *argv[]){
 
     int status = -1;
 
-    char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status, 100);
+    char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status, 2);
+
+    printf("\nEncodedtext: \n %s", encodedText);
 
     free(encodedText);
-
 
     printf("\n\nSTATUS IS : %d" , status);
 
