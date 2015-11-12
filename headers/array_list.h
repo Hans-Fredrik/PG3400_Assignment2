@@ -14,11 +14,11 @@ typedef struct{
     int         length;
 }ArrayList;
 
-ArrayList new_array_list(int size);
+ArrayList new_array_list(int size, int *mallocError);
 
-void add_string(ArrayList *pArray, String element);
+void add_string(ArrayList *pArray, String element, int *mallocError);
 
-void resize_array_list(ArrayList *pArray);
+void resize_array_list(ArrayList *pArray, int *mallocError);
 
 void free_array_list_memory(ArrayList *pArray);
 

@@ -12,7 +12,7 @@
 #include "../headers/array_list.h"
 #include "../headers/search_util.h"
 
-int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList);
-int check_decoded_words_in_dictionary(String *pDecoded, ArrayList *words);
+int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList, int *mallocError);
+int check_decoded_words_in_dictionary(String *pDecoded, ArrayList *words, int *mallocError);
 
 #endif //INNLEVERING2_CRACK_UTIL_H

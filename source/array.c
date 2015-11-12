@@ -9,31 +9,34 @@
 const int RESIZE_FACTOR_ARRAY = 2;
 
 
-Array new_array(int size){
+Array new_array(int size, int  *mallocError){
     Array array;
     array.numbers = malloc(size * sizeof(int));
+
+    if(array.numbers == NULL) *mallocError = 1;
+
+
     array.usedLength = 0;
     array.length = size;
     array.currentIndex = 0;
     return  array;
 }
 
-void add_int(Array *pArray, int element){
+void add_int(Array *pArray, int element, int *mallocError){
     if (pArray->usedLength == pArray->length) {
-        resize_array(pArray);
+        resize_array(pArray, mallocError);
     }
     pArray->numbers[pArray->usedLength] = element;
     pArray->usedLength++;
 }
 
-void resize_array(Array *pArray){
+void resize_array(Array *pArray, int *mallocError){
     pArray->length *= RESIZE_FACTOR_ARRAY ;
     pArray->numbers= realloc(pArray->numbers, pArray->length * sizeof(int));
 
     if(pArray->numbers== NULL){
-        printf("\nProgram couldn't reallocate more memory, freeing memory and exiting!\n");
+        *mallocError = 1;
         free_array_memory(pArray);
-        exit(0);
     }
 }
 

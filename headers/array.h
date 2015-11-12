@@ -19,11 +19,11 @@ typedef struct{
 }Array;
 
 
-Array new_array(int size);
+Array new_array(int size, int *mallocError);
 
-void add_int(Array *pArray, int element);
+void add_int(Array *pArray, int element, int *mallocError);
 
-void resize_array(Array *pArray);
+void resize_array(Array *pArray, int *mallocError);
 
 void free_array_memory(Array *pArray);
 

@@ -12,15 +12,42 @@
 
 static const int DEFAULT_SIZE = 2;
 
+void on_error_free_helper(String *pString, String *pString1, String *pString2){
+    free_string_memory(pString);
+    free_string_memory(pString1);
+    free_string_memory(pString2);
+}
 
-char *encode(const char *inputMessageFile, const char *keyFile, const char *outputFile, int *status){
+
+char *encode(const char *inputMessageFile, const char *keyFile, const char *outputFile, int *status, int d){
     if(inputMessageFile == NULL || keyFile == NULL || outputFile == NULL) return NULL;
 
-    String keyString = new_string(DEFAULT_SIZE);
-    if(!read_file(keyFile, &keyString, KEY)){
-        printf("\nEncode function error: could not open keyfile.\n");
-        free_string_memory(&keyString);
+    int memoryError = 0;
+
+    String keyString = new_string(DEFAULT_SIZE, &memoryError);
+    String inputString = new_string(DEFAULT_SIZE, &memoryError);
+    String encodedString = new_string(DEFAULT_SIZE, &memoryError);
+
+    if(memoryError){
+        on_error_free_helper(&keyString, &inputString, &encodedString);
+        OUTPUT_ERROR("\nCould not allocate enough memory");
         *status = 1;
+        return  NULL;
+    }
+
+
+
+    if(!read_file(keyFile, &keyString, KEY, &memoryError) || memoryError){
+
+        if(memoryError){
+            OUTPUT_ERROR("\nCould not allocate enough memory");
+            *status = 1;
+        }else{
+            OUTPUT_FILE_ERROR("\nEncode function error: could not open keyfile", keyFile);
+            *status = 2;
+        }
+
+        on_error_free_helper(&keyString, &inputString, &encodedString);
         return NULL;
     }
 
@@ -28,13 +55,20 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
 
 
     printf("\nMessage: \n");
-    String inputString = new_string(DEFAULT_SIZE);
-    if(!read_file(inputMessageFile, &inputString, NORMAL)){
-        printf("\nEncode function error: could not open inputMessageFile.\n");
-        free_string_memory(&inputString);
-        free_string_memory(&keyString);
-        *status = 2;
+
+    if(!read_file(inputMessageFile, &inputString, NORMAL, &memoryError) || memoryError){
+
+        if(memoryError){
+            OUTPUT_ERROR("\nCould not allocate enough memory");
+            *status = 1;
+        }else{
+            OUTPUT_FILE_ERROR("\nEncode function error: could not open inputMessageFile", inputMessageFile);
+            *status = 3;
+        }
+
+        on_error_free_helper(&keyString, &inputString, &encodedString);
         return NULL;
+
     }
 
     print_string(&inputString);
@@ -42,26 +76,35 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
 
 
     printf("\nEncoded message: \n");
-    String encodedString = new_string(DEFAULT_SIZE);
-    if(!encode_string(&keyString, &inputString,&encodedString, 1)){
-        printf("\nEncode function error: Could not encode with the keyfile. Missing characters...\n");
-        free_string_memory(&encodedString);
-        free_string_memory(&keyString);
-        free_string_memory(&inputString);
 
-        *status = 3;
+    if(!encode_string(&keyString, &inputString,&encodedString, d, &memoryError) || memoryError){
+
+        if(memoryError){
+            OUTPUT_ERROR("\nCould not allocate enough memory");
+            *status = 1;
+        }else{
+            OUTPUT_FILE_ERROR("\nEncode function error: Could not encode with the keyfile. Missing characters[a-z is must] in", keyFile);
+            *status = 4;
+        }
+
+        on_error_free_helper(&keyString, &inputString, &encodedString);
         return NULL;
     }
 
     print_string(&encodedString);
 
+    if(!write_to_file(outputFile, &encodedString)){
+        OUTPUT_FILE_ERROR("\nEncode function: output filename need to be atleast 1 char long, could not save to file ", outputFile);
+        on_error_free_helper(&keyString, &inputString, &encodedString);
+        *status = 5;
+        return  NULL;
+    }
+
+
+    *status = 0;
     free_string_memory(&keyString);
     free_string_memory(&inputString);
 
-    if(!write_to_file(outputFile, &encodedString)){
-        printf("\nEncode function: could not save to file[%s] output filename need atleast 1 to be char.\n", outputFile);
-    }
-    
     return encodedString.characters;
 }
 
@@ -69,20 +112,22 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
 char *decode(const char *inputCodeFile, const char *keyFile, int *status){
     if(inputCodeFile == NULL || keyFile == NULL) return NULL;
 
-    String keyString = new_string(DEFAULT_SIZE);
-    read_file(keyFile, &keyString, KEY);
+    int memoryError = 0;
+
+    String keyString = new_string(DEFAULT_SIZE, &memoryError);
+    read_file(keyFile, &keyString, KEY, &memoryError);
     print_string(&keyString);
 
 
     printf("\nEncoded messsage from file: \n");
-    String encodedFileText = new_string(DEFAULT_SIZE);
-    read_file("encodedText.txt", &encodedFileText, NORMAL);
+    String encodedFileText = new_string(DEFAULT_SIZE, &memoryError);
+    read_file("encodedText.txt", &encodedFileText, NORMAL, &memoryError);
     print_string(&encodedFileText);
 
 
     printf("\nDecoded: \n");
-    String decodedText = new_string(DEFAULT_SIZE);
-    decode_string(&keyString, &encodedFileText, &decodedText);
+    String decodedText = new_string(DEFAULT_SIZE, &memoryError);
+    decode_string(&keyString, &encodedFileText, &decodedText, &memoryError);
     print_string(&decodedText);
 
     free_string_memory(&keyString);
@@ -94,18 +139,20 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 
 
 char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
-    ArrayList wordList = new_array_list(2);
-    read_dictionary("words", &wordList);
+    int memoryError = 0; // SHOULD STAY ALL THE TIME OR MOST LIKELY OUTPUT_FILE_ERROR
+
+    ArrayList wordList = new_array_list(2, &memoryError);
+    read_dictionary("words", &wordList, &memoryError);
 
 
-    String encodedText = new_string(2);
-    if(!read_file(inputCodeFile, &encodedText, NORMAL)){
+    String encodedText = new_string(2, &memoryError);
+    if(!read_file(inputCodeFile, &encodedText, NORMAL ,&memoryError)){
         *status = 1;
         return NULL;
     }
 
-    String keyfiles = new_string(2);
-    if(!read_directory(keyFolder, &keyfiles)){
+    String keyfiles = new_string(2, &memoryError);
+    if(!read_directory(keyFolder, &keyfiles, &memoryError)){
         *status = 2;
         return NULL;
     }
@@ -115,17 +162,17 @@ char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
         return NULL;
     }
 
-    String crackedKey = new_string(2);
+    String crackedKey = new_string(2, &memoryError);
 
-    if(!brute_force_right_key(&crackedKey, keyname, &encodedText, &wordList)){
+    if(!brute_force_right_key(&crackedKey, keyname, &encodedText, &wordList, &memoryError)){
 
     }
 
-    String decodedText = new_string(2);
-    decode_string(&crackedKey, &encodedText, &decodedText);
+    String decodedText = new_string(2, &memoryError);
+    decode_string(&crackedKey, &encodedText, &decodedText, &memoryError);
 
     printf("Key: ");
-    COMPLETE_OUTPUT(crackedKey.characters);
+    OUTPUT_COMPLETE(crackedKey.characters);
 
     free_string_memory(&keyfiles);
     free_string_memory(&encodedText);

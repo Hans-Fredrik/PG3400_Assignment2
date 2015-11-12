@@ -23,10 +23,10 @@ typedef struct{
 
 
 
-String new_string(int startSize);
-void add_char(String *pString, char element);
-void add_word(String *pString, const char *word, size_t length);
-void resize_string(String *pString);
+String new_string(int startSize, int *mallocError);
+void add_char(String *pString, char element, int *mallocError);
+void add_word(String *pString, const char *word, size_t length, int *mallocError);
+void resize_string(String *pString, int *mallocError);
 void free_string_memory(String *pString);
 void print_string(String *pString);
 

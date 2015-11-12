@@ -15,21 +15,23 @@
 #define WHITE  "\x1B[37m"
 #define RESET "\033[0m"
 
-#define ERROR(X) printf("%s %s %s", RED, X, RESET)
-#define COMPLETE_OUTPUT(MSG) printf("%s %s %s \n", GREEN, MSG, RESET)
+#define OUTPUT_FILE_ERROR(MSG, DATA) printf("%s %s [%s] %s", RED, MSG, DATA, RESET)
+#define OUTPUT_ERROR(MSG) printf("%s %s %s", RED, MSG, RESET)
+#define OUTPUT_WARNING(MSG) printf("%s %s %s \n", GREEN, MSG, RESET)
+#define OUTPUT_COMPLETE(MSG) printf("%s %s %s \n", GREEN, MSG, RESET)
 
 #include "../headers/string.h"
 
 
 void remove_string_content(String *pString);
 
-int encode_string(String *key, String *message, String *encodedOutput, int d);
+int encode_string(String *key, String *message, String *encodedOutput, int d, int *memoryError);
 
 int get_char_position_in_map(Map *pMap, char target, int d);
 
-void add_int_as_indiviudal_chars(String *encodedOutput, int number);
+void add_int_as_indiviudal_chars(String *encodedOutput, int number, int *memoryError);
 
-void decode_string(String *key, String *message, String *decodeOutput);
+void decode_string(String *key, String *message, String *decodeOutput, int *memoryError);
 
 char get_char_at_position(String *pString, int pos);
 

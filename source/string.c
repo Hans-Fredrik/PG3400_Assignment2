@@ -7,18 +7,21 @@
 
 const int ARRAY_RESIZE_FACTOR = 2;
 
-String new_string(int startSize){
+String new_string(int startSize, int *mallocError){
     String string;
     string.characters = malloc(startSize * sizeof(char));
+
+    if(string.characters == NULL) *mallocError = 1;
+
     string.used = 0;
     string.length = startSize;
     return string;
 }
 
 
-void add_char(String *pString, char element) {
+void add_char(String *pString, char element, int *mallocError) {
     if (pString->used == pString->length) {
-        resize_string(pString);
+        resize_string(pString, mallocError);
     }
 
     pString->characters[pString->used] = element;
@@ -26,23 +29,22 @@ void add_char(String *pString, char element) {
 }
 
 
-void add_word(String *pString, const char *word, size_t length){
+void add_word(String *pString, const char *word, size_t length, int *mallocError){
     for(int i = 0; i < length; i++){
         if(word[i] != '\n'){
-            add_char(pString, word[i]);
+            add_char(pString, word[i], mallocError);
         }
     }
 }
 
 
-void resize_string(String *pString){
+void resize_string(String *pString, int *mallocError){
     pString->length *= ARRAY_RESIZE_FACTOR;
     pString->characters = realloc(pString->characters, pString->length * sizeof(char));
 
     if(pString->characters == NULL){
-        printf("\nProgram couldn't reallocate more memory, freeing memory and exiting!\n");
         free_string_memory(pString);
-        exit(0);
+        *mallocError = 1;
     }
 }
 

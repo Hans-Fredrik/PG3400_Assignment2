@@ -19,12 +19,12 @@ typedef enum {
     KEY
 } ReadFlag;
 
-int read_file(const char *fileName, String *pstring, ReadFlag readFlag);
+int read_file(const char *fileName, String *pstring, ReadFlag readFlag, int *memoryError);
 
-int read_directory(const char *dirName, String *pString);
+int read_directory(const char *dirName, String *pString, int *mallocError);
 
 int write_to_file(const char *fileName, String *pstring);
 
-int read_dictionary(const char *fileName, ArrayList *pArrayList);
+int read_dictionary(const char *fileName, ArrayList *pArrayList, int *mallocError);
 
 #endif //INNLEVERING2_FILE_READER_H

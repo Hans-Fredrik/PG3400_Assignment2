@@ -5,32 +5,36 @@
 #include "../headers/array_list.h"
 #include "../headers/string.h"
 
-ArrayList new_array_list(int size){
+ArrayList new_array_list(int size, int *mallocError){
     ArrayList arrayList;
     arrayList.strings = malloc(size * sizeof(String));
+
+    if(arrayList.strings == NULL) {
+        *mallocError = 1;
+    }
+
     arrayList.length = size;
     arrayList.usedLength = 0;
 
     return arrayList;
 }
 
-void add_string(ArrayList *pArray, String element){
+void add_string(ArrayList *pArray, String element, int *mallocError){
     if(pArray->usedLength == pArray->length){
-        resize_array_list(pArray);
+        resize_array_list(pArray, mallocError);
     }
 
     pArray->strings[pArray->usedLength] = element;
     pArray->usedLength++;
 }
 
-void resize_array_list(ArrayList *pArray){
+void resize_array_list(ArrayList *pArray, int *mallocError){
     pArray->length *= 2 ;
     pArray->strings = realloc(pArray->strings, pArray->length * sizeof(String));
 
     if(pArray->strings == NULL){
-        printf("\nFROM ARRAYLIST: Program couldn't reallocate more memory, freeing memory and exiting!\n");
+        *mallocError = 1;
         free_array_list_memory(pArray);
-        exit(0);
     }
 }
 

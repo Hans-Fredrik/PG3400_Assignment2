@@ -25,11 +25,16 @@ typedef struct{
 }Map;
 
 
-Map new_map(int size);
-void put(Map *pMap, Item item);
-void add_int_on_key(Map *pMap, char key, int number);
+Map new_map(int size, int *mallocError);
+
+void put(Map *pMap, Item item, int *mallocError);
+
+void add_int_on_key(Map *pMap, char key, int number, int *mallocError);
+
 int get_index_for_key(Map *pMap, char key);
-void resize_map(Map *pMap);
+
+void resize_map(Map *pMap, int *mallocError);
+
 void free_map_memory(Map *pMap);
 
 #endif //INNLEVERING2_MAP_H

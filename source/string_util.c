@@ -14,10 +14,10 @@ void remove_string_content(String *pString){
 }
 
 
-void add_int_as_indiviudal_chars(String *encodedOutput, int number){
+void add_int_as_indiviudal_chars(String *encodedOutput, int number, int *memoryError){
 
     if(number == 0) {
-        add_char(encodedOutput, '0');
+        add_char(encodedOutput, '0', memoryError);
     }else{
         const int length = (int)log10(number)+1;
 
@@ -26,22 +26,22 @@ void add_int_as_indiviudal_chars(String *encodedOutput, int number){
         sprintf(buffer, "%d", number);
 
         for(int i = 0; i < length ; i++){
-            add_char(encodedOutput, buffer[i]);
+            add_char(encodedOutput, buffer[i], memoryError);
         }
     }
 }
 
 
-Map create_char_index_map(String *key){
-    Map map = new_map(2);
+Map create_char_index_map(String *key, int *malloc_error){
+    Map map = new_map(2 ,malloc_error);
 
     for(char i = 'a'; i <= 'z'; i++){
-        const Item charItem = {.key = i, .value = new_array(2), .isUsed = 0};
-        put(&map, charItem);
+        const Item charItem = {.key = i, .value = new_array(2, malloc_error), .isUsed = 0};
+        put(&map, charItem, malloc_error);
     }
 
     for(int i = 0; i < key->used; i++){
-        add_int_on_key(&map, key->characters[i], i);
+        add_int_on_key(&map, key->characters[i], i, malloc_error);
     }
 
     return map;
@@ -93,10 +93,11 @@ int get_char_position_in_map(Map *pMap, char target, int d){
 }
 
 
-int encode_string(String *key, String *message, String *encodedOutput, int d){
-    Map indexMap = create_char_index_map(key);
+int encode_string(String *key, String *message, String *encodedOutput, int d , int *memoryError){
 
-    if(!check_map_for_a_z(&indexMap)){
+    Map indexMap = create_char_index_map(key, memoryError);
+
+    if(!check_map_for_a_z(&indexMap) || *memoryError){
         free_map_memory(&indexMap);
         return 0;
     }
@@ -105,25 +106,27 @@ int encode_string(String *key, String *message, String *encodedOutput, int d){
     for(int i = 0; i < message->used; i++){
 
         if(char_lower(message->characters[i]) || char_upper(message->characters[i])){
-            add_char(encodedOutput, '[');
+            add_char(encodedOutput, '[', memoryError);
 
             if(char_upper(message->characters[i])){
-                add_char(encodedOutput, '-');
+                add_char(encodedOutput, '-', memoryError);
             }
 
             int pos = get_char_position_in_map(&indexMap, tolower(message->characters[i]), d);
 
 
-            add_int_as_indiviudal_chars(encodedOutput, pos);
+            add_int_as_indiviudal_chars(encodedOutput, pos, memoryError);
 
-            add_char(encodedOutput, ']');
+            add_char(encodedOutput, ']' ,memoryError);
         }else{
-            add_char(encodedOutput, message->characters[i]);
+            add_char(encodedOutput, message->characters[i], memoryError);
         }
     }
 
-    add_char(encodedOutput, '\0');
+    add_char(encodedOutput, '\0', memoryError);
     free_map_memory(&indexMap);
+
+
     return 1;
 }
 
@@ -151,35 +154,35 @@ char get_char_at_position(String *pString, int pos){
 }
 
 
-void decode_string(String *key, String *message, String *decodeOutput){
+void decode_string(String *key, String *message, String *decodeOutput, int *memoryError){
 
     for(int i = 0; i < message->used; i++){
 
         if(message->characters[i] == '['){
-            String numberBasedOnChar = new_string(2);
+            String numberBasedOnChar = new_string(2, memoryError);
 
             i++;
             while(i < message->used && message->characters[i] != ']'){
-                add_char(&numberBasedOnChar, message->characters[i]);
+                add_char(&numberBasedOnChar, message->characters[i], memoryError);
                 i++;
             }
 
-            add_char(&numberBasedOnChar, '\0');
+            add_char(&numberBasedOnChar, '\0', memoryError);
 
             int number;
             sscanf(numberBasedOnChar.characters, "%d", &number);
 
 
             if(number < 0){
-                add_char(decodeOutput, (char)toupper(get_char_at_position(key, abs(number))));
+                add_char(decodeOutput, (char)toupper(get_char_at_position(key, abs(number))), memoryError);
 
             }else{
-                add_char(decodeOutput, get_char_at_position(key, number));
+                add_char(decodeOutput, get_char_at_position(key, number), memoryError);
             }
 
             free_string_memory(&numberBasedOnChar);
         }else{
-            add_char(decodeOutput, message->characters[i]);
+            add_char(decodeOutput, message->characters[i], memoryError);
         }
     }
 }
