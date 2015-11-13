@@ -21,11 +21,14 @@ ArrayList new_array_list(int size, int *mallocError){
 
 void add_string(ArrayList *pArray, String element, int *mallocError){
     if(pArray->usedLength == pArray->length){
+        if(!*mallocError) 
         resize_array_list(pArray, mallocError);
     }
 
-    pArray->strings[pArray->usedLength] = element;
-    pArray->usedLength++;
+    if(!*mallocError){
+        pArray->strings[pArray->usedLength] = element;
+        pArray->usedLength++;
+    }
 }
 
 void resize_array_list(ArrayList *pArray, int *mallocError){
@@ -34,7 +37,6 @@ void resize_array_list(ArrayList *pArray, int *mallocError){
 
     if(pArray->strings == NULL){
         *mallocError = 1;
-        free_array_list_memory(pArray);
     }
 }
 

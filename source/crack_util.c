@@ -4,7 +4,7 @@
 
 #include "../headers/crack_util.h"
 #include "../headers/string.h"
-#include "../headers/encode_decode_util.h"
+#include "../headers/exception_handler.h"
 
 
 int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList, int *memoryError){

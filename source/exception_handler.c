@@ -2,7 +2,7 @@
 // Created by Hans Fredrik Brastad on 12/11/15.
 //
 
-#include "../headers/encode_decode_util.h"
+#include "../headers/exception_handler.h"
 #include "../headers/crack_util.h"
 
 int read_and_parse_key_file(const char *keyFile, String *keyString, int *status){

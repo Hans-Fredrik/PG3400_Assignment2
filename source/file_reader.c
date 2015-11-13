@@ -20,6 +20,11 @@ int read_file(const char *fileName, String *pstring, ReadFlag readFlag, int *mem
         }else if(readFlag == NORMAL){
             add_char(pstring, readChar, memoryError);
         }
+
+        if(*memoryError){
+            fclose(file);
+            return 0;
+        }
     }
 
     fclose (file);
@@ -27,7 +32,7 @@ int read_file(const char *fileName, String *pstring, ReadFlag readFlag, int *mem
 }
 
 
-int read_directory(const char *dirName, String *pString, int *mallocError){
+int read_directory(const char *dirName, String *pString, int *memoryError){
     DIR *dir;
 
     dir = opendir(dirName);
@@ -36,7 +41,7 @@ int read_directory(const char *dirName, String *pString, int *mallocError){
         return 0;
     }
 
-    while (1) {
+    while (!*memoryError) {
         struct dirent * entry;
 
         entry = readdir (dir);
@@ -44,19 +49,23 @@ int read_directory(const char *dirName, String *pString, int *mallocError){
             break;
         }
 
-        add_word(pString, dirName, strlen(dirName), mallocError);
-        add_word(pString, entry->d_name, strlen(entry->d_name), mallocError);
-        add_char(pString, '\n', mallocError);
+        add_word(pString, dirName, strlen(dirName), memoryError);
+        add_word(pString, entry->d_name, strlen(entry->d_name), memoryError);
+        add_char(pString, '\n', memoryError);
     }
+    add_char(pString, '\0', memoryError);
 
-    add_char(pString, '\0', mallocError);
+    if(*memoryError){
+        closedir(dir);
+        return 0;
+    }
 
     closedir(dir);
     return 1;
 }
 
 
-int read_dictionary(const char *fileName, ArrayList *pArrayList, int *mallocError){
+int read_dictionary(const char *fileName, ArrayList *pArrayList, int *memoryError){
     FILE* file = fopen (fileName, "r");
 
     if(file == NULL) return 0;
@@ -64,12 +73,16 @@ int read_dictionary(const char *fileName, ArrayList *pArrayList, int *mallocErro
     char read[100];
 
     while(fgets(read, 100, file) != NULL){
-        String word = new_string(2, mallocError);
+        String word = new_string(2, memoryError);
 
-        add_word(&word, read, strlen(read), mallocError);
-        add_char(&word, '\0', mallocError);
+        add_word(&word, read, strlen(read), memoryError);
+        add_char(&word, '\0', memoryError);
+        add_string(pArrayList, word, memoryError);
 
-        add_string(pArrayList, word, mallocError);
+        if(*memoryError){
+            fclose (file);
+            return 0;
+        }
     }
 
     fclose (file);

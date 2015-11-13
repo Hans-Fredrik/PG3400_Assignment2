@@ -21,10 +21,10 @@ typedef enum {
 
 int read_file(const char *fileName, String *pstring, ReadFlag readFlag, int *memoryError);
 
-int read_directory(const char *dirName, String *pString, int *mallocError);
+int read_directory(const char *dirName, String *pString, int *memoryError);
 
 int write_to_file(const char *fileName, String *pstring);
 
-int read_dictionary(const char *fileName, ArrayList *pArrayList, int *mallocError);
+int read_dictionary(const char *fileName, ArrayList *pArrayList, int *memoryError);
 
 #endif //INNLEVERING2_FILE_READER_H

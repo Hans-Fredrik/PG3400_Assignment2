@@ -18,10 +18,14 @@ Map new_map(int size, int *mallocError){
 
 void put(Map *pMap, Item item, int *mallocError){
     if (pMap->used == pMap->length) {
+        if(!*mallocError)
         resize_map(pMap, mallocError);
     }
-    pMap->items[pMap->used] = item;
-    pMap->used++;
+
+    if(!*mallocError){
+        pMap->items[pMap->used] = item;
+        pMap->used++;
+    }
 }
 
 
@@ -38,6 +42,7 @@ int get_index_for_key(Map *pMap, char key){
 void add_int_on_key(Map *pMap, char key, int number, int *mallocError){
     for(int i = 0; i < pMap->used; i++){
         if(pMap->items[i].key == key){
+            if(*mallocError) break;
             add_int(&pMap->items[i].value, number, mallocError);
         }
     }
@@ -49,7 +54,6 @@ void resize_map(Map *pMap, int *mallocError){
 
     if(pMap->items == NULL){
         *mallocError = 1;
-        free_map_memory(pMap);
     }
 }
 

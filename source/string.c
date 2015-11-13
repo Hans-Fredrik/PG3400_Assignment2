@@ -21,17 +21,21 @@ String new_string(int startSize, int *mallocError){
 
 void add_char(String *pString, char element, int *mallocError) {
     if (pString->used == pString->length) {
+        if(!*mallocError)
         resize_string(pString, mallocError);
     }
 
-    pString->characters[pString->used] = element;
-    pString->used++;
+    if(!*mallocError){
+        pString->characters[pString->used] = element;
+        pString->used++;
+    }
 }
 
 
 void add_word(String *pString, const char *word, size_t length, int *mallocError){
     for(int i = 0; i < length; i++){
         if(word[i] != '\n'){
+            if(*mallocError) break;
             add_char(pString, word[i], mallocError);
         }
     }
@@ -42,8 +46,9 @@ void resize_string(String *pString, int *mallocError){
     pString->length *= ARRAY_RESIZE_FACTOR;
     pString->characters = realloc(pString->characters, pString->length * sizeof(char));
 
+
     if(pString->characters == NULL){
-        free_string_memory(pString);
+        // This implementation need to throw the error up, because of the exception handler. So no freeing at this level.
         *mallocError = 1;
     }
 }
@@ -57,8 +62,3 @@ void free_string_memory(String *pString) {
 }
 
 
-void print_string(String *pString){
-    for(int i = 0; i < pString->used; i++){
-        printf("%c", pString->characters[i]);
-    }
-}

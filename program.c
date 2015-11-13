@@ -11,9 +11,10 @@ int main(int argc, char *argv[]){
 
     // Tester ut de Ordentlige secretCoder funksjonene..
 
+
+
+
     int status = -1;
-
-
 
     char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status, 2);
 
@@ -29,10 +30,10 @@ int main(int argc, char *argv[]){
     free(decodedText);
 
 
-
     char * decodedText2 = crack("encodedText.txt", "data/", "words", &status);
     printf("\nCracked decoedText2: \n%s", decodedText2);
     free(decodedText2);
+
 
 
     return 0;

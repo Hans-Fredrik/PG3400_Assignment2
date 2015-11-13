@@ -15,7 +15,6 @@ Array new_array(int size, int  *mallocError){
 
     if(array.numbers == NULL) *mallocError = 1;
 
-
     array.usedLength = 0;
     array.length = size;
     array.currentIndex = 0;
@@ -24,10 +23,13 @@ Array new_array(int size, int  *mallocError){
 
 void add_int(Array *pArray, int element, int *mallocError){
     if (pArray->usedLength == pArray->length) {
+        if(!*mallocError)
         resize_array(pArray, mallocError);
     }
-    pArray->numbers[pArray->usedLength] = element;
-    pArray->usedLength++;
+    if(!*mallocError){
+        pArray->numbers[pArray->usedLength] = element;
+        pArray->usedLength++;
+    }
 }
 
 void resize_array(Array *pArray, int *mallocError){
@@ -36,7 +38,6 @@ void resize_array(Array *pArray, int *mallocError){
 
     if(pArray->numbers== NULL){
         *mallocError = 1;
-        free_array_memory(pArray);
     }
 }
 

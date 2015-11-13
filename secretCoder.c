@@ -7,8 +7,7 @@
 #include "headers/string.h"
 #include "headers/file_reader.h"
 #include "headers/string_util.h"
-#include "headers/crack_util.h"
-#include "headers/encode_decode_util.h"
+#include "headers/exception_handler.h"
 
 
 static const int DEFAULT_SIZE = 2;
