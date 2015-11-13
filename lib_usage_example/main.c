@@ -10,14 +10,14 @@ int main(int argc, char *argv[]){
 
     int status = 99;
 
-    char *encodedText = encode("inputMessage.txt", "../keys/sweetChildGR.txt", "encodedText.txt", &status, 2);
+    char *encodedText = encode("inputMessage.txt", "keys/sweetChildGR.txt", "encodedText.txt", &status, 2);
 
     printf("EncodedMessage: %s\n", encodedText);
 
     free(encodedText);
 
 
-    char *decodedText = decode("encodedText.txt", "../keys/sweetChildGR.txt", &status);
+    char *decodedText = decode("encodedText.txt", "keys/sweetChildGR.txt", &status);
 
     printf("\nDecoedMessage: %s\n", decodedText);
 
