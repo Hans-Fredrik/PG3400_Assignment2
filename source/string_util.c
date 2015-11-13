@@ -121,11 +121,14 @@ int encode_string(String *key, String *message, String *encodedOutput, int d , i
         }else{
             add_char(encodedOutput, message->characters[i], memoryError);
         }
+
+        if(*memoryError) break;
     }
 
     add_char(encodedOutput, '\0', memoryError);
     free_map_memory(&indexMap);
 
+    if(*memoryError) return 0;
 
     return 1;
 }
@@ -157,14 +160,22 @@ char get_char_at_position(String *pString, int pos){
 int decode_string(String *key, String *message, String *decodeOutput, int *memoryError){
 
     for(int i = 0; i < message->used; i++){
-
         if(message->characters[i] == '['){
             String numberBasedOnChar = new_string(2, memoryError);
+            if(*memoryError) {
+                free_string_memory(&numberBasedOnChar);
+                return 0;
+            }
 
             i++;
             while(i < message->used && message->characters[i] != ']'){
                 add_char(&numberBasedOnChar, message->characters[i], memoryError);
                 i++;
+
+                if(*memoryError){
+                    free_string_memory(&numberBasedOnChar);
+                    return 0;
+                }
             }
 
             add_char(&numberBasedOnChar, '\0', memoryError);
@@ -185,6 +196,8 @@ int decode_string(String *key, String *message, String *decodeOutput, int *memor
         }else{
             add_char(decodeOutput, message->characters[i], memoryError);
         }
+
+        if(*memoryError) return 0;
     }
 
     return 1;
@@ -207,6 +220,7 @@ int verify_adjacent_code(Item *item, int d){
     if(item->value.usedLength == 1){
         printf("\nEncode function (Warning): "
                        "Only 1 index[%d] on key [%c] in keystring not possible to satifsy d = %d\n " ,item->value.numbers[0],item->key, d);
+
         return 0;
     }
 

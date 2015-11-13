@@ -34,4 +34,5 @@ int read_key_names_from_directory(const char *keyFolder, String *keyfiles, int *
 
 int brute_force_for_the_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList, int *status);
 
+
 #endif //INNLEVERING2_ENCODE_DECODE_UTIL_H

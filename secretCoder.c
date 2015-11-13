@@ -64,7 +64,12 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
     return encodedString.characters;
 }
 
-
+/*
+ * 1 -> means memory issue (Most likely not going to happen but can)
+ * 2 -> Could nopen open and read keyfile
+ * 3 -> Could not open and read encoded message file
+ * 1 -> memory error again.
+ */
 char *decode(const char *inputCodeFile, const char *keyFile, int *status){
     if(inputCodeFile == NULL || keyFile == NULL) return NULL;
 
@@ -130,6 +135,7 @@ char *crack(const char *inputCodeFile, const char *keyFolder, const char *dictio
         return NULL;
     }
 
+
     if(!read_dictionary_to_array_list(dictionaryFile, &wordList, status)){
         on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
         return NULL;
@@ -154,6 +160,7 @@ char *crack(const char *inputCodeFile, const char *keyFolder, const char *dictio
         on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
         return NULL;
     }
+
 
     if(!brute_force_for_the_right_key(&crackedKey, keyname, &encodedText, &wordList, status)){
         on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);

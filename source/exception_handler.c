@@ -95,7 +95,7 @@ int read_encoded_message_to_decode(const char *inputCodeFile, String *encodedFil
             *status = 1;
         }else{
             OUTPUT_FILE_ERROR("\nDecode function error: could not open encoded message file ", inputCodeFile);
-            *status = 6;
+            *status = 3;
         }
         return 0;
     }
