@@ -4,6 +4,7 @@
 
 #include "../headers/string_util.h"
 #include "../headers/string.h"
+#include "../headers/map.h"
 
 
 void remove_string_content(String *pString){
@@ -56,7 +57,7 @@ int get_char_position_in_map(Map *pMap, char target, int d){
 
 
     if(pMap->items[keyIndex].isUsed){
-        verify_adjacent_code(&pMap->items[keyIndex], d);
+        verify_adjacent_code(&pMap->items[keyIndex], d, 0);
     }else{
         pMap->items[keyIndex].isUsed = 1;
     }
@@ -100,6 +101,26 @@ int encode_string(String *key, String *message, String *encodedOutput, int d , i
     if(!check_map_for_a_z(&indexMap) || *memoryError){
         free_map_memory(&indexMap);
         return 0;
+    }
+
+    // The basecheck is based on a atleast 75 % satisfaction.. Else there will be no encoding.
+    int notSatisfyingD = 0;
+    for(int i = 0; i < indexMap.used; i++){
+        if(!verify_adjacent_code(&indexMap.items[i], d, 1)){
+            notSatisfyingD++;
+        }
+    }
+
+    int percentage = (notSatisfyingD*100)/indexMap.used;
+    if(100 - percentage < 80){
+        OUTPUT_D_ERROR("\nPercentage match with current d only: ", (100-percentage));
+        OUTPUT_ERROR("%\n");
+        free_map_memory(&indexMap);
+        return 3;
+    }
+
+    if(100 - percentage != 100){
+        OUTPUT_D_COMPLETE("\nPercentage match with current d is: ", 100-percentage);
     }
 
 
@@ -214,15 +235,8 @@ int check_map_for_a_z(Map *map){
 }
 
 
-int verify_adjacent_code(Item *item, int d){
+int verify_adjacent_code(Item *item, int d, int silent){
     if(d == 0) return 1;
-
-    if(item->value.usedLength == 1){
-        printf("\nEncode function (Warning): "
-                       "Only 1 index[%d] on key [%c] in keystring not possible to satifsy d = %d\n " ,item->value.numbers[0],item->key, d);
-
-        return 0;
-    }
 
     int lowestNumber = item->value.numbers[0];
     int numbersOfIndexesFullFillD = 0;
@@ -240,8 +254,13 @@ int verify_adjacent_code(Item *item, int d){
     }
 
     if(numbersOfIndexesFullFillD < 2){
-        printf("\nEncode function (Warning): Did not satisfy [%d] units between indexes on char [%c] in key. Number of indexes: %d\n"
-                ,d, item->key, item->value.usedLength);
+        if(!silent){
+            OUTPUT_WARNING("\nEncode function (Warning): ");
+            printf("Did not satisfy [%d] units between indexes on char [%c] in key. Number of indexes: %d\n"
+                    ,d, item->key, item->value.usedLength);
+
+        }
+        return 0;
     }
 
     return 1;

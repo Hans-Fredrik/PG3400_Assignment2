@@ -12,8 +12,10 @@
 
 #define OUTPUT_FILE_ERROR(MSG, DATA) printf("%s %s [%s] %s", RED, MSG, DATA, RESET)
 #define OUTPUT_ERROR(MSG) printf("%s %s %s", RED, MSG, RESET)
-#define OUTPUT_WARNING(MSG) printf("%s %s %s \n", YELLOW, MSG, RESET)
+#define OUTPUT_D_ERROR(MSG, DATA) printf("%s %s [%d] %s", RED, MSG, DATA, RESET)
+#define OUTPUT_WARNING(MSG) printf("%s %s %s", YELLOW, MSG, RESET)
 #define OUTPUT_COMPLETE(MSG, DATA) printf("%s %s %s %s \n", GREEN, MSG, DATA, RESET)
+#define OUTPUT_D_COMPLETE(MSG, DATA) printf("%s %s %d %s", GREEN, MSG, DATA, RESET)
 
 #include "../headers/string.h"
 
@@ -30,7 +32,7 @@ int decode_string(String *key, String *message, String *decodeOutput, int *memor
 
 char get_char_at_position(String *pString, int pos);
 
-int verify_adjacent_code(Item *item, int d);
+int verify_adjacent_code(Item *item, int d, int silent);
 
 int char_lower(char chr);
 

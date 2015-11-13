@@ -106,6 +106,12 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
 
     free_string_memory(&keyString);
     free_string_memory(&encodedFileText);
+
+    if(decodedText.used == 0){
+        free_string_memory(&decodedText);
+        return  NULL;
+    }
+
     return decodedText.characters;
 }
 

@@ -29,7 +29,6 @@ int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText
                 return 0;
             }
 
-
             int result = check_decoded_words_in_dictionary(&decodedText, wordList, memoryError);
 
             if(result > highestPercentage){
@@ -73,6 +72,7 @@ int check_decoded_words_in_dictionary(String *pDecoded, ArrayList *words, int *m
             add_char(&word, tolower(pDecoded->characters[i]), memoryError);
             i++;
         }
+        if(*memoryError) break;
 
         if(word.used > 0){
             add_char(&word, '\0', memoryError);

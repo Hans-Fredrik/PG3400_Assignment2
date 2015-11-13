@@ -9,6 +9,7 @@ const int ARRAY_RESIZE_FACTOR = 2;
 
 String new_string(int startSize, int *mallocError){
     String string;
+
     string.characters = malloc(startSize * sizeof(char));
 
     if(string.characters == NULL) *mallocError = 1;

@@ -51,15 +51,18 @@ int encode_the_message_with_key(String *keyString, String *inputString, String *
 
     int encodeMessageWithKeyResult = encode_string(keyString, inputString,encodedString, d, &memoryError);
 
-    if(!encodeMessageWithKeyResult || memoryError){
+    if(encodeMessageWithKeyResult != 1 || memoryError){
         if(memoryError){
             OUTPUT_ERROR("\nCould not allocate enough memory");
             *status = 1;
-        }else{
+        }else if(encodeMessageWithKeyResult == 3){
+            OUTPUT_D_ERROR("\nAborting encoding, could not satifsy d", d);
+            *status = 4;
+        }
+        else {
             OUTPUT_FILE_ERROR("\nEncode function error: Could not encode with the keyfile. Missing characters[a-z is must] in", keyFile);
             *status = 4;
         }
-
         return 0;
     }
 
@@ -73,7 +76,7 @@ int write_encoded_message_to_file(const char *outputFile, String *encodedString,
 
     if(!writeEncodedMessageResult){
         OUTPUT_FILE_ERROR("\nEncode function: output filename need to be atleast 1 char long, could not save to file ", outputFile);
-        *status = 5;
+        *status = 6;
         return  0;
     }
 
