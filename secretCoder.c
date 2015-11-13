@@ -105,53 +105,89 @@ char *decode(const char *inputCodeFile, const char *keyFile, int *status){
     return decodedText.characters;
 }
 
+static void on_error_decode_helper(String *pS1, String *pS2, String *pS3, ArrayList *pArrayList){
+    free_string_memory(pS1);
+    free_string_memory(pS2);
+    free_string_memory(pS3);
+    free_array_list_memory(pArrayList);
 
-char *crack(const char *inputCodeFile, const char *keyFolder, int *status){
+}
+
+char *crack(const char *inputCodeFile, const char *keyFolder, const char *dictionaryFile, int *status){
     if(inputCodeFile == NULL || keyFolder == NULL) return NULL;
 
+    *status = 0;
     int memoryError = 0;
 
     ArrayList wordList = new_array_list(DEFAULT_SIZE, &memoryError);
-    read_dictionary("words", &wordList, &memoryError);
-
-
     String encodedText = new_string(DEFAULT_SIZE, &memoryError);
-    if(!read_file(inputCodeFile, &encodedText, NORMAL ,&memoryError)){
+    String keyfiles = new_string(DEFAULT_SIZE, &memoryError);
+    String crackedKey = new_string(DEFAULT_SIZE, &memoryError);
+
+    if(memoryError){
+        OUTPUT_ERROR("\nCould not allocate enough memory");
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
         *status = 1;
         return NULL;
     }
 
-    String keyfiles = new_string(DEFAULT_SIZE, &memoryError);
-    if(!read_directory(keyFolder, &keyfiles, &memoryError)){
-        *status = 2;
+    if(!read_dictionary_to_array_list(dictionaryFile, &wordList, status)){
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
         return NULL;
     }
+
+
+    if(!read_encoded_message_to_decode(inputCodeFile, &encodedText, status)){
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
+        return NULL;
+    }
+
+
+    if(!read_key_names_from_directory(keyFolder, &keyfiles, &memoryError)){
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
+        return NULL;
+    }
+
 
     char *keyname = strtok(keyfiles.characters, "\n");
     if(keyname == NULL) {
+        OUTPUT_ERROR("\nCrack function [Keyname splitting]: Could not get first keyfile from string.");
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
         return NULL;
     }
 
-    String crackedKey = new_string(DEFAULT_SIZE, &memoryError);
-
-    if(!brute_force_right_key(&crackedKey, keyname, &encodedText, &wordList, &memoryError) || memoryError){
-
+    if(!brute_force_for_the_right_key(&crackedKey, keyname, &encodedText, &wordList, status)){
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
+        return NULL;
     }
 
+
+
     String keyString = new_string(DEFAULT_SIZE, &memoryError);
-    read_file(crackedKey.characters, &keyString, KEY, &memoryError);
+    if(!read_and_parse_key_file(crackedKey.characters, &keyString, status)){
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
+        free_string_memory(&keyString);
+        return NULL;
+    }
+
+
 
     String decodedText = new_string(DEFAULT_SIZE, &memoryError);
-    decode_string(&keyString, &encodedText, &decodedText, &memoryError);
+    if(!decode_string(&keyString, &encodedText, &decodedText, &memoryError)){
+        on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
+        free_string_memory(&keyString);
+        free_string_memory(&decodedText);
+        return NULL;
+    }
 
-    printf("Key: ");
-    OUTPUT_COMPLETE(crackedKey.characters);
+
+    OUTPUT_COMPLETE("Key:",crackedKey.characters);
 
     free_string_memory(&keyfiles);
-    free_string_memory(&encodedText);
     free_string_memory(&crackedKey);
-    free_string_memory(&keyString);
     free_array_list_memory(&wordList);
+    free_string_memory(&encodedText);
+    free_string_memory(&keyString);
 
 
     return  decodedText.characters;

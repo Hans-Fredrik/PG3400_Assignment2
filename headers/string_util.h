@@ -5,20 +5,15 @@
 #ifndef INNLEVERING2_STRING_UTIL_H
 #define INNLEVERING2_STRING_UTIL_H
 
-#define KNRM  "\x1B[0m"
 #define RED  "\x1B[31m"
 #define GREEN  "\x1B[32m"
 #define YELLOW  "\x1B[33m"
-#define BLUE  "\x1B[34m"
-#define MAGENTA  "\x1B[35m"
-#define CYAN  "\x1B[36m"
-#define WHITE  "\x1B[37m"
 #define RESET "\033[0m"
 
 #define OUTPUT_FILE_ERROR(MSG, DATA) printf("%s %s [%s] %s", RED, MSG, DATA, RESET)
 #define OUTPUT_ERROR(MSG) printf("%s %s %s", RED, MSG, RESET)
-#define OUTPUT_WARNING(MSG) printf("%s %s %s \n", GREEN, MSG, RESET)
-#define OUTPUT_COMPLETE(MSG) printf("%s %s %s \n", GREEN, MSG, RESET)
+#define OUTPUT_WARNING(MSG) printf("%s %s %s \n", YELLOW, MSG, RESET)
+#define OUTPUT_COMPLETE(MSG, DATA) printf("%s %s %s %s \n", GREEN, MSG, DATA, RESET)
 
 #include "../headers/string.h"
 

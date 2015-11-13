@@ -13,6 +13,6 @@
 #include "../headers/search_util.h"
 
 int brute_force_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList, int *memoryError);
-int check_decoded_words_in_dictionary(String *pDecoded, ArrayList *words, int *mallocError);
+int check_decoded_words_in_dictionary(String *pDecoded, ArrayList *words, int *memoryError);
 
 #endif //INNLEVERING2_CRACK_UTIL_H

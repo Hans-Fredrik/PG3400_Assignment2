@@ -3,6 +3,7 @@
 //
 
 #include "../headers/encode_decode_util.h"
+#include "../headers/crack_util.h"
 
 int read_and_parse_key_file(const char *keyFile, String *keyString, int *status){
     int memoryError = 0;
@@ -94,8 +95,69 @@ int read_encoded_message_to_decode(const char *inputCodeFile, String *encodedFil
             *status = 1;
         }else{
             OUTPUT_FILE_ERROR("\nDecode function error: could not open encoded message file ", inputCodeFile);
-            *status = 2;
+            *status = 6;
         }
+        return 0;
+    }
+
+    return 1;
+}
+
+int read_dictionary_to_array_list(const char *dictionaryFile, ArrayList *wordList, int *status){
+    int memoryError = 0;
+
+    int readDictionaryStatus = read_dictionary(dictionaryFile, wordList, &memoryError);
+    if(!readDictionaryStatus || memoryError){
+        if(memoryError){
+            OUTPUT_ERROR("\nCould not allocate enough memory");
+            *status = 1;
+        }else{
+            OUTPUT_FILE_ERROR("\nCrack function error: could not open and read file", dictionaryFile);
+            *status = 7;
+        }
+
+        return 0;
+    }
+
+    return 1;
+}
+
+
+int read_key_names_from_directory(const char *keyFolder, String *keyfiles, int *status){
+    int memoryError = 0;
+
+    int readKeysInDirectoryResult = read_directory(keyFolder, keyfiles, &memoryError);
+
+    if(!readKeysInDirectoryResult || memoryError){
+        if(memoryError){
+            OUTPUT_ERROR("\nCould not allocate enough memory");
+            *status = 1;
+        }else{
+            OUTPUT_FILE_ERROR("\nCrack function error: could not open and read file(directory)", keyFolder);
+            *status = 8;
+        }
+
+        return 0;
+    }
+
+    return 1;
+}
+
+
+int brute_force_for_the_right_key(String *crackedKey, char *keyname, String *encodedText, ArrayList *wordList, int *status){
+    int memoryError = 0;
+
+    int bruteForceRightKeyResult = brute_force_right_key(crackedKey, keyname, encodedText, wordList, &memoryError);
+
+    if(!bruteForceRightKeyResult || memoryError){
+        if(memoryError){
+            OUTPUT_ERROR("\nCould not allocate enough memory");
+            *status = 1;
+        }else{
+            OUTPUT_FILE_ERROR("\nBrute force function error: Could not get any matches!", keyname);
+            *status = 9;
+        }
+
         return 0;
     }
 

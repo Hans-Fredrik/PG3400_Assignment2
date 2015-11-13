@@ -33,7 +33,6 @@ int read_directory(const char *dirName, String *pString, int *mallocError){
     dir = opendir(dirName);
 
     if(dir == NULL){
-        printf("Could not open the directory");
         return 0;
     }
 
