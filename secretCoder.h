@@ -22,7 +22,6 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
  * 1 -> means memory issue (Most likely not going to happen but can)
  * 2 -> Could nopen open and read keyfile
  * 3 -> Could not open and read encoded message file
- * 1 -> memory error again.
  */
 
 char *decode(const char *inputCodeFile, const char *keyFile, int *status);

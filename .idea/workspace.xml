@@ -12,10 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e4593c6-6790-4ed6-b6e4-b74ee4184f47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encodedText.txt" afterPath="$PROJECT_DIR$/encodedText.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.c" afterPath="$PROJECT_DIR$/secretCoder.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.h" afterPath="$PROJECT_DIR$/secretCoder.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_test.c" afterPath="$PROJECT_DIR$/unit_test.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Innlevering2.iws" />
@@ -37,47 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="unit_test.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/unit_test.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8363402">
-              <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="secretCoder.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/secretCoder.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="203" column="68" selection-start-line="203" selection-start-column="68" selection-end-line="203" selection-end-column="68" />
-              <folding>
-                <element signature="e#463#2150#0" expanded="false" />
-                <element signature="e#2152#3688#0" expanded="false" />
-                <element signature="e#3690#3917#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exception_handler.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/exception_handler.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="23" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="23" />
-              <folding>
-                <element signature="e#55#96#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="secretCoder.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="secretCoder.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/secretCoder.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="37" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.44458762">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -139,9 +100,9 @@
         <option value="$PROJECT_DIR$/source/file_reader.c" />
         <option value="$PROJECT_DIR$/source/exception_handler.c" />
         <option value="$PROJECT_DIR$/lib_usage_example/main.c" />
-        <option value="$PROJECT_DIR$/secretCoder.h" />
         <option value="$PROJECT_DIR$/secretCoder.c" />
         <option value="$PROJECT_DIR$/unit_test.c" />
+        <option value="$PROJECT_DIR$/secretCoder.h" />
       </list>
     </option>
   </component>
@@ -196,20 +157,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Innlevering2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Innlevering2" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Innlevering2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib_usage_example" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,12 +491,18 @@
       <option name="project" value="LOCAL" />
       <updated>1447454333491</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447458121735</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1447458121735</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.06840796" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -557,7 +510,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50497514" order="2" side_tool="true" content_ui="tabs" />
@@ -993,27 +946,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secretCoder.h">
+    <entry file="file://$PROJECT_DIR$/unit_test.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="37" selection-end-column="3" />
+        <state vertical-scroll-proportion="2.280928">
+          <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/exception_handler.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="23" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="23" />
-          <folding>
-            <element signature="e#55#96#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/secretCoder.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.45876288">
           <caret line="203" column="68" selection-start-line="203" selection-start-column="68" selection-end-line="203" selection-end-column="68" />
           <folding>
             <element signature="e#463#2150#0" expanded="false" />
@@ -1023,10 +966,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unit_test.c">
+    <entry file="file://$PROJECT_DIR$/source/exception_handler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8363402">
-          <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.3234536">
+          <caret line="144" column="23" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="23" />
+          <folding>
+            <element signature="e#55#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/secretCoder.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44458762">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
           <folding />
         </state>
       </provider>
