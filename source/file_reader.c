@@ -4,6 +4,7 @@
 
 
 #include "../headers/file_reader.h"
+#include "../headers/string.h"
 
 int read_file(const char *fileName, String *pstring, ReadFlag readFlag, int *memoryError){
     FILE* file = fopen (fileName, "r");
@@ -54,6 +55,7 @@ int read_directory(const char *dirName, String *pString, int *memoryError){
         add_char(pString, '\n', memoryError);
     }
     add_char(pString, '\0', memoryError);
+
 
     if(*memoryError){
         closedir(dir);

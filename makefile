@@ -4,8 +4,7 @@ LIBOUTPUT=lib_output/
 
 CFLAG_LIB=-c -g -std=c11
 all:
-	gcc $(CFLAGS) program.c -o program $(LIBS)
-
+	gcc $(CFLAGS) unit_test.c -o unit_test $(LIBS)
 
 prepare_lib:
 	gcc $(CFLAG_LIB) source/array.c -o $(LIBOUTPUT)array.o $(LIBS)
@@ -43,3 +42,4 @@ clean:
 	rm -f crack_util
 	rm -f string_util
 	rm -f exception_handler
+	rm -f lib_example/main.c

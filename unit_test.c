@@ -3,7 +3,7 @@
 //
 
 
-#include "program.h"
+#include "unit_test.h"
 #include "headers/string.h"
 
 
@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
     int status = -1;
 
 
-    char *encodedText = encode("inputMessage.txt", "data/sweetChildGR.txt", "encodedText.txt", &status, 250);
+    char *encodedText = encode("inputMessage.txt", "keys/sweetChildGR.txt", "encodedText.txt", &status, 250);
 
 
     printf("\nEncodedtext: \n %s", encodedText);
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
 
     status = -1;
 
-    char *decodedText = decode("encodedText.txt", "data/sweetChildGR.txt", &status);
+    char *decodedText = decode("encodedText.txt", "keys/sweetChildGR.txt", &status);
 
     printf("\nDecodedtext: \n %s", decodedText);
 
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]){
 
 
 
-    char * decodedText2 = crack("encodedText.txt", "data/", "words", &status);
+    char * decodedText2 = crack("encodedText.txt", "keys/", "words", &status);
     printf("\nCracked decoedText2: \n%s", decodedText2);
     free(decodedText2);
 
