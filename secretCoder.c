@@ -170,7 +170,7 @@ char *crack(const char *inputCodeFile, const char *keyFolder, const char *dictio
     }
 
 
-    if(!read_key_names_from_directory(keyFolder, &keyfiles, &memoryError)){
+    if(!read_key_names_from_directory(keyFolder, &keyfiles, status)){
         on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
         return NULL;
     }
@@ -201,7 +201,7 @@ char *crack(const char *inputCodeFile, const char *keyFolder, const char *dictio
 
 
     String decodedText = new_string(DEFAULT_SIZE, &memoryError);
-    if(!decode_string(&keyString, &encodedText, &decodedText, &memoryError)){
+    if(!decode_string(&keyString, &encodedText, &decodedText, status)){
         on_error_decode_helper(&encodedText, &keyfiles, &crackedKey, &wordList);
         free_string_memory(&keyString);
         free_string_memory(&decodedText);
