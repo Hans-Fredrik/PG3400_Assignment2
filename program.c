@@ -31,11 +31,10 @@ int main(int argc, char *argv[]){
 
 
 
-    /*
     char * decodedText2 = crack("encodedText.txt", "data/", "words", &status);
     printf("\nCracked decoedText2: \n%s", decodedText2);
     free(decodedText2);
-     */
+
 
     return 0;
 }

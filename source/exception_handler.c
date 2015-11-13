@@ -48,8 +48,9 @@ int read_the_message_to_encode(const char *inputMessageFile, String *inputString
 
 int encode_the_message_with_key(String *keyString, String *inputString, String *encodedString, const char *keyFile, int *status, int d){
     int memoryError = 0;
+    int warningsGiven = 0;
 
-    int encodeMessageWithKeyResult = encode_string(keyString, inputString,encodedString, d, &memoryError);
+    int encodeMessageWithKeyResult = encode_string(keyString, inputString,encodedString, d, &memoryError, &warningsGiven);
 
     if(encodeMessageWithKeyResult != 1 || memoryError){
         if(memoryError){
@@ -61,9 +62,13 @@ int encode_the_message_with_key(String *keyString, String *inputString, String *
         }
         else {
             OUTPUT_FILE_ERROR("\nEncode function error: Could not encode with the keyfile. Missing characters[a-z is must] in", keyFile);
-            *status = 4;
+            *status = 5;
         }
         return 0;
+    }
+
+    if(warningsGiven == 0){
+        OUTPUT_COMPLETE("\nEncoding done with [100%] d satisfaction", "\n");
     }
 
     return 1;
@@ -116,7 +121,7 @@ int read_dictionary_to_array_list(const char *dictionaryFile, ArrayList *wordLis
             *status = 1;
         }else{
             OUTPUT_FILE_ERROR("\nCrack function error: could not open and read file", dictionaryFile);
-            *status = 7;
+            *status = 4;
         }
 
         return 0;
@@ -137,7 +142,7 @@ int read_key_names_from_directory(const char *keyFolder, String *keyfiles, int *
             *status = 1;
         }else{
             OUTPUT_FILE_ERROR("\nCrack function error: could not open and read file(directory)", keyFolder);
-            *status = 8;
+            *status = 5;
         }
 
         return 0;
@@ -158,7 +163,7 @@ int brute_force_for_the_right_key(String *crackedKey, char *keyname, String *enc
             *status = 1;
         }else{
             OUTPUT_FILE_ERROR("\nBrute force function error: Could not get any matches!", keyname);
-            *status = 9;
+            *status = 6;
         }
 
         return 0;

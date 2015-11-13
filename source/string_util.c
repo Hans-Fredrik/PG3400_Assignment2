@@ -49,7 +49,7 @@ Map create_char_index_map(String *key, int *malloc_error){
 }
 
 
-int get_char_position_in_map(Map *pMap, char target, int d){
+int get_char_position_in_map(Map *pMap, char target, int d, int *warningsGiven){
     int keyIndex =  get_index_for_key(pMap, target);
 
     int usedLength = pMap->items[keyIndex].value.usedLength;
@@ -57,7 +57,7 @@ int get_char_position_in_map(Map *pMap, char target, int d){
 
 
     if(pMap->items[keyIndex].isUsed){
-        verify_adjacent_code(&pMap->items[keyIndex], d, 0);
+        verify_adjacent_code(&pMap->items[keyIndex], d, 0, warningsGiven);
     }else{
         pMap->items[keyIndex].isUsed = 1;
     }
@@ -94,7 +94,7 @@ int get_char_position_in_map(Map *pMap, char target, int d){
 }
 
 
-int encode_string(String *key, String *message, String *encodedOutput, int d , int *memoryError){
+int encode_string(String *key, String *message, String *encodedOutput, int d , int *memoryError, int *warningsGiven){
 
     Map indexMap = create_char_index_map(key, memoryError);
 
@@ -103,24 +103,24 @@ int encode_string(String *key, String *message, String *encodedOutput, int d , i
         return 0;
     }
 
-    // The basecheck is based on a atleast 75 % satisfaction.. Else there will be no encoding.
+    // The basecheck is based on a atleast 80 % satisfaction.. Else there will be no encoding.
     int notSatisfyingD = 0;
     for(int i = 0; i < indexMap.used; i++){
-        if(!verify_adjacent_code(&indexMap.items[i], d, 1)){
+        if(!verify_adjacent_code(&indexMap.items[i], d, 1, warningsGiven)){
             notSatisfyingD++;
         }
     }
 
     int percentage = (notSatisfyingD*100)/indexMap.used;
     if(100 - percentage < 80){
-        OUTPUT_D_ERROR("\nPercentage match with current d only: ", (100-percentage));
+        OUTPUT_D_ERROR("\nPercentage d match with current d only: ", (100-percentage));
         OUTPUT_ERROR("%\n");
         free_map_memory(&indexMap);
         return 3;
     }
 
     if(100 - percentage != 100){
-        OUTPUT_D_COMPLETE("\nPercentage match with current d is: ", 100-percentage);
+        OUTPUT_D_COMPLETE("\nWoorsctcase percentage d match with current d is (80% is lower-limit): ", 100-percentage);
     }
 
 
@@ -133,7 +133,7 @@ int encode_string(String *key, String *message, String *encodedOutput, int d , i
                 add_char(encodedOutput, '-', memoryError);
             }
 
-            int pos = get_char_position_in_map(&indexMap, tolower(message->characters[i]), d);
+            int pos = get_char_position_in_map(&indexMap, tolower(message->characters[i]), d, warningsGiven);
 
 
             add_int_as_indiviudal_chars(encodedOutput, pos, memoryError);
@@ -235,7 +235,7 @@ int check_map_for_a_z(Map *map){
 }
 
 
-int verify_adjacent_code(Item *item, int d, int silent){
+int verify_adjacent_code(Item *item, int d, int silent, int *warningsGiven){
     if(d == 0) return 1;
 
     int lowestNumber = item->value.numbers[0];
@@ -258,7 +258,7 @@ int verify_adjacent_code(Item *item, int d, int silent){
             OUTPUT_WARNING("\nEncode function (Warning): ");
             printf("Did not satisfy [%d] units between indexes on char [%c] in key. Number of indexes: %d\n"
                     ,d, item->key, item->value.usedLength);
-
+            *warningsGiven = *warningsGiven +1;
         }
         return 0;
     }

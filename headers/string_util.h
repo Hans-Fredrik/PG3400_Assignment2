@@ -22,9 +22,9 @@
 
 void remove_string_content(String *pString);
 
-int encode_string(String *key, String *message, String *encodedOutput, int d, int *memoryError);
+int encode_string(String *key, String *message, String *encodedOutput, int d, int *memoryError, int *warningsGiven);
 
-int get_char_position_in_map(Map *pMap, char target, int d);
+int get_char_position_in_map(Map *pMap, char target, int d, int *warningsGiven);
 
 void add_int_as_indiviudal_chars(String *encodedOutput, int number, int *memoryError);
 
@@ -32,7 +32,7 @@ int decode_string(String *key, String *message, String *decodeOutput, int *memor
 
 char get_char_at_position(String *pString, int pos);
 
-int verify_adjacent_code(Item *item, int d, int silent);
+int verify_adjacent_code(Item *item, int d, int silent, int *warningsGiven);
 
 int char_lower(char chr);
 
