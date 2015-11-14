@@ -101,6 +101,8 @@ int main(int argc, char *argv[]){
     char *encodedText = encode("inputMessage.txt", "keys/sweetChildGR.txt", "encodedText.txt", &status, 2);
 
     printf("EncodedMessage: %s\n", encodedText);
+    printf("Status: %d\n" , status);
+
 
     free(encodedText);
 
@@ -109,6 +111,7 @@ int main(int argc, char *argv[]){
 
     printf("\nDecoedMessage: %s\n", decodedText);
 
+    printf("Status: %d\n" , status);
     free(decodedText);
 
 
@@ -117,6 +120,7 @@ int main(int argc, char *argv[]){
 
     printf("\nCracked DecoedMessage: %s\n", decodedText2);
 
+    printf("Status: %d\n" , status);
     free(decodedText2);
 
     return 0;
