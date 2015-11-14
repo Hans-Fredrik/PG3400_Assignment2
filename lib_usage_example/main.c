@@ -25,10 +25,10 @@ int main(int argc, char *argv[]){
 
 
 
-    char * decodedText2 = crack("encodedText.txt", "keys/", "../words", &status);
+    // OPS: Valgrind on crack may take up to 60 s because of the big words file and allocation's to check
+    char * decodedText2 = crack("encodedText.txt", "keys/", "words", &status);
 
     printf("\nCracked DecoedMessage: %s\n", decodedText2);
-
 
     free(decodedText2);
 

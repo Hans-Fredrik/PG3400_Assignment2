@@ -8,6 +8,8 @@
 /*
  * Note! The client should handle the status message and(or) at least check for NULL when using this library.
  * Example give in example usage is just simplified.
+ * Note! The code usa math library and need to be compiled with -lm
+ * example: gcc -L. main.c -o main -lsecretCoder -lm
  */
 
 

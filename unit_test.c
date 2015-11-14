@@ -14,17 +14,17 @@ int main(int argc, char *argv[]){
 
     // Testing encode function
     printf("\nTesting if input message param is NULL is handled:  ");
-    char *expectNullWhen1ParamIsNull = encode(NULL, "keys/sweetChildGR.txt", "encodedText.txt", &status, 2);
+    char *expectNullWhen1ParamIsNull = encode(NULL, "keys/sweetChildGR.txt", "files/encodedText.txt", &status, 2);
     printf("\nexpectNullWhen1ParamIsNull is: %s expcted null\n", expectNullWhen1ParamIsNull);
 
 
     printf("\nTesting if keyfile param is NULL is handled:  ");
-    char *expectNullWhen2ParamIsNull = encode("encodedText.txt", NULL, "encodedText.txt", &status, 2);
+    char *expectNullWhen2ParamIsNull = encode("files/inputMessage.txt", NULL, "files/encodedText.txt", &status, 2);
     printf("\nexpectNullWhen2ParamIsNull is: %s expcted null\n", expectNullWhen2ParamIsNull);
 
 
     printf("\nTesting if outputfile param is NULL is handled:  ");
-    char *expectNullWhen3ParamIsNull = encode("encodedText.txt", "keys/sweetChildGR.txt", NULL, &status, 2);
+    char *expectNullWhen3ParamIsNull = encode("files/encodedText.txt", "keys/sweetChildGR.txt", NULL, &status, 2);
     printf("\nexpectNullWhen3ParamIsNull is: %s expcted null\n", expectNullWhen3ParamIsNull);
 
 
@@ -36,28 +36,28 @@ int main(int argc, char *argv[]){
 
     // Testing encode function
     printf("\nTesting if blank input message file is handled:  ");
-    char *expectInputMessageFileError = encode("", "keys/sweetChildGR.txt", "encodedText.txt", &status, 2);
+    char *expectInputMessageFileError = encode("", "keys/sweetChildGR.txt", "files/encodedText.txt", &status, 2);
     printf("\nThe expectInputMessageFileError is: %s expected null and status is: %d expected 3\n", expectInputMessageFileError, status);
 
 
     printf("\nTesting if blank input keyfile is handled:  ");
-    char *expectKeyFileError = encode("encodedText.txt", "", "encodedText.txt", &status, 2);
+    char *expectKeyFileError = encode("files/encodedText.txt", "", "files/encodedText.txt", &status, 2);
     printf("\nThe expectKeyFileError is: %s expected null and status is: %d expected 2\n", expectKeyFileError, status);
 
 
     printf("\nTesting if blank input keyfile is handled:  ");
-    char *expectCouldNotWriteToFIleError = encode("encodedText.txt", "keys/sweetChildGR.txt", "", &status, 2);
+    char *expectCouldNotWriteToFIleError = encode("files/encodedText.txt", "keys/sweetChildGR.txt", "", &status, 2);
     printf("\nThe expectCouldNotWriteToFIleError is: %s expected null and status is: %d expected 6\n", expectCouldNotWriteToFIleError, status);
 
 
     printf("\nTesting if very high D condition handled:  ");
-    char *expectNotSatisfyingDCon = encode("encodedText.txt", "keys/sweetChildGR.txt", "encodedText.txt", &status, 2000);
+    char *expectNotSatisfyingDCon = encode("files/inputMessage.txt", "keys/sweetChildGR.txt", "files/encodedText.txt", &status, 2000);
     printf("\nThe expectNotSatisfyingDCon is: %s expected null and status is: %d expected 4\n", expectNotSatisfyingDCon, status);
 
 
     // Testing encode function
     printf("\nTesting that program can handle badkey:  ");
-    char *expectNotCompleteKeyFile = encode("encodedText.txt", "badkey", "encodedText.txt", &status, 2);
+    char *expectNotCompleteKeyFile = encode("files/inputMessage.txt", "badkey", "files/encodedText.txt", &status, 2);
     printf("\nThe expectNotCompleteKeyFile is: %s expected null and status is: %d expected 5\n", expectNotCompleteKeyFile, status);
     free(expectNotCompleteKeyFile);
 
@@ -70,7 +70,7 @@ int main(int argc, char *argv[]){
 
 
     printf("\nTesting that encode can handle badkey:  ");
-    char *expectKeyFileErrorDecode = decode("encodedText.txt", "", &status);
+    char *expectKeyFileErrorDecode = decode("files/encodedText.txt", "", &status);
     printf("\nThe expectKeyFileErrorDecode is: %s expected null and status is: %d expected 2\n", expectKeyFileErrorDecode, status);
 
     printf("\nTesting that encode can handle missing input file:  ");
@@ -87,18 +87,18 @@ int main(int argc, char *argv[]){
 
 
     printf("\nTesting that crack can handle missing input file:  ");
-    char *expectInputFileErrorCrack= crack("", "keys/", "words", &status);
+    char *expectInputFileErrorCrack= crack("", "keys/", "files/words", &status);
     printf("\nThe expectInputFileErrorCrack is: %s expected null and status is: %d expected 3\n", expectInputFileErrorCrack, status);
 
 
     printf("\nTesting that crack can handle missing wrong directory:  ");
-    char *expectDirectoryErrorCrack= crack("encodedText.txt", "sdfszfdaf", "words", &status);
+    char *expectDirectoryErrorCrack= crack("files/encodedText.txt", "sdfszfdaf", "files/words", &status);
     printf("\nThe expectDirectoryErrorCrack is: %s expected null and status is: %d expected 5\n", expectDirectoryErrorCrack, status);
 
 
 
     // Showing expect behaviour
-    char *encodedText = encode("inputMessage.txt", "keys/sweetChildGR.txt", "encodedText.txt", &status, 2);
+    char *encodedText = encode("files/inputMessage.txt", "keys/sweetChildGR.txt", "files/encodedText.txt", &status, 2);
 
     printf("EncodedMessage: %s\n", encodedText);
     printf("Status: %d\n" , status);
@@ -107,7 +107,7 @@ int main(int argc, char *argv[]){
     free(encodedText);
 
 
-    char *decodedText = decode("encodedText.txt", "keys/sweetChildGR.txt", &status);
+    char *decodedText = decode("files/encodedText.txt", "keys/sweetChildGR.txt", &status);
 
     printf("\nDecoedMessage: %s\n", decodedText);
 
@@ -116,7 +116,7 @@ int main(int argc, char *argv[]){
 
 
 
-    char * decodedText2 = crack("encodedText.txt", "keys/", "words", &status);
+    char * decodedText2 = crack("files/encodedText.txt", "keys/", "files/words", &status);
 
     printf("\nCracked DecoedMessage: %s\n", decodedText2);
 

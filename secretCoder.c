@@ -19,14 +19,6 @@ static void on_error_free_helper(String *pString, String *pString1, String *pStr
     free_string_memory(pString2);
 }
 
-/*
- * 1. Memory error
- * 2. Keyfile errror
- * 3. Inputfilemessage error
- * 4. Could not satisfy d condition
- * 5. Keyfile does not have a-z
- * 6. Could write to outputFile, name can't be blank
- */
 char *encode(const char *inputMessageFile, const char *keyFile, const char *outputFile, int *status, int d){
     if(inputMessageFile == NULL || keyFile == NULL || outputFile == NULL) return NULL;
 
@@ -70,13 +62,6 @@ char *encode(const char *inputMessageFile, const char *keyFile, const char *outp
 
     return encodedString.characters;
 }
-
-/*
- * 1 -> means memory issue (Most likely not going to happen but can)
- * 2 -> Could nopen open and read keyfile
- * 3 -> Could not open and read encoded message file
- * 1 -> memory error again.
- */
 
 char *decode(const char *inputCodeFile, const char *keyFile, int *status){
     if(inputCodeFile == NULL || keyFile == NULL) return NULL;
@@ -131,14 +116,6 @@ static void on_error_decode_helper(String *pS1, String *pS2, String *pS3, ArrayL
 
 }
 
-/*
- * 1. Memory error
- * 2. Could not open keyfile
- * 3. COuld not read inputCodeFile
- * 4. COuld not open dictionaryFile
- * 5. Could not open and read from file directory
- * 6. Brute force function could not get any matches..
- */
 char *crack(const char *inputCodeFile, const char *keyFolder, const char *dictionaryFile, int *status){
     if(inputCodeFile == NULL || keyFolder == NULL || dictionaryFile == NULL) return NULL;
 
