@@ -12,16 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e4593c6-6790-4ed6-b6e4-b74ee4184f47" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/headers/dynamic_char_array.h" afterPath="$PROJECT_DIR$/headers/string.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/dynamic_char_array.c" afterPath="$PROJECT_DIR$/source/string.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program" afterPath="$PROJECT_DIR$/program" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/encodedText.txt" afterPath="$PROJECT_DIR$/files/encodedText.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/inputMessage.txt" afterPath="$PROJECT_DIR$/files/inputMessage.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Innlevering2.iml" afterPath="$PROJECT_DIR$/.idea/Innlevering2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/arraylist.h" afterPath="$PROJECT_DIR$/headers/arraylist.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/file_utility.c" afterPath="$PROJECT_DIR$/source/file_utility.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/file_utility.h" afterPath="$PROJECT_DIR$/headers/file_utility.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program.c" afterPath="$PROJECT_DIR$/program.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/program.h" afterPath="$PROJECT_DIR$/program.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib_usage_example/main.c" afterPath="$PROJECT_DIR$/lib_usage_example/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.c" afterPath="$PROJECT_DIR$/secretCoder.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretCoder.h" afterPath="$PROJECT_DIR$/secretCoder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib_usage_example/secretCoder.h" afterPath="$PROJECT_DIR$/lib_usage_example/secretCoder.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_test.c" afterPath="$PROJECT_DIR$/unit_test.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Innlevering2.iws" />
@@ -42,82 +40,7 @@
     <favorites_list name="Innlevering2" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="program.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/program.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding>
-                <element signature="e#55#74#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file_utility.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/file_utility.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44458762">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="secretCoder.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/secretCoder.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="string.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/string.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="e#122#141#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="string.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/string.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="program.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/program.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="secretCoder.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/secretCoder.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,22 +48,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/secretCoder.h" />
-        <option value="$PROJECT_DIR$/secretCoder.c" />
-        <option value="$PROJECT_DIR$/headers/string.h" />
-        <option value="$PROJECT_DIR$/makefile" />
-        <option value="$PROJECT_DIR$/inputMessage.txt" />
-        <option value="$PROJECT_DIR$/encodedText.txt" />
-        <option value="$PROJECT_DIR$/headers/file_utility.h" />
-        <option value="$PROJECT_DIR$/source/arraylist.c" />
         <option value="$PROJECT_DIR$/headers/arraylist.h" />
-        <option value="$PROJECT_DIR$/source/dynamic_char_array.c" />
-        <option value="$PROJECT_DIR$/program.c" />
-        <option value="$PROJECT_DIR$/headers/dynamic_char_array.h" />
-        <option value="$PROJECT_DIR$/source/string.c" />
-        <option value="$PROJECT_DIR$/program.h" />
+        <option value="$PROJECT_DIR$/source/array.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/source/string_utility.c" />
         <option value="$PROJECT_DIR$/source/file_utility.c" />
+        <option value="$PROJECT_DIR$/headers/file_utility.h" />
+        <option value="$PROJECT_DIR$/headers/crack_utility.h" />
+        <option value="$PROJECT_DIR$/source/crack_utility.c" />
+        <option value="$PROJECT_DIR$/headers/search_util.h" />
+        <option value="$PROJECT_DIR$/data/kryptonite.txt" />
+        <option value="$PROJECT_DIR$/words" />
+        <option value="$PROJECT_DIR$/data/diamonds.txt" />
+        <option value="$PROJECT_DIR$/data/derniereDanse.txt" />
+        <option value="$PROJECT_DIR$/data/letHerGo.txt" />
+        <option value="$PROJECT_DIR$/data/timber.txt" />
+        <option value="$PROJECT_DIR$/data/youAndI.txt" />
+        <option value="$PROJECT_DIR$/data/darkHorse.txt" />
+        <option value="$PROJECT_DIR$/data/becomingInsane.txt" />
+        <option value="$PROJECT_DIR$/headers/array.h" />
+        <option value="$PROJECT_DIR$/headers/array_list.h" />
+        <option value="$PROJECT_DIR$/headers/crack_util.h" />
+        <option value="$PROJECT_DIR$/headers/file_reader.h" />
+        <option value="$PROJECT_DIR$/headers/map.h" />
+        <option value="$PROJECT_DIR$/headers/encode_decode_util.h" />
+        <option value="$PROJECT_DIR$/source/encode_decode_util.c" />
+        <option value="$PROJECT_DIR$/source/array.c" />
+        <option value="$PROJECT_DIR$/source/array_list.c" />
+        <option value="$PROJECT_DIR$/source/map.c" />
+        <option value="$PROJECT_DIR$/program.h" />
+        <option value="$PROJECT_DIR$/headers/exception_handler.h" />
+        <option value="$PROJECT_DIR$/badkey" />
+        <option value="$PROJECT_DIR$/source/string.c" />
+        <option value="$PROJECT_DIR$/encodedText.txt" />
+        <option value="$PROJECT_DIR$/source/crack_util.c" />
+        <option value="$PROJECT_DIR$/source/search_util.c" />
+        <option value="$PROJECT_DIR$/headers/string_util.h" />
+        <option value="$PROJECT_DIR$/source/string_util.c" />
+        <option value="$PROJECT_DIR$/inputMessage.txt" />
+        <option value="$PROJECT_DIR$/program.c" />
+        <option value="$PROJECT_DIR$/makefile" />
+        <option value="$PROJECT_DIR$/lib_example/makefile" />
+        <option value="$PROJECT_DIR$/lib_example/main.c" />
+        <option value="$PROJECT_DIR$/lib_usage_example/encodedText.txt" />
+        <option value="$PROJECT_DIR$/source/file_reader.c" />
+        <option value="$PROJECT_DIR$/source/exception_handler.c" />
+        <option value="$PROJECT_DIR$/headers/string.h" />
+        <option value="$PROJECT_DIR$/secretCoder.h" />
+        <option value="$PROJECT_DIR$/lib_usage_example/secretCoder.h" />
+        <option value="$PROJECT_DIR$/secretCoder.c" />
+        <option value="$PROJECT_DIR$/unit_test.c" />
+        <option value="$PROJECT_DIR$/lib_usage_example/main.c" />
       </list>
     </option>
   </component>
@@ -151,6 +109,7 @@
   <component name="NamedScopeManager">
     <order />
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -207,21 +166,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Innlevering2" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Innlevering2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headers" />
+              <option name="myItemId" value="lib_usage_example" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -231,18 +176,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Forelesning7" />
     <property name="FullScreen" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="changes&#9;ACTION&#9;RecentChanges&#10;change&#9;ACTION&#9;CMake.ChangeCMakeProjectContentRoot&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;changes&#9;ACTION&#9;RecentChanges&#10;change&#9;ACTION&#9;CMake.ChangeCMakeProjectContentRoot&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib_usage_example" />
+      <recent name="$PROJECT_DIR$/lib_example" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/files" />
       <recent name="$PROJECT_DIR$/headers" />
     </key>
   </component>
@@ -290,29 +238,318 @@
       <option name="project" value="LOCAL" />
       <updated>1446636731691</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed small issue before branching out">
+      <created>1446651495021</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1446651495021</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactored add_int_as_individual_chars&#10;">
+      <created>1446723115804</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1446723115804</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactored add_int_as_individual_chars&#10;">
+      <created>1446723237319</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1446723237319</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactored add_int_as_individual_chars is now using normal char array instead of the String&#10;">
+      <created>1446723915064</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1446723915064</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactored add_int_as_individual_chars is now using normal char array instead of the String&#10;">
+      <created>1446725826481</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1446725826481</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactoring string.c soon implementing map consider create string utiltiy class. string.c should be as consice as possible.">
+      <created>1446727394404</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1446727394404</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactoring string.c soon implementing map consider create string utiltiy class. string.c should be as consice as possible.">
+      <created>1446764048640</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1446764048640</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Implemented map and array, map -&gt; using key and array as value should work fine now. 3 hours stuggeling because of no reason. Problem is solved, but solution was not as expected but is it ok.">
+      <created>1446766547359</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1446766547359</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implemented map and array, map -&gt; using key and array as value should work fine now. 3 hours stuggeling because of no reason. Problem is solved, but solution was not as expected but is it ok.">
+      <created>1446766808166</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1446766808166</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implemented map and array, map -&gt; using key and array as value should work fine now. 3 hours stuggeling because of no reason. Problem is solved, but solution was not as expected but is it ok.">
+      <created>1446819161391</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1446819161391</updated>
+    </task>
+    <task id="LOCAL-00012" summary="D condition now supported..">
+      <created>1446828042805</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1446828042805</updated>
+    </task>
+    <task id="LOCAL-00013" summary="D condition now supported..">
+      <created>1446832436023</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1446832436023</updated>
+    </task>
+    <task id="LOCAL-00014" summary="D condition now supported..">
+      <created>1446832804399</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1446832804399</updated>
+    </task>
+    <task id="LOCAL-00015" summary="D condition now supported..">
+      <created>1446834672328</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1446834672328</updated>
+    </task>
+    <task id="LOCAL-00016" summary="D condition now supported..">
+      <created>1446835034781</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1446835034781</updated>
+    </task>
+    <task id="LOCAL-00017" summary="secretCoder.c is not fully implemented code is doing all it's work. Bruteforce should now be implemented. When that is done and refactoring the task seems to be done in good enough condition to A'it">
+      <created>1446894856918</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1446894856918</updated>
+    </task>
+    <task id="LOCAL-00018" summary="secretCoder.c is not fully implemented code is doing all it's work. Bruteforce should now be implemented. When that is done and refactoring the task seems to be done in good enough condition to A'it">
+      <created>1446902400891</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1446902400891</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Rafactoring, Everything is set to go. Fixing exception handling, secretCoder code should be flowless and then split up some functionality and after that bruteforce&#10;">
+      <created>1447003093919</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1447003093920</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Rafactoring, Everything is set to go. Fixing exception handling, secretCoder code should be flowless and then split up some functionality and after that bruteforce&#10;">
+      <created>1447003638205</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1447003638205</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Rafactoring, Everything is set to go. Fixing exception handling, secretCoder code should be flowless and then split up some functionality and after that bruteforce&#10;">
+      <created>1447012681523</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1447012681523</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed last error part! Super happy, that means it is now only refactoring and bonus task. Great work in less than 2 hours.">
+      <created>1447024712604</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1447024712604</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Brute force is now nearly done.. Trying to do some refactoring on names, this have been bothering me.">
+      <created>1447100589798</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1447100589798</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Renaming has been done">
+      <created>1447100912059</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1447100912059</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Renaming has been done">
+      <created>1447106925372</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1447106925372</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Renaming has been done">
+      <created>1447186885320</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1447186885320</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Renaming has been done">
+      <created>1447194550355</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1447194550355</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Renaming has been done">
+      <created>1447229401546</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1447229401546</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Renaming has been done">
+      <created>1447242772464</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1447242772464</updated>
+    </task>
+    <task id="LOCAL-00030" summary="CRACKING DONE BITCH">
+      <created>1447263519402</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1447263519402</updated>
+    </task>
+    <task id="LOCAL-00031" summary="CRACKING DONE BITCH">
+      <created>1447278325803</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1447278325803</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447278825097</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1447278825097</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447336498184</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1447336498184</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447355171522</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1447355171522</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447356212224</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1447356212224</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447358777342</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1447358777342</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Alt fix fax klart for en runde med refaktorering..">
+      <created>1447369911279</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1447369911279</updated>
+    </task>
+    <task id="LOCAL-00038" summary="NEARLY perfect exception handling">
+      <created>1447371766811</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1447371766811</updated>
+    </task>
+    <task id="LOCAL-00039" summary="NEARLY perfect exception handling">
+      <created>1447375575622</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1447375575622</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447423880068</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1447423880068</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447428183946</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1447428183946</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447447083489</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1447447083489</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447451666984</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1447451666984</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447454295917</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1447454295917</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447454333491</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1447454333491</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447458121735</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1447458121735</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447458306996</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1447458307005</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Thing start to look delivery able. That's greate, too much effort in this assignment.">
+      <created>1447501748727</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1447501748727</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Code is now finished.">
+      <created>1447501984706</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1447501984706</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.06840796" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50497514" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="123" width="1240" height="673" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -331,292 +568,444 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&#10;" />
     <MESSAGE value="&#10;saf" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;saf" />
+    <MESSAGE value="Fixed small issue before branching out" />
+    <MESSAGE value="refactored add_int_as_individual_chars&#10;" />
+    <MESSAGE value="refactored add_int_as_individual_chars is now using normal char array instead of the String&#10;" />
+    <MESSAGE value="Refactoring string.c soon implementing map consider create string utiltiy class. string.c should be as consice as possible." />
+    <MESSAGE value="Implemented map and array, map -&gt; using key and array as value should work fine now. 3 hours stuggeling because of no reason. Problem is solved, but solution was not as expected but is it ok." />
+    <MESSAGE value="D condition now supported.." />
+    <MESSAGE value="secretCoder.c is not fully implemented code is doing all it's work. Bruteforce should now be implemented. When that is done and refactoring the task seems to be done in good enough condition to A'it" />
+    <MESSAGE value="Rafactoring, Everything is set to go. Fixing exception handling, secretCoder code should be flowless and then split up some functionality and after that bruteforce&#10;" />
+    <MESSAGE value="Fixed last error part! Super happy, that means it is now only refactoring and bonus task. Great work in less than 2 hours." />
+    <MESSAGE value="Brute force is now nearly done.. Trying to do some refactoring on names, this have been bothering me." />
+    <MESSAGE value="Renaming has been done" />
+    <MESSAGE value="CRACKING DONE BITCH" />
+    <MESSAGE value="Alt fix fax klart for en runde med refaktorering.." />
+    <MESSAGE value="NEARLY perfect exception handling" />
+    <MESSAGE value="Thing start to look delivery able. That's greate, too much effort in this assignment." />
+    <MESSAGE value="Code is now finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code is now finished." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/program.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-          <folding>
-            <element signature="e#55#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/file_utility.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/encodedText.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/secretCoder.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/arraylist.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#121#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/arraylist.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#122#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/string.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <element signature="e#55#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/file_utility.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/secretCoder.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/arraylist.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#121#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/arraylist.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#122#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/string.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/allThatSheWants.txt">
+    <entry file="file://$PROJECT_DIR$/keys/californiaKingBed.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/brownSugarRS.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/breakMeShakeMe.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/boombastic.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/allThatSheWants.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09664948">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/anaconda.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/babyJB.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/backInBlack.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/badMJ.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/bangBang.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/beatItMJ.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/becomingInsane.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75386596">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/blackAndGoldKatyPerry.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys/bohemianRhapsody.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/map.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8505155">
+          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/array_list.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42525774">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/array.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4007732">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/string.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32289627">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/search_util.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19329897">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/string_util.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50489235">
+          <caret line="180" column="4" selection-start-line="180" selection-start-column="4" selection-end-line="180" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inputMessage.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="130" selection-start-line="0" selection-start-column="130" selection-end-line="0" selection-end-column="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/file_utility.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19329897">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.6164383">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/lib_usage_example/keys/rude.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11597938">
-          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.55772996">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/file_reader.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039138943">
+          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+          <folding>
+            <element signature="e#56#91#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/crack_util.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0958904">
+          <caret line="90" column="21" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib_usage_example/words">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib_output/array.o">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_test.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25128865">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/exception_handler.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8311856">
+          <caret line="144" column="23" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="23" />
+          <folding>
+            <element signature="e#55#96#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/array.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42525774">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/array_list.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27061856">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/exception_handler.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6378866">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/file_reader.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40592784">
+          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.560567">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/search_util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/map.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5798969">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/string_util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36726806">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1322314">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/encodedText.txt">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/arraylist.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11741683">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/arraylist.h">
+    <entry file="file://$PROJECT_DIR$/lib_usage_example/inputMessage.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.02739726">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#121#140#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib_usage_example/encodedText.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib_usage_example/makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.019329896">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib_usage_example/secretCoder.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23195876">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/secretCoder.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/string.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.28994846">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#122#141#0" expanded="true" />
+            <element signature="e#3293#3520#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/secretCoder.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.21262887">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program.c">
+    <entry file="file://$PROJECT_DIR$/files/words">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#55#74#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.11597938">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/file_utility.c">
+    <entry file="file://$PROJECT_DIR$/files/encodedText.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44458762">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.019329896">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/inputMessage.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="130" selection-start-line="0" selection-start-column="130" selection-end-line="0" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/badkey">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/crack_util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25128865">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09664948">
+          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib_usage_example/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5412371">
+          <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2126288">
+          <caret line="94" column="105" selection-start-line="94" selection-start-column="105" selection-end-line="94" selection-end-column="105" />
           <folding />
         </state>
       </provider>

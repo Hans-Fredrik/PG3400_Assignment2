@@ -8,27 +8,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <math.h>
+#include "map.h"
 
-const int ARRAY_RESIZE_FACTOR = 2;
+
+const int ARRAY_RESIZE_FACTOR;
 
 
 typedef struct{
-    char    *charArray;
+    char    *characters;
     int     used;
     int     length;
 }String;
 
 
-String new_string(int startSize);
-void add_char(String *pString, char element);
-static void resize_string(String *pString);
+
+String new_string(int startSize, int *mallocError);
+
+void add_char(String *pString, char element, int *mallocError);
+
+void add_word(String *pString, const char *word, size_t length, int *mallocError);
+
+void resize_string(String *pString, int *mallocError);
+
 void free_string_memory(String *pString);
-
-void print_string(String *pString);
-void encode_string(String *key, String *message, String *encodedOutput, int d);
-int get_char_position(String *pString, char target);
-void add_int_as_indiviudal_chars(String *encodedOutput, int number);
-void decode_string(String *key, String *message, String *decodeOutput);
-char get_char_at_position(String *pString, int pos);
-
 #endif //INNLEVERING2_ARRAYLIST_H
